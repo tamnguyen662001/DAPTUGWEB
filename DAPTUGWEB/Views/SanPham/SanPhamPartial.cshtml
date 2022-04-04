@@ -1,0 +1,42 @@
+﻿@using DAPTUGWEB.Models;
+@model List<SANPHAM>
+
+
+
+@{ foreach (var item in Model.ToList())
+        {
+        
+        <div onclick="location.href='details.html';" class="product-grid1 col-md-4 ">
+            <div class="product-grid-head">
+                <ul class="grid-social">
+                    <li><a class="facebook" href="#"><span> </span></a></li>
+                    <li><a class="twitter" href="#"><span> </span></a></li>
+                    <li><a class="googlep" href="#"><span> </span></a></li>
+                    <div class="clear"> </div>
+                </ul>
+                
+            </div>
+            <div class="product-pic">
+                <a href="#"><img src="~/Image/San_pham/@item.ANHSP" title="product-name" /></a>
+                <p>
+                    
+                    <span>@item.TENSP</span>
+                </p>
+            </div>
+            <div class="product-info">
+                <div class="product-info-cust">
+                    <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">Details</a>
+                </div>
+                <div class="product-info-price">
+                    <a href="details.html">@((float)item.DONGIA) Đ</a>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="more-product-info">
+                <span> </span>
+            </div>
+        </div>
+        
+    }
+}
+

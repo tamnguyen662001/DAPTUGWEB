@@ -1,0 +1,20 @@
+﻿@using DAPTUGWEB.Models;
+@model List<NHACC>
+
+
+
+
+@{ foreach (var item in Model)
+    {
+        <li class="level0">
+            <a class='' href='@Url.Action("SanPhamTheoNhaCungCap", new { @MANCC = item.MANCC})'>
+                
+                <span>@item.TENNCC</span>
+            </a>
+        </li>
+    }
+}
+
+
+
+

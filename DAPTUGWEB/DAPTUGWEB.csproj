@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,8 +129,50 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiSanPhamController.cs" />
+    <Compile Include="Controllers\NhaCungCapController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHD.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\databaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\databaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\databaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HOADON.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAISP.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHACC.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THANHTOAN.cs">
+      <DependentUpon>databaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +182,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\productdetail.css" />
     <Content Include="css\rightsidebar.css" />
     <Content Include="css\megamenu.css" />
     <Content Include="css\slider.css" />
@@ -139,14 +190,58 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="image\Screenshot %2853%29.png" />
-    <Content Include="image\Screenshot %2854%29.png" />
-    <Content Include="image\Screenshot %2855%29.png" />
-    <Content Include="image\Screenshot %2856%29.png" />
+    <Content Include="Image\Loai_san_pham\1.jpg" />
+    <Content Include="Image\Loai_san_pham\2.jpg" />
+    <Content Include="Image\Loai_san_pham\3.jpg" />
+    <Content Include="Image\Loai_san_pham\4.jpg" />
+    <Content Include="Image\Loai_san_pham\5.jpg" />
+    <Content Include="Image\San_pham\1.jpg" />
+    <Content Include="Image\San_pham\10.jpg" />
+    <Content Include="Image\San_pham\11.jpg" />
+    <Content Include="Image\San_pham\12.jpg" />
+    <Content Include="Image\San_pham\13.jpg" />
+    <Content Include="Image\San_pham\14.jpg" />
+    <Content Include="Image\San_pham\15.jpg" />
+    <Content Include="Image\San_pham\16.jpg" />
+    <Content Include="Image\San_pham\17.jpg" />
+    <Content Include="Image\San_pham\18.jpg" />
+    <Content Include="Image\San_pham\19.jpg" />
+    <Content Include="Image\San_pham\2.jpg" />
+    <Content Include="Image\San_pham\20.jpg" />
+    <Content Include="Image\San_pham\21.jpg" />
+    <Content Include="Image\San_pham\22.jpg" />
+    <Content Include="Image\San_pham\23.jpg" />
+    <Content Include="Image\San_pham\24.jpg" />
+    <Content Include="Image\San_pham\25.jpg" />
+    <Content Include="Image\San_pham\3.jpg" />
+    <Content Include="Image\San_pham\4.jpg" />
+    <Content Include="Image\San_pham\5.jpg" />
+    <Content Include="Image\San_pham\6.jpg" />
+    <Content Include="Image\San_pham\7.jpg" />
+    <Content Include="Image\San_pham\8.jpg" />
+    <Content Include="Image\San_pham\9.jpg" />
     <Content Include="js\main.js" />
     <Content Include="js\megamenu.js" />
+    <Content Include="js\productdetail.js" />
+    <Content Include="Models\databaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>databaseModel.Context.cs</LastGenOutput>
+      <DependentUpon>databaseModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\databaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>databaseModel.edmx</DependentUpon>
+      <LastGenOutput>databaseModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\databaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>databaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\databaseModel.edmx.diagram">
+      <DependentUpon>databaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -174,10 +269,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Layout\MainLayout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\LoaiSanPham\LoaiSanPhamPartial.cshtml" />
+    <Content Include="Views\SanPham\SanPhamPartial.cshtml" />
+    <Content Include="Views\NhaCungCap\NhaCungCapPartial.cshtml" />
+    <Content Include="Views\SanPham\ChiTietSanPham.cshtml" />
+    <Content Include="Views\NhaCungCap\SanPhamTheoNhaCungCap.cshtml" />
+    <Content Include="Views\LoaiSanPham\SanPhamTheoLoai.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Image\Nhan_vien\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -191,6 +292,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

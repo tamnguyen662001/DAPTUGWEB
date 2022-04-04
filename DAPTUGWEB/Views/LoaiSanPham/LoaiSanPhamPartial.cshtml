@@ -1,0 +1,18 @@
+﻿@using DAPTUGWEB.Models;
+@model List<LOAISP>
+
+
+
+@{ foreach (var item in Model)
+    {
+        <li class="level0">
+            <a class='' href='@Url.Action("SanPhamTheoLoai", new { @MALSP = item.MALSP})'>
+               
+                <span>@item.TENLSP</span>
+            </a>
+        </li>
+    }
+}
+
+
+

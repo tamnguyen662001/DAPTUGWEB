@@ -13,8 +13,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    @*
-        <link rel="stylesheet" href="/assests/css/font-awesome.min.css">*@
+
+
 
     <link href="~/css/rightsidebar.css" rel="stylesheet" />
     <link href="~/css/index.css" rel="stylesheet" />
@@ -23,60 +23,90 @@
 
 
 
+
+
+
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
     <script src="~/js/megamenu.js"></script>
 
 
+
 </head>
-@RenderBody()
+
 
 <body>
-
+    @*@RenderBody()*@
     <!-- New toolbar-->
     <!---start-wrap---->
     <!---start-header---->
-    <div class="header">
-        <div class="top-header">
-            <div class="wrap">
-                <!--<div class="top-header-left">
-                    <ul>
+    @*<div class="header sticky-bit">*@
+    <!--<div class="top-header">
+    <div class="wrap">-->
+    <!--<div class="top-header-left">
+    <ul>
 
-                        <li><a class="cart" href="#"><span id="clickme"> </span></a></li>-->
-                <!---start-cart-bag---->
-                <!--<div id="cart">Your Cart is Empty <span>(0)</span></div>-->
-                <!---start-cart-bag---->
-                <!--<li><a class="info" href="#"><span> </span></a></li>
+        <li><a class="cart" href="#"><span id="clickme"> </span></a></li>-->
+    <!---start-cart-bag---->
+    <!--<div id="cart">Your Cart is Empty <span>(0)</span></div>-->
+    <!---start-cart-bag---->
+    <!--<li><a class="info" href="#"><span> </span></a></li>
+        </ul>
+    </div>-->
+    <!--<div class="top-header-center ">
+                <div class="top-header-center-alert-left">
+                    <h3><a>@Html.ActionLink("FREE DELIVERY", "index")</a></h3>
+                </div>
+                <div class="top-header-right">
+                    <ul>
+                        <li><a>@Html.ActionLink("Login", "Login") </a><span> </span></li>
+                        <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
                     </ul>
-                </div>-->
-                <div class="top-header-center ">
-                    <div class="top-header-center-alert-left">
-                        <h3><a>@Html.ActionLink("FREE DELIVERY", "index")</a></h3>
-                    </div>
-                    <div class="top-header-right">
-                        <ul>
-                            <li><a>@Html.ActionLink("Login", "Login") </a><span> </span></li>
-                            <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
-                        </ul>
-                    </div>
-                    <div class="clear"> </div>
                 </div>
                 <div class="clear"> </div>
             </div>
+            <div class="clear"> </div>
         </div>
-        <!----start-mid-head---->
-        <div class="mid-header">
-            <div class="wrap">
-                <div class="mid-grid-left">
-                    <form>
-                        <input type="text" placeholder="What Are You Looking for?" />
-                    </form>
-                </div>
-                <div class="mid-grid-right">
-                    <a class="logo" href="index.html" <img src="~/image/web/images.png" /></a>
-                </div>
+    </div>-->
+    <!-- Thử làm lại nav menu theo cách thường-->
+    <nav class="navbar navbar-light bg-dark navbar-expand-md fixed-top">
+        <span>@Html.ActionLink("DTT SHOES", "../Home")</span>
+        <button class="navbar-toggler" type="button" data-target="#navResponsive" data-toggle="collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse top-header-right" id="navResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li><a>@Html.ActionLink("Login", "Login") </a><span> </span></li>
+                <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
+            </ul>
+        </div>
+    </nav><br>
+
+    <!----start-mid-head---->
+    <div class="mid-header">
+        <div class="wrap">
+            <div class="mid-grid-left">
+                @*<form>
+                    <input type="text" placeholder="What Are You Looking for?" />*@
+
+                @using (Html.BeginForm())
+                {
+                    @Html.TextBox("mid-grid-left", "", htmlAttributes: new
+                    {
+                        @class = "mid-grid-left",
+                        placeholder =
+                    "What Are You Looking for?"
+                    })
+                    <input class="btn btn-primary" type="submit" value="Search" />
+                }
+
+
+
                 <div class="clear"> </div>
             </div>
         </div>
+
+
 
         <div class="header-bottom">
             <div class="wrap">
@@ -91,24 +121,9 @@
                                         <h4>popular</h4>
                                         <ul>
                                             <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
                                             <li><a href="products.html">login</a></li>
                                         </ul>
                                     </div>
-                                    <div class="h_nav">
-                                        <h4 class="top">man</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="#">accessories</a></li>
-                                            <li><a href="#">kids</a></li>
-                                            <li><a href="#">style videos</a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                                 <div class="col1">
                                     <div class="h_nav">
@@ -117,8 +132,6 @@
                                             <li><a href="products.html">men</a></li>
                                             <li><a href="products.html">women</a></li>
                                             <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -127,18 +140,10 @@
                                         <h4>style zone</h4>
                                         <ul>
                                             <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col1 men">
-                                    <div class="men-pic">
-                                        <img src="images/men.png" title="" />
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </li>
@@ -148,49 +153,9 @@
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
-                                        <h4>shop</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="h_nav">
-                                        <h4>help</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>my company</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
                                         <h4>account</h4>
                                         <ul>
                                             <li><a href="products.html">login</a></li>
-                                            <li><a href="products.html">create an account</a></li>
-                                            <li><a href="products.html">create wishlist</a></li>
-                                            <li><a href="products.html">my shopping bag</a></li>
                                             <li><a href="products.html">brands</a></li>
                                             <li><a href="products.html">create wishlist</a></li>
                                         </ul>
@@ -203,9 +168,7 @@
                                             <li><a href="products.html">trends</a></li>
                                             <li><a href="products.html">sale</a></li>
                                             <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -214,78 +177,10 @@
                                         <h4>popular</h4>
                                         <ul>
                                             <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
                                             <li><a href="products.html">style videos</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col1 women">
-                                    <div class="women-pic">
-                                        <img src="images/women.png" title="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="color5" href="#">KIDS</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>popular</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">login</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="h_nav">
-                                        <h4 class="top">man</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>style zone</h4>
-                                        <ul>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1 kids">
-                                    <div class="kids-pic">
-                                        <img src="images/kids1.png" title="" />
-                                    </div>
-                                </div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
                             </div>
                         </div>
                     </li>
@@ -300,65 +195,27 @@
                                             <li><a href="products.html">new arrivals</a></li>
                                             <li><a href="products.html">men</a></li>
                                             <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
+
                                         </ul>
                                     </div>
-                                    <div class="h_nav">
-                                        <h4 class="top">my company</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
+
                                 </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>man</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
                                 <div class="col1">
                                     <div class="h_nav">
                                         <h4>help</h4>
                                         <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
                                             <li><a href="products.html">style videos</a></li>
                                             <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col1 sports">
-                                    <div class="sports-pic">
-                                        <img src="images/sport.png" title="" />
-                                    </div>
-                                </div>
+
                             </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
+
                         </div>
                     </li>
-                    <li>
+                    <li class="float-rt">
                         <a class="color7" href="#">NIKE SPORTSWEAR</a>
                         <div class="megapanel">
                             <div class="row">
@@ -368,468 +225,32 @@
                                         <ul>
                                             <li><a href="products.html">new arrivals</a></li>
                                             <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
                                         </ul>
                                     </div>
-                                    <div class="h_nav">
-                                        <h4>my company</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>help</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>my company</h4>
-                                        <ul>
-                                            <li><a href="products.html">trends</a></li>
-                                            <li><a href="products.html">sale</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>account</h4>
-                                        <ul>
-                                            <li><a href="products.html">login</a></li>
-                                            <li><a href="products.html">create an account</a></li>
-                                            <li><a href="products.html">create wishlist</a></li>
-                                            <li><a href="products.html">my shopping bag</a></li>
-                                            <li><a href="products.html">brands</a></li>
-                                            <li><a href="products.html">create wishlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1 nike">
-                                    <div class="nike-pic">
-                                        <img src="images/nike.png" title="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col2"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                                <div class="col1"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="color8" href="#">NIKEiD</a>
-                        <div class="megapanel">
-                            <div class="row">
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>style zone</h4>
-                                        <ul>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">women</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">brands</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>popular</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">men</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">login</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="h_nav">
-                                        <h4 class="top">man</h4>
-                                        <ul>
-                                            <li><a href="products.html">new arrivals</a></li>
-                                            <li><a href="products.html">accessories</a></li>
-                                            <li><a href="products.html">kids</a></li>
-                                            <li><a href="products.html">style videos</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col1"></div>
-                                    <div class="col1"></div>
-                                    <div class="col1"></div>
-                                    <div class="col1"></div>
+
                                 </div>
 
                             </div>
+
                         </div>
                     </li>
+
                 </ul>
 
             </div>
         </div>
     </div>
+
     <!----//End-bottom-header---->
     <!---//End-header---->
     <!----start-image-slider---->
     <!---728x90--->
-    <div class="container">
-        <div class="row my-5 mx-3">         
-            <div class="col-lg-12 mt-3">
-                <div id="slides" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li class="active" data-target="#slides" data-slide-to="0"></li>
-                        <li data-target="#slides" data-slide-to="1"></li>
-                        <li data-target="#slides" data-slide-to="2"></li>
-                        <li data-target="#slides" data-slide-to="3"></li>
-                    </ul>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-
-                            @*<img class="d-block w-100 img-responesive" src="./image/web/slide-1.jpg" alt="">*@
 
 
-                            <img src="~/image/Screenshot (56).png" />
-                            <div class="carousel-caption d-md-block">
-                                <h1>BOOTSTRAP4</h1>
-                                <h3>Welcom to my website</h3>
-                                <a href="" class="btn btn-outline-light btn-md">START</a>
-                            </div>
-                        </div>
 
-                        <div class="carousel-item">
-
-                            <img src="~/image/Screenshot (53).png" />
-                        </div>
-                        <div class="carousel-item">
-
-                            <img src="~/image/Screenshot (54).png" />
-                        </div>
-
-                        <div class="carousel-item">
-
-                            <img src="~/image/Screenshot (55).png" />
-                        </div>
-                        <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @RenderBody()
 
     
-    <div class="navbar-main">
-        <div id=" mb_mainnav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-12 col-xs-12 vertical_menu">
-                        <div id="mb_verticle_menu" class="menu-quick-select">
-                            <div class="title_block">
-                                <span>Danh mục sản phẩm</span>
-                            </div>
-                            <div id="menuverti" class="block_content navbar_menuvertical">
-                                <ul class='nav_verticalmenu'>
-                                    <li class="has-child level0">
-                                        <a class='' href='/san-pham/nghao-so-oc-33804'>
-                                            <img class='icon-menu' src='/Uploads/shop2005/images/icon/s1.png' alt=''>
-                                            <span>Nghao - Sò - Ốc</span>
-                                        </a>
-                                        <ul class='level1'>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/ngao-33820'><span>Ngao</span></a>
-                                            </li>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/so-33821'><span>Sò</span></a>
-                                            </li>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/oc-33822'><span>Ốc</span></a>
-                                            </li>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/hau-33823'><span>Hàu</span></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level0">
-                                        <a class='' href='/san-pham/bao-ngu-33805'>
-                                            <img class='icon-menu' src='/Uploads/shop2005/images/icon/s2.png' alt=''>
-                                            <span>Bào ngư</span>
-                                        </a>
-                                    </li>
-                                    <li class="level0">
-                                        <a class='' href='/san-pham/tom-33806'>
-                                            <img class='icon-menu' src='/Uploads/shop2005/images/icon/s3.png' alt=''>
-                                            <span>Tôm</span>
-                                        </a>
-                                    </li>
-                                    <li class="level0">
-                                        <a class='' href='/san-pham/muc-33807'>
-                                            <img class='icon-menu' src='/Uploads/shop2005/images/icon/s4.png' alt=''>
-                                            <span>Mực</span>
-                                        </a>
-                                    </li>
-                                    <li class="has-child level0">
-                                        <a class='' href='/san-pham/ca-33808'>
-                                            <img class='icon-menu' src='/Uploads/shop2005/images/icon/s5.png' alt=''>
-                                            <span>Cá</span>
-                                        </a>
-                                        <ul class='level1'>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/ca-ngu-dai-duong-33824'>
-                                                    <span>
-                                                        Cá ngừ đại
-                                                        dương
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="level1">
-                                                <a class='' href='/san-pham/ca-hoi-33825'>
-                                                    <span>
-                                                        Cá
-                                                        hồi
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-9">
-                        <div onclick="location.href='details.html';" class="product-grid ">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                <a href="#"><img src="images/product2.jpg" title="product-name" /></a>
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 380</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span> </span>
-                            </div>
-                        </div>
-                        <div onclick="location.href='details.html';" class="product-grid ">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                <a href="#"><img src="images/product1.jpg" title="product-name" /></a>
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 375</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span> </span>
-                            </div>
-                        </div>
-                        <div onclick="location.href='details.html';" class="product-grid  last-grid">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                <a href="#"><img src="images/product3.jpg" title="product-name" /></a>
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 350</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span> </span>
-                            </div>
-                        </div>
-                        <div onclick="location.href='details.html';" class="product-grid ">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                @*<a href="#"><img src="" title="product-name" /></a>*@
-                                <img src="~/image/web/slide-1.jpg" title="product-name" />
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 370</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span></span>
-                            </div>
-                        </div>
-                        <div onclick="location.href='details.html';" class="product-grid ">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                <a href="#"><img src="images/product5.jpg" title="product-name" /></a>
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 355</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span> </span>
-                            </div>
-                        </div>
-                        <div onclick="location.href='details.html';" class="product-grid  last-grid">
-                            <div class="product-grid-head">
-                                <ul class="grid-social">
-                                    <li><a class="facebook" href="#"><span> </span></a></li>
-                                    <li><a class="twitter" href="#"><span> </span></a></li>
-                                    <li><a class="googlep" href="#"><span> </span></a></li>
-                                    <div class="clear"> </div>
-                                </ul>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div> <span> (46)</span>
-                                </div>
-                            </div>
-                            <div class="product-pic">
-                                <a href="#"><img src="images/product6.jpg" title="product-name" /></a>
-                                <p>
-                                    <a href="#"><small>Nike</small> HYPERVENOM <small>Phantom</small> FG</a>
-                                    <span>Men's Firm-Ground Football Boot</span>
-                                </p>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-info-cust">
-                                    <a href="details.html">Details</a>
-                                </div>
-                                <div class="product-info-price">
-                                    <a href="details.html">&#163; 390</a>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="more-product-info">
-                                <span> </span>
-                            </div>
-                        </div>
-                        <div class="clear"> </div>
-                    </div>
-                </div>
-                <div class="clear"> </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
     <!---//End-rate---->
     <!---caption-script---->
     <!---//caption-script---->
@@ -860,7 +281,8 @@
                 <div class="bottom-top-grid last-bottom-top-grid">
                     <h4>REGISTER</h4>
                     <p>
-                        Create one account to manage everything you do with Nike, from your shopping preferences to your
+                        Create one account to manage everything you do with Nike, from your shopping preferences to
+                        your
                         Nike+ activity.
                     </p>
                     <a class="learn-more" href="#">Learn more</a>
@@ -889,6 +311,10 @@
             </div>
         </div>
     </div>
+
+    @*<div class="to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>*@
     <!---- //End-bottom-grids---->
     <!----//End-image-slider---->
     <!---start-footer---->
@@ -906,30 +332,20 @@
                 </ul>
             </div>
             <div class="footer-right">
-                <p> &copy; 2022 Spike_shoes. All rights reserved | Template by <a href="http://w3layouts.com/">#</a></p>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        /*
-                        var defaults = {
-                                containerID: 'toTop', // fading element id
-                            containerHoverID: 'toTopHover', // fading element hover id
-                            scrollSpeed: 1200,
-                            easingType: 'linear'
-                            };
-                        */
+                <p>
+                    &copy; 2022 Spike_shoes. All rights reserved | Template by <a href="http://w3layouts.com/">#</a>
+                </p>
 
-                        $().UItoTop({ easingType: 'easeOutQuart' });
-
-                    });
-                </script>
                 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
             </div>
             <div class="clear"> </div>
         </div>
     </div>
+
     <!---//End-footer---->
-    @*@RenderSection("a")*@
+
     <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 
 </html>

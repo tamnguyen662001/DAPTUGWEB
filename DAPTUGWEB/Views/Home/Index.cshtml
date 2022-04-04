@@ -2,3 +2,63 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Layout/MainLayout.cshtml";
 }
+
+
+
+
+<div class="container">
+    <div class="row pb-3">
+        <div class="colum-md-12">
+            <img class="d-block w-100" src="https://giaydb.com/wp-content/uploads/2020/10/slideshow_1.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+
+                <div id="mb_verticle_menu" class="menu-quick-select">
+
+                    <div class="title_block">
+                        <span>Danh mục sản phẩm</span>
+                    </div>
+
+                    <div id="menuverti" class="block_content navbar_menuvertical">
+                        <ul class='nav_verticalmenu'>
+                            @Html.Action("LoaiSanPhamPartial", "LoaiSanPham")
+                        </ul>
+                    </div>
+
+                </div>
+                <div id="mb_verticle_menu" class="menu-quick-select">
+
+                    <div class="title_block">
+                        <span>Nhà cung cấp</span>
+                    </div>
+
+                    <div id="menuverti" class="block_content navbar_menuvertical">
+                        <ul class='nav_verticalmenu'>
+                            @Html.Action("NhaCungCapPartial", "NhaCungCap")
+                        </ul>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                    @Html.Action("SanPhamPartial", "SanPham")
+                </div>
+
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </div>
+
+    <div class="clear"> </div>
+</div>
+
