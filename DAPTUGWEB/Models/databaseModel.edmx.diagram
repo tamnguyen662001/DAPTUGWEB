@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0002caa886f44af0bc019bbc98afde7d" Name="Diagram1">
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.CTHD" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.CTHD" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.HOADON" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.LOAISP" Width="1.5" PointX="4.875" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.NHACC" Width="1.5" PointX="9.625" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.NHANVIEN" Width="1.5" PointX="0.625" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.SANPHAM" Width="1.5" PointX="7.375" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.THANHTOAN" Width="1.5" PointX="2.625" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.LOAISP" Width="1.5" PointX="6.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.NHACC" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.SANPHAM" Width="1.5" PointX="8.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAYModel.THANHTOAN" Width="1.5" PointX="4.125" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAYModel.FK_CTHD_HOADON" ManuallyRouted="false" />
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAYModel.FK_CTHD_SANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAYModel.FK_HOADON_KHACHHANG" ManuallyRouted="false" />

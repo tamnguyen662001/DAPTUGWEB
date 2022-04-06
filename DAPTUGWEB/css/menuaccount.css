@@ -1,0 +1,54 @@
+﻿.menu-account {
+    margin-bottom: 15px;
+}
+
+    .menu-about h3,
+    .menu-logined h3,
+    .menu-account h3 {
+        background-color: black;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 15px 10px;
+        text-transform: uppercase;
+        margin: 0;
+        border-left: 5px solid black;
+    }
+
+ 
+    .menu-account ul li {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        text-decoration:none;
+    }
+        .menu-account ul li  {
+           
+            font-weight: 700;
+            padding-left: 10px;
+            transition: all 0.3s ease;
+        }
+            .menu-account ul li:hover {
+                padding-left: 15px;
+                transition: all 0.3s ease;
+            }
+            .menu-account ul li a {
+                text-decoration: none;
+                color: black;
+            }
+            /*  .menu-account li:hover > a::after {
+        position:absolute;
+        background: black;
+        height: 100%;
+        top: 0px;
+        left: -20px;
+        width: 2px;
+        content: '';
+        z-index: 2000;
+        outline: 1.5px solid black;
+    }*/
+            .account {
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                font-weight: 700;
+                padding-left: 15px;
+            }

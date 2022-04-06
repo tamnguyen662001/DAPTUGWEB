@@ -58,7 +58,7 @@
                 </div>
                 <div class="top-header-right">
                     <ul>
-                        <li><a>@Html.ActionLink("Login", "Login") </a><span> </span></li>
+                        <li><a>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") </a><span> </span></li>
                         <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
                     </ul>
                 </div>
@@ -76,8 +76,8 @@
 
         <div class="collapse navbar-collapse top-header-right" id="navResponsive">
             <ul class="navbar-nav ml-auto">
-                <li><a>@Html.ActionLink("Login", "Login") </a><span> </span></li>
-                <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
+                <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span> </span></li>
+                <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
             </ul>
         </div>
     </nav><br>
@@ -95,7 +95,7 @@
                     {
                         @class = "mid-grid-left",
                         placeholder =
-                    "What Are You Looking for?"
+                    "Nhập tên sản phẩm cần tìm kiếm"
                     })
                     <input class="btn btn-primary" type="submit" value="Search" />
                 }
@@ -247,15 +247,8 @@
     <!---728x90--->
 
 
-
     @RenderBody()
 
-    
-    <!---//End-rate---->
-    <!---caption-script---->
-    <!---//caption-script---->
-    <!-- left bar copy bán sò-->
-    <!--end left bar-->
     <!---- start-bottom-grids---->
     <!---728x90--->
     <div class="bottom-grids">

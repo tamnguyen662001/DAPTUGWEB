@@ -248,6 +248,8 @@ body {
         color: #FFF;
         font-size: 0.7em;
         text-transform: uppercase;
+      text-decoration:none!important;
+      
     }
 /*----start-mid-head---*/
 .mid-grids {
@@ -3443,15 +3445,16 @@ span.mail a {
     padding-right: 0;
 }*/
 
-    .navbar_menuvertical > .nav_verticalmenu {
-        margin: 0px;
-        padding: 0;
-        border: 1px solid #dadada;
-        border-top-color: transparent;
-        -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
-        float: left;
-    }
+.navbar_menuvertical > .nav_verticalmenu {
+    width: 100%!important;
+    margin: 0px;
+    padding: 0;
+    border: 1px solid #dadada;
+    border-top-color: transparent;
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    float: left;
+}
 
     .navbar_menuvertical .nav_verticalmenu li {
         position: relative;
@@ -3461,6 +3464,7 @@ span.mail a {
         display: block;
         float: left;
         padding: 0px 20px;
+        width:100%;
     }
 
         .navbar_menuvertical .nav_verticalmenu li:last-child {
@@ -3480,6 +3484,7 @@ span.mail a {
             text-decoration: none !important;
             transition: all 0.3s ease;
             font-weight: 700;
+          
         }
 
         .navbar_menuvertical .nav_verticalmenu li:hover {
@@ -3496,6 +3501,7 @@ span.mail a {
         content: '';
         z-index: 2000;
         outline: 1.5px solid black;
+
     }
 
     .navbar_menuvertical .nav_verticalmenu > li:hover > a {
@@ -3599,7 +3605,8 @@ span.mail a {
     .menu_hori li ul li:hover ul {
         display: block;
     }
-
-
+.aa .level0{
+    width:100%;
+}
 
 

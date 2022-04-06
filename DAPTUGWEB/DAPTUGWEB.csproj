@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\NhaCungCapController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +183,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\menuaccount.css" />
     <Content Include="css\productdetail.css" />
     <Content Include="css\rightsidebar.css" />
     <Content Include="css\megamenu.css" />
@@ -220,6 +222,7 @@
     <Content Include="Image\San_pham\7.jpg" />
     <Content Include="Image\San_pham\8.jpg" />
     <Content Include="Image\San_pham\9.jpg" />
+    <Content Include="js\address.js" />
     <Content Include="js\main.js" />
     <Content Include="js\megamenu.js" />
     <Content Include="js\productdetail.js" />
@@ -275,6 +278,7 @@
     <Content Include="Views\SanPham\ChiTietSanPham.cshtml" />
     <Content Include="Views\NhaCungCap\SanPhamTheoNhaCungCap.cshtml" />
     <Content Include="Views\LoaiSanPham\SanPhamTheoLoai.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
