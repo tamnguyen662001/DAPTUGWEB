@@ -21,18 +21,26 @@ namespace DAPTUGWEB.Models
             this.HOADONs = new HashSet<HOADON>();
         }
         [Display(Name = "Mã khách hàng")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+
         public string MAKH { get; set; }
         [Display(Name = "Tên khách hàng")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string TENKH { get; set; }
         [Display(Name = "Số điện thoại")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string SDT { get; set; }
         [Display(Name = "Tên đăng nhập")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string TENDN { get; set; }
         [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string MK { get; set; }
         [Display(Name = "Email")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string EMAIL { get; set; }
         [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "{0} không được để trống")]
         public string DIACHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

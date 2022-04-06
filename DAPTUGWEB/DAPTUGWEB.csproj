@@ -279,6 +279,7 @@
     <Content Include="Views\NhaCungCap\SanPhamTheoNhaCungCap.cshtml" />
     <Content Include="Views\LoaiSanPham\SanPhamTheoLoai.cshtml" />
     <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

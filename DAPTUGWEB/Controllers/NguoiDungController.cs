@@ -21,16 +21,37 @@ namespace DAPTUGWEB.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DangKy(KHACHHANG a)
         {
-            db.KHACHHANGs.Add(a);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                db.KHACHHANGs.Add(a);
+                db.SaveChanges();
+            }
+            
             return View();
         }
-
+        [HttpGet]
         public ActionResult DangNhap()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult DangNhap(FormCollection f)
+        {
+            string sTendn = f["Tendn"].ToString();
+            string sMk  = f.Get("Mk").ToString();
+            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.TENDN == sTendn && n.MK == sMk);
+            if (kh != null)
+            {
+                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công 1";
+                Session["Taikhoan"] = kh;
+                return View();
+            }
+                ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
+            return View();
+           
         }
     }
 }
