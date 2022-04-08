@@ -7,20 +7,20 @@
       <Schema Namespace="ASP_QUAN_LY_SHOP_GIAYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTHD">
           <Key>
-            <PropertyRef Name="MHD" />
+            <PropertyRef Name="MAHD" />
             <PropertyRef Name="MASP" />
           </Key>
           <Property Name="SOLUONG" Type="smallint" Nullable="false" />
-          <Property Name="MHD" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAHD" Type="int" Nullable="false" />
           <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="HOADON">
           <Key>
             <PropertyRef Name="MAHD" />
           </Key>
-          <Property Name="MAHD" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MANV" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MANV" Type="int" Nullable="false" />
+          <Property Name="MAKH" Type="int" Nullable="false" />
           <Property Name="TGDAT" Type="datetime" Nullable="false" />
           <Property Name="TGGIAO" Type="datetime" />
           <Property Name="IDTHANHTOAN" Type="int" Nullable="false" />
@@ -31,7 +31,7 @@
           <Key>
             <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENKH" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="TENDN" Type="varchar" MaxLength="15" Nullable="false" />
@@ -60,11 +60,11 @@
           <Key>
             <PropertyRef Name="MANV" />
           </Key>
-          <Property Name="MANV" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MANV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENNV" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="NGAYSINH" Type="date" Nullable="false" />
           <Property Name="SDT" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="CHUCVU" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="QTV" Type="bit" Nullable="false" />
           <Property Name="TENDN" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="MK" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="ANHNV" Type="varchar" MaxLength="1024" Nullable="false" />
@@ -100,7 +100,7 @@
               <PropertyRef Name="MAHD" />
             </Principal>
             <Dependent Role="CTHD">
-              <PropertyRef Name="MHD" />
+              <PropertyRef Name="MAHD" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -221,11 +221,11 @@
       <Schema Namespace="ASP_QUAN_LY_SHOP_GIAYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CTHD">
           <Key>
-            <PropertyRef Name="MHD" />
+            <PropertyRef Name="MAHD" />
             <PropertyRef Name="MASP" />
           </Key>
           <Property Name="SOLUONG" Type="Int16" Nullable="false" />
-          <Property Name="MHD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAHD" Type="Int32" Nullable="false" />
           <Property Name="MASP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="HOADON" Relationship="Self.FK_CTHD_HOADON" FromRole="CTHD" ToRole="HOADON" />
           <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CTHD_SANPHAM" FromRole="CTHD" ToRole="SANPHAM" />
@@ -234,9 +234,9 @@
           <Key>
             <PropertyRef Name="MAHD" />
           </Key>
-          <Property Name="MAHD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MANV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MAKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MANV" Type="Int32" Nullable="false" />
+          <Property Name="MAKH" Type="Int32" Nullable="false" />
           <Property Name="TGDAT" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TGGIAO" Type="DateTime" Precision="3" />
           <Property Name="IDTHANHTOAN" Type="Int32" Nullable="false" />
@@ -251,7 +251,7 @@
           <Key>
             <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MAKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TENDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -283,11 +283,11 @@
           <Key>
             <PropertyRef Name="MANV" />
           </Key>
-          <Property Name="MANV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MANV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENNV" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NGAYSINH" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CHUCVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QTV" Type="Boolean" Nullable="false" />
           <Property Name="TENDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MK" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ANHNV" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
@@ -328,7 +328,7 @@
               <PropertyRef Name="MAHD" />
             </Principal>
             <Dependent Role="CTHD">
-              <PropertyRef Name="MHD" />
+              <PropertyRef Name="MAHD" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -452,7 +452,7 @@
             <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.CTHD">
               <MappingFragment StoreEntitySet="CTHD">
                 <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-                <ScalarProperty Name="MHD" ColumnName="MHD" />
+                <ScalarProperty Name="MAHD" ColumnName="MAHD" />
                 <ScalarProperty Name="MASP" ColumnName="MASP" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -510,7 +510,7 @@
                 <ScalarProperty Name="TENNV" ColumnName="TENNV" />
                 <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+                <ScalarProperty Name="QTV" ColumnName="QTV" />
                 <ScalarProperty Name="TENDN" ColumnName="TENDN" />
                 <ScalarProperty Name="MK" ColumnName="MK" />
                 <ScalarProperty Name="ANHNV" ColumnName="ANHNV" />

@@ -20,10 +20,10 @@ namespace DAPTUGWEB.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
+
         [Display(Name = "Mã khách hàng")]
         [Required(ErrorMessage = "{0} không được để trống")]
-
-        public string MAKH { get; set; }
+        public int MAKH { get; set; }
         [Display(Name = "Tên khách hàng")]
         [Required(ErrorMessage = "{0} không được để trống")]
         public string TENKH { get; set; }
@@ -41,8 +41,9 @@ namespace DAPTUGWEB.Models
         public string EMAIL { get; set; }
         [Display(Name = "Địa chỉ")]
         [Required(ErrorMessage = "{0} không được để trống")]
+        //[RegularExpression(@"^[_A - Za - z0 - 9 -\\+]+(\\_A-Za-z0-9-1+)*@" + "[A-Za-z0-9-1+(V.(A-Za-0-9]+)*\\.[A-Za-z}{2.})$"),ErrorMessage ="{0} không hợp lê}")]
         public string DIACHI { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }

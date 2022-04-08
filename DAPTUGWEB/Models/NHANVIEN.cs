@@ -20,16 +20,18 @@ namespace DAPTUGWEB.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-        [Display(Name = "Mã nhân viên")]
-        public string MANV { get; set; }
+        [Display(Name = "Mã khách hàng")]
+        [Required(ErrorMessage = "{0} không được để trống")]
+        public int MANV { get; set; }
+
         [Display(Name = "Tên nhân viên")]
         public string TENNV { get; set; }
         [Display(Name = "Ngày sinh")]
         public System.DateTime NGAYSINH { get; set; }
         [Display(Name = "Điện thoại")]
         public string SDT { get; set; }
-        [Display(Name = "Chức vụ")]
-        public string CHUCVU { get; set; }
+        [Display(Name = "Là quản trị viên ")]
+        public bool QTV { get; set; }
         [Display(Name = "Tên đăng nhập")]
         public string TENDN { get; set; }
         [Display(Name = "Mật khẩu")]
@@ -38,7 +40,7 @@ namespace DAPTUGWEB.Models
         public string ANHNV { get; set; }
         [Display(Name = "Email")]
         public string EMAIL { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }

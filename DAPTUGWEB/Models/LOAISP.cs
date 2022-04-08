@@ -20,13 +20,15 @@ namespace DAPTUGWEB.Models
         {
             this.SANPHAMs = new HashSet<SANPHAM>();
         }
+    
+       
         [Display(Name = "Mã loại sản phẩm")]
         public string MALSP { get; set; }
         [Display(Name = "Tên loại sản phẩm")]
         public string TENLSP { get; set; }
         [Display(Name = "Ảnh")]
         public string ANHLSP { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
     }

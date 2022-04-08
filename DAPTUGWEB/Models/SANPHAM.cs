@@ -20,6 +20,7 @@ namespace DAPTUGWEB.Models
         {
             this.CTHDs = new HashSet<CTHD>();
         }
+
         [Display(Name = "Mã sản phẩm")]
         public string MASP { get; set; }
         [Display(Name = "Mã loại sản phẩm")]
@@ -40,7 +41,7 @@ namespace DAPTUGWEB.Models
         public string CHITIETSP { get; set; }
         [Display(Name = "Ảnh")]
         public string ANHSP { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHD> CTHDs { get; set; }
         public virtual LOAISP LOAISP { get; set; }
