@@ -45,7 +45,7 @@ namespace DAPTUGWEB.Controllers
             KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.TENDN == sTendn && n.MK == sMk);
             if (kh != null)
             {
-                ViewBag.ThongBao = "Chúc mừng bạn đăng nhập thành công 1";
+                ViewBag.ThongBao = "Đăng nhập thành công! Chào " + kh.TENKH;
                 Session["Taikhoan"] = kh;
                 return View();
             }

@@ -12,8 +12,6 @@
 <link href="~/css/index.css" rel="stylesheet" />
 <link href="~/css/menuaccount.css" rel="stylesheet" />
 
-<script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js" />
-<script src="~/js/address.js"></script>
 
 <div class="container">
     <div class="row">
@@ -45,7 +43,7 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.LabelFor(model => model.MAKH, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.MAKH, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.MAKH, "", new { @class = "text-danger" })
                         </div>
@@ -53,7 +51,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.TENKH, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.TENKH, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.TENKH, "", new { @class = "text-danger" })
                         </div>
@@ -61,7 +59,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
                         </div>
@@ -69,7 +67,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.TENDN, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.TENDN, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.TENDN, "", new { @class = "text-danger" })
                         </div>
@@ -77,7 +75,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.MK, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.MK, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.MK, "", new { @class = "text-danger" })
                         </div>
@@ -85,7 +83,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
                         </div>
@@ -93,7 +91,7 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-3" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
                         </div>
@@ -101,7 +99,7 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Create" class="btn btn-default" />
+                            <input type="submit" value="Đăng ký" class="btn btn-success" />
                         </div>
                     </div>
                 </div>
@@ -113,90 +111,5 @@
         </div>
     </div>
 </div>
-
-<select name="calc_shipping_provinces" required="">
-    <option value="">Tỉnh / Thành phố</option>
-</select>
-<select name="calc_shipping_district" required="">
-    <option value="">Quận / Huyện</option>
-</select>
-<input class="billing_address_1" name="" type="hidden" value="">
-<input class="billing_address_2" name="" type="hidden" value="">
-
-
-
-
-<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js' />
-<script>
-    //<![CDATA[
-    if (address_2 = localStorage.getItem('address_2_saved')) {
-        $('select[name="calc_shipping_district"] option').each(function () {
-            if ($(this).text() == address_2) {
-                $(this).attr('selected', '')
-            }
-        })
-        $('input.billing_address_2').attr('value', address_2)
-    }
-    if (district = localStorage.getItem('district')) {
-        $('select[name="calc_shipping_district"]').html(district)
-        $('select[name="calc_shipping_district"]').on('change', function () {
-            var target = $(this).children('option:selected')
-            target.attr('selected', '')
-            $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
-            address_2 = target.text()
-            $('input.billing_address_2').attr('value', address_2)
-            district = $('select[name="calc_shipping_district"]').html()
-            localStorage.setItem('district', district)
-            localStorage.setItem('address_2_saved', address_2)
-        })
-    }
-    $('select[name="calc_shipping_provinces"]').each(function () {
-        var $this = $(this),
-            stc = ''
-        c.forEach(function (i, e) {
-            e += +1
-            stc += '<option value=' + e + '>' + i + '</option>'
-            $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
-            if (address_1 = localStorage.getItem('address_1_saved')) {
-                $('select[name="calc_shipping_provinces"] option').each(function () {
-                    if ($(this).text() == address_1) {
-                        $(this).attr('selected', '')
-                    }
-                })
-                $('input.billing_address_1').attr('value', address_1)
-            }
-            $this.on('change', function (i) {
-                i = $this.children('option:selected').index() - 1
-                var str = '',
-                    r = $this.val()
-                if (r != '') {
-                    arr[i].forEach(function (el) {
-                        str += '<option value="' + el + '">' + el + '</option>'
-                        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
-                    })
-                    var address_1 = $this.children('option:selected').text()
-                    var district = $('select[name="calc_shipping_district"]').html()
-                    localStorage.setItem('address_1_saved', address_1)
-                    localStorage.setItem('district', district)
-                    $('select[name="calc_shipping_district"]').on('change', function () {
-                        var target = $(this).children('option:selected')
-                        target.attr('selected', '')
-                        $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
-                        var address_2 = target.text()
-                        $('input.billing_address_2').attr('value', address_2)
-                        district = $('select[name="calc_shipping_district"]').html()
-                        localStorage.setItem('district', district)
-                        localStorage.setItem('address_2_saved', address_2)
-                    })
-                } else {
-                    $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
-                    district = $('select[name="calc_shipping_district"]').html()
-                    localStorage.setItem('district', district)
-                    localStorage.removeItem('address_1_saved', address_1)
-                }
-            })
-        })
-    })
-//]]></script>
 
 

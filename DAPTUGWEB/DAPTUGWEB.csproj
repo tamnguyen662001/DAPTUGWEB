@@ -223,6 +223,7 @@
     <Content Include="Image\San_pham\8.jpg" />
     <Content Include="Image\San_pham\9.jpg" />
     <Content Include="js\address.js" />
+    <Content Include="js\app.js" />
     <Content Include="js\main.js" />
     <Content Include="js\megamenu.js" />
     <Content Include="js\productdetail.js" />
