@@ -16,48 +16,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link href="~/css/productdetail.css" rel="stylesheet" />
 
-<!--<div onclick="location.href='details.html';" class="product-grid1 col-md-6 container">
-    <div class="product-grid-head">
-        <ul class="grid-social">
-            <li><a class="facebook" href="#"><span> </span></a></li>
-            <li><a class="twitter" href="#"><span> </span></a></li>
-            <li><a class="googlep" href="#"><span> </span></a></li>
-            <div class="clear"> </div>
-        </ul>
 
-    </div>
-    <div class="product-pic">
-        <a href="#"><img src="~/Image/San_pham/@Model.ANHSP" title="product-name" /></a>
-        <p>
-
-            <span>@Model.TENSP</span>
-        </p>
-    </div>
-    <div class="product-info">
-        <div class="product-info-cust">-->
-@*<a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">Details</a>*@
-<!--</div>
-        <div class="product-info-price">
-            <a href="details.html">@((float)Model.DONGIA) Đ</a>
-        </div>
-        <div class="clear"> </div>
-    </div>
-    <div class="more-product-info">
-        <span> </span>
-    </div>
-</div>-->
-
-@*<script>
-    $('#tang').click(function () {
-        UpQuantity();
-    });
-
-    function UpQuantity() {
-        var a = document.getElementById("InputQuantity").value;
-        document.getElementById("InputQuantity").value = parseInt(a) + 1;
-    } 
-
-</script>*@
 
 
 <script src="~/js/productdetail.js"></script>
@@ -113,8 +72,12 @@
                                     </div>
                                     <div class="button clearfix row my-4" ng-if="IsTrackingInventory==false||AllowPurchaseWhenSoldOut==true || (IsTrackingInventory&&AllowPurchaseWhenSoldOut==false&&Quantity>0)">
                                         @*<div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-l-0 p-r-xxs-0 m-b-10"><button id="add-to-cart" ng-click="addToCard()" data-toggle="modal" data-target="#modalMyCart"><i class="glyphicon glyphicon-shopping-cart" ></i> Thêm giỏ hàng</button></div>*@
-                                        <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-l-0 p-r-xxs-0 m-b-10"><button data-toggle="modal" id="add-to-cart" onclick="addToCard()" data-target="#modalMyCart"><i class="glyphicon glyphicon-shopping-cart" ></i> Thêm giỏ hàng</button></div>
-                                        <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-r-0 p-l-xxs-0 m-b-10"><button id="buy-now" ng-click="addToCardBuy()"><i class="glyphicon glyphicon-ok"></i> Mua ngay</button></div>
+                                        <div class="col-lg-6 col-sm-6 col-xs-6 col-xxs-12 p-l-0 p-r-xxs-0 m-b-10"><button data-toggle="modal" id="add-to-cart" onclick="addToCard()" data-target="#modalMyCart"><i class="glyphicon glyphicon-shopping-cart"></i> Thêm giỏ hàng</button></div>
+                                        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
+                                        {
+                                            <input type="submit" value="Mua ngay">
+
+                                        }
                                     </div>
 
                                     <div class="call">

@@ -19,7 +19,7 @@ namespace DAPTUGWEB.Controllers
             List<GioHang> dssp = Session["GioHang"] as List<GioHang>;
             if (dssp == null)
             {
-                dssp = new List<GioHang>;
+                dssp = new List<GioHang>();
                 Session["GioHang"] = dssp;
 
             }
