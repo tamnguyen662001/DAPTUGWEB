@@ -75,8 +75,9 @@
         </button>
 
         <div class="collapse navbar-collapse top-header-right" id="navResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span> </span></li>
+            <ul class="navbar-nav ml-auto" >
+                <li>@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
+                <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
                 <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
             </ul>
         </div>

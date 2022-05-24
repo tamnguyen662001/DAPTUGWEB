@@ -40,6 +40,7 @@ namespace DAPTUGWEB.Controllers
             if (gh == null)
             {
                 gh = new GioHang(maSP);
+                dssp.Add(gh);
                 return Redirect(url);
 
             }
@@ -131,6 +132,17 @@ namespace DAPTUGWEB.Controllers
             }
             return TongTien;
 
+        }
+
+        public ActionResult GioHangPartial()
+        {
+            if(TongSoLuong() == 0)
+            {
+                return PartialView();
+            }
+            ViewBag.TongSoLuong = TongSoLuong();
+            ViewBag.TongTien = TongTien();
+            return PartialView();
         }
     }
 }
