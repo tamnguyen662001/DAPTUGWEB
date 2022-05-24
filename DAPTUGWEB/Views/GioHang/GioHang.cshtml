@@ -39,12 +39,31 @@
     }
 
     .tr, .td {
-        text-align: left;
+        text-align: center;
+        padding-left:40px;
     }
+    #giohang {
+        border-collapse: collapse;
+        width:100%;
+    }
+        #giohang tr {
+          
+        }
+        #giohang td {
+            border: 2px solid #000;
+            padding: 8px;
+            text-align: center;
+            align-items: center;
+        }
+        #giohang img {
+            width: 60px;
+            height: 60px;
+          
+        }
 </style>
-@*<div class="container">
+<div class="container">
 
-        <table align="center" border="1">
+        <table align="center" border="1" id="giohang">
             <tr>
                 <td> Ảnh sản phẩm </td>
 
@@ -62,7 +81,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td><img src="@Url.Content("~/Image/San_pham/" + item.anhSP)" width="50px" height="50px" /></td>
+                    <td><img src="@Url.Content("~/Image/San_pham/" + item.anhSP)" /></td>
 
                     <td>@item.maSP</td>
 
@@ -76,8 +95,8 @@
                 </tr>
             }
         </table>
-    </div>*@
-<div class="container">
+    </div>
+@*<div class="container">
     @grid.GetHtml(
                tableStyle: "table table-bordered table-hover",
                footerStyle: "grid-footer",
@@ -98,4 +117,4 @@
 
     })
 
-</div>
+</div>*@
