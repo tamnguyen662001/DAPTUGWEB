@@ -67,11 +67,12 @@ namespace DAPTUGWEB.Controllers
             GioHang gh = dssp.SingleOrDefault(n => n.maSP == maSP);
             if (gh != null)
             {
+               
                 gh.soLuong = int.Parse(f["textSL"].ToString());
 
 
             }
-            return View("GioHang");
+            return RedirectToAction("GioHang");
         }
 
         // xoa gio hang
@@ -93,7 +94,7 @@ namespace DAPTUGWEB.Controllers
             }
             if(dssp.Count == 0)
             {
-                return RedirectToAction("TrangChu", "Home");
+                return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("GioHang");
 
@@ -103,7 +104,7 @@ namespace DAPTUGWEB.Controllers
            
             if (Session["GioHang"] == null)
             {
-                return RedirectToAction("TrangChu", "Home");
+                return RedirectToAction("Index", "Home");
             }
             List<GioHang> dssp = LayGioHang();
             return View(dssp);
@@ -143,6 +144,16 @@ namespace DAPTUGWEB.Controllers
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
             return PartialView();
+        }
+
+        public ActionResult SuaGioHang()
+        {
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            List<GioHang> dssp = LayGioHang();
+            return View(dssp);
         }
     }
 }

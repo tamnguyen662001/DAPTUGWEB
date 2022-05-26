@@ -1,7 +1,7 @@
 ﻿@using DAPTUGWEB.Models;
 @model List<GioHang>
 @{
-    ViewBag.Title = "GioHang";
+    ViewBag.Title = "CapNhatGioHang";
     Layout = "~/Views/Layout/MainLayout.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "maSP", rowsPerPage: 3);
 }
@@ -40,38 +40,38 @@
 
     .tr, .td {
         text-align: center;
-        padding-left:40px;
+        padding-left: 40px;
     }
+
     #giohang {
         border-collapse: collapse;
-        width:100%;
+        width: 100%;
     }
+
         #giohang tr {
-          
         }
+
         #giohang td {
             border: 1px solid #000;
             padding: 8px;
             text-align: center;
             align-items: center;
         }
+
         #giohang img {
             width: 60px;
             height: 60px;
-          
         }
-        #giohang #tieude{
-            text-transform:uppercase;
-            font-weight:600;
-          
-
+        #giohang #tieude {
+            text-transform: uppercase;
+            font-weight: 600;
         }
 </style>
 <div class="container">
 
     <table align="center" border="1" id="giohang">
         <tr id="tieude">
-            <td> Ảnh sản phẩm </td>
+            <td> Ảnh sản phẩm</td>
 
             <td> Mã sản phẩm </td>
 
@@ -82,53 +82,52 @@
             <td>Đơn giá</td>
 
             <td>Thành tiền</td>
+            <td> </td>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
-                <td><a href="@Url.Action("ChiTietSanPham","SanPham",new { @maSP = item.maSP})"><img src="@Url.Content("~/Image/San_pham/" + item.anhSP)" /></a></td>
+                <td><img src="@Url.Content("~/Image/San_pham/" + item.anhSP)" /></td>
 
                 <td>@item.maSP</td>
 
                 <td>@item.tenSP</td>
-
-                <td>@item.soLuong</td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @maSP = item.maSP })) 
+                {
+                <td>@Html.TextBox("textSL", item.soLuong)</td>
 
                 <td>@item.donGia</td>
 
                 <td>@item.thanhTien</td>
+                <td> <input type="submit" value="Cập nhật " />
+                     <br />
+                    @Html.ActionLink("Xoá","XoaGioHang", new {@maSP = item.maSP})
+                </td>
+                }
             </tr>
-
         }
-
-
     </table>
-    <br />
-    <div colspan="6" style="text-align:right">
-        @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
-    </div>
-
 </div>
 @*<div class="container">
-    @grid.GetHtml(
-               tableStyle: "table table-bordered table-hover",
-               footerStyle: "grid-footer",
-               fillEmptyRows: true,
-               mode: WebGridPagerModes.Numeric,
-               alternatingRowStyle: "alternatingRowStyle",
-                 columns: new[]  // colums in grid
-                {
-                grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+        @grid.GetHtml(
+                   tableStyle: "table table-bordered table-hover",
+                   footerStyle: "grid-footer",
+                   fillEmptyRows: true,
+                   mode: WebGridPagerModes.Numeric,
+                   alternatingRowStyle: "alternatingRowStyle",
+                     columns: new[]  // colums in grid
+                    {
+                    grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
 
-                     grid.Column("anhSP"," Ảnh sản phẩm"),
-           grid.Column("maSP","Mã sản phẩm"), //the model fields to display
-           grid.Column("tenSP","Tên sản phẩm"  ),
-           grid.Column("soLuong","Số lượng"),
-           grid.Column("donGia","Đơn giá"),
-           grid.Column("thanhTien"," Thành tiền"),
+                         grid.Column("anhSP"," Ảnh sản phẩm"),
+               grid.Column("maSP","Mã sản phẩm"), //the model fields to display
+               grid.Column("tenSP","Tên sản phẩm"  ),
+               grid.Column("soLuong","Số lượng"),
+               grid.Column("donGia","Đơn giá"),
+               grid.Column("thanhTien"," Thành tiền"),
 
 
-    })
+        })
 
-</div>*@
+    </div>*@
