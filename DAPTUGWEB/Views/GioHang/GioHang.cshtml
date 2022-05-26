@@ -109,6 +109,16 @@
         @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
     </div>
 
+    <div colspan="6" style="text-align:right">
+        @using (Html.BeginForm("DatHang", "GioHang"))
+        {
+            <input type = "submit" value = "Đặt hàng " />
+
+
+        }
+        </div>
+        
+
 </div>
 @*<div class="container">
     @grid.GetHtml(

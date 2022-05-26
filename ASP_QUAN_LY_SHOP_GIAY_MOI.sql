@@ -75,7 +75,7 @@ CREATE TABLE HOADON
 	DAGIAO BIT NOT NULL
 )
 GO
-
+select * from nhanvien
 
 CREATE TABLE CTHD 
 (
@@ -157,11 +157,11 @@ INSERT INTO KHACHHANG VALUES ('KH0011',N'Nguyễn Quốc Châu',N'+84921255852',
 INSERT INTO KHACHHANG VALUES ('KH0012',N'Trương Thị Diễm Quỳnh',N'+84921255121','TK012','147','qu@gmail.com',N'Tuy Hòa, Phú Yên')
 INSERT INTO KHACHHANG VALUES ('KH0013',N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
 
-SELECT * FROM KHACHHANG
+SELECT * FROM NHANVIEN
 
 --nhan vien (sl: 11) (chua hoan thanh link anh) (Chua co quan ly, quan tri vien)
-INSERT INTO NHANVIEN VALUES('NV0001',N'Nguyễn Nhật Minh','20011201',N'+84905012354',N'Quản Lý','NV1','1234','','nhat@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0002',N'Phan Châu Tần','20000201',N'+84902325654',N'Nhân Viên','NV2','9999','','tan@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Nguyễn Nhật Minh','20011201',N'+84905012354',0,'NV1','1234','','nhat@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Phan Châu Tần','20000201',N'+84902325654',1,'NV2','9999','','tan@gmail.com')
 INSERT INTO NHANVIEN VALUES('NV0003',N'Nguyễn Bình Thạch','19991210',N'+84925648754',N'Nhân Viên','NV3','nmt','','thac@gmail.com')
 INSERT INTO NHANVIEN VALUES('NV0004',N'Phạm Ngũ Lão','20020405',N'+84902154875',N'Nhân Viên','NV4','5689','','lao@gmail.com')
 INSERT INTO NHANVIEN VALUES('NV0005',N'Trần Ngu','19980521',N'+84854652145',N'Nhân Viên','NV5','1478','','ngu@gmail.com')
@@ -233,6 +233,9 @@ INSERT INTO CTHD VALUES(1,'100004','SP0005')
 
 
 select * from KHACHHANG
+
+
+	select * from HOADON
 
 --21/3
 -- Đã chèn dữ liệu bảng loại sản phẩm 

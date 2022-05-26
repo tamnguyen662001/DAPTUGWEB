@@ -12,7 +12,7 @@ namespace DAPTUGWEB.Controllers
         // GET: GioHang
         ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
 
-
+        #region Thêm xoá sửa giỏ hàng
 
         public List<GioHang> LayGioHang()
         {
@@ -155,5 +155,47 @@ namespace DAPTUGWEB.Controllers
             List<GioHang> dssp = LayGioHang();
             return View(dssp);
         }
+        #endregion
+        #region Đặt hàng
+        public ActionResult DatHang()
+        {
+            if(Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            {
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+            if (Session["GioHang"] == null )
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            NHANVIEN nv = new NHANVIEN();
+            HOADON hoadon = new HOADON();
+            KHACHHANG khachhang = (KHACHHANG)Session["TaiKhoan"];
+            List<GioHang> giohang = LayGioHang();
+            hoadon.MAKH = khachhang.MAKH;
+            hoadon.TGDAT = DateTime.Now;
+            hoadon.MANV = nv.MANV;
+            db.HOADONs.Add(hoadon);
+            //db.SaveChanges();
+                
+            foreach (var item in giohang)
+            {
+                CTHD chitietHD = new CTHD();
+                chitietHD.MAHD = hoadon.MAHD;
+                chitietHD.MASP = item.maSP;
+                chitietHD.SOLUONG = (short)item.soLuong;
+                db.CTHDs.Add(chitietHD);
+            }
+           // db.SaveChanges();
+            return RedirectToAction("ThanhToan","GioHang");
+
+        }
+        public ActionResult ThanhToan()
+        {
+            return View();
+        }
+        #endregion
     }
+    
+
+
 }
