@@ -186,7 +186,7 @@ namespace DAPTUGWEB.Controllers
                 db.CTHDs.Add(chitietHD);
             }
            // db.SaveChanges();
-            return RedirectToAction("ThanhToan","GioHang");
+            return RedirectToAction("ThanhToan","GioHang/ThanhToan");
 
         }
         public ActionResult ThanhToan()

@@ -7,10 +7,10 @@ using System.Web.Mvc;
 
 namespace DAPTUGWEB.Controllers
 {
-    public class NguoiDungController : Controller
+    public class NhanVienController : Controller
     {
         ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
-        // GET: NguoiDung
+        // GET: NhanVien
         public ActionResult Index()
         {
             return View();
@@ -22,38 +22,39 @@ namespace DAPTUGWEB.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DangKy(KHACHHANG a)
+        public ActionResult DangKy(NHANVIEN a)
         {
             if (ModelState.IsValid)
             {
-                db.KHACHHANGs.Add(a);
+                db.NHANVIENs.Add(a);
                 db.SaveChanges();
             }
-            
+
             return View();
         }
         [HttpGet]
         public ActionResult DangNhap()
         {
             return View();
-           
+
         }
         [HttpPost]
         public ActionResult DangNhap(FormCollection f)
         {
-            string sTendn = f["Tendn"].ToString();
-            string sMk  = f.Get("Mk").ToString();
-            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.TENDN == sTendn && n.MK == sMk);
-            if (kh != null)
+            string sTendn = f["Tendnnv"].ToString();
+            string sMk = f.Get("Mknv").ToString();
+            NHANVIEN nv = db.NHANVIENs.SingleOrDefault(n => n.TENDN == sTendn && n.MK == sMk);
+            if (nv != null)
             {
-                ViewBag.ThongBao = "Đăng nhập thành công! Chào " + kh.TENKH;
-                Session["Taikhoan"] = kh;
-                return View();
-                
+                ViewBag.ThongBao = "Đăng nhập thành công! Chào " + nv.TENNV;
+                Session["Taikhoan"] = nv;
+                //return View();
+                //return RedirectToAction("SuaGioHang", "GioHang");
+                return RedirectToAction("Index", "QuanLySanPham/Index");
             }
-                ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
+            ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
             return View();
-           
+
         }
     }
 }

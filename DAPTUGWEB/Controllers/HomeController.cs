@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 
 namespace DAPTUGWEB.Controllers
@@ -11,9 +13,13 @@ namespace DAPTUGWEB.Controllers
     public class HomeController : Controller
     {
         ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
-        public ActionResult Index()
+
+        public ActionResult Index(int? page)
         {
-            return View();
+            int pageSize = 6;
+            int pageumber = (page ?? 1);
+
+            return View(db.SANPHAMs.ToList().OrderBy(n=>n.DONGIA).ToPagedList(pageumber,pageSize));
         }
 
        

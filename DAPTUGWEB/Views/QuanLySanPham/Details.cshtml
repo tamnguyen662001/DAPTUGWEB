@@ -1,0 +1,91 @@
+﻿@model DAPTUGWEB.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SANPHAM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DVT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KICHTHUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KICHTHUOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLTON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLTON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHITIETSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHITIETSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANHSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANHSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOAISP.TENLSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAISP.TENLSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHACC.TENNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHACC.TENNCC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MASP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
