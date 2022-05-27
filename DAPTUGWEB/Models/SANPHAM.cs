@@ -26,18 +26,24 @@ namespace DAPTUGWEB.Models
         [Display(Name = "Mã loại sản phẩm")]
         public string MALSP { get; set; }
         [Display(Name = "Tên sản phẩm")]
+        [Required(ErrorMessage = "Nhập tên sản phẩm")]
         public string TENSP { get; set; }
         [Display(Name = "Đơn vị tính")]
+        [Required(ErrorMessage = "Nhập đơn vị tính")]
         public string DVT { get; set; }
         [Display(Name = "Kích thước")]
+        [Required(ErrorMessage = "Nhập kích thước")]
         public short KICHTHUOC { get; set; }
         [Display(Name = "Đơn giá")]
+        [Required(ErrorMessage = "Nhập đơn giá")]
         public decimal DONGIA { get; set; }
-        [Display(Name = "Mã nhà cung cấp")]
+        [Display(Name = "Nhà cung cấp")]
         public string MANCC { get; set; }
-        [Display(Name = "Kho")]
+        [Display(Name = "Số lượng trong kho")]
+        [Required(ErrorMessage = "Nhập số lượng trong kho ")]
         public int SLTON { get; set; }
         [Display(Name = "Thông tin sản phẩm")]
+        [Required(ErrorMessage = "Nhập chi tiết sản phẩm")]
         public string CHITIETSP { get; set; }
         [Display(Name = "Ảnh")]
         public string ANHSP { get; set; }

@@ -15,6 +15,14 @@ namespace DAPTUGWEB.Controllers
         private ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
 
         // GET: QuanLySanPham
+
+        string LayMaSP()
+        {
+            var maMax = db.SANPHAMs.ToList().Select(n => n.MASP).Max();
+            int maNV = int.Parse(maMax.Substring(2)) + 1;
+            string NV = String.Concat("000", maNV.ToString());
+            return "SP" + NV.Substring(maNV.ToString().Length - 1);
+        }
         public ActionResult Index()
         {
             var sANPHAMs = db.SANPHAMs.Include(s => s.LOAISP).Include(s => s.NHACC);
@@ -39,9 +47,11 @@ namespace DAPTUGWEB.Controllers
         // GET: QuanLySanPham/Create
         public ActionResult Create()
         {
+            ViewBag.MaSP = LayMaSP();
             ViewBag.MALSP = new SelectList(db.LOAISPs, "MALSP", "TENLSP");
             ViewBag.MANCC = new SelectList(db.NHACCs, "MANCC", "TENNCC");
             return View();
+            
         }
 
         // POST: QuanLySanPham/Create
@@ -51,8 +61,17 @@ namespace DAPTUGWEB.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MASP,MALSP,TENSP,DVT,KICHTHUOC,DONGIA,MANCC,SLTON,CHITIETSP,ANHSP")] SANPHAM sANPHAM)
         {
+            //System.Web.HttpPostedFileBase Avatar;
+            var imgSP = Request.Files["Avatar"];
+            //Lấy thông tin từ input type=file có tên Avatar
+            string postedFileName = System.IO.Path.GetFileName(imgSP.FileName);
+            //Lưu hình đại diện về Server
+            var path = Server.MapPath("/Image/" + postedFileName);
+            imgSP.SaveAs(path);
             if (ModelState.IsValid)
             {
+                sANPHAM.MASP = LayMaSP();
+                sANPHAM.ANHSP = postedFileName;
                 db.SANPHAMs.Add(sANPHAM);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -87,6 +106,17 @@ namespace DAPTUGWEB.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MASP,MALSP,TENSP,DVT,KICHTHUOC,DONGIA,MANCC,SLTON,CHITIETSP,ANHSP")] SANPHAM sANPHAM)
         {
+            var imgSP = Request.Files["Avatar"];
+            try
+            {
+                //Lấy thông tin từ input type=file có tên Avatar
+                string postedFileName = System.IO.Path.GetFileName(imgSP.FileName);
+                //Lưu hình đại diện về Server
+                var path = Server.MapPath("/Image/" + postedFileName);
+                imgSP.SaveAs(path);
+            }
+            catch
+            { }
             if (ModelState.IsValid)
             {
                 db.Entry(sANPHAM).State = EntityState.Modified;

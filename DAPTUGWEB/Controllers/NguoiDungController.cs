@@ -48,7 +48,7 @@ namespace DAPTUGWEB.Controllers
             {
                 ViewBag.ThongBao = "Đăng nhập thành công! Chào " + kh.TENKH;
                 Session["Taikhoan"] = kh;
-                return View();
+                return RedirectToAction("Index","Home");
                 
             }
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
