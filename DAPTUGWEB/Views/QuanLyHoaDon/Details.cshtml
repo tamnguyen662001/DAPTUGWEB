@@ -1,0 +1,75 @@
+﻿@model DAPTUGWEB.Models.HOADON
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOADON</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TGDAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGDAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TGGIAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TGGIAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATHANHTOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATHANHTOAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAGIAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAGIAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KHACHHANG.TENKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHACHHANG.TENKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIEN.TENNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIEN.TENNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANHTOAN.HTTHANHTOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DAPTUGWEB.Models.HOADON>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TGDAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TGGIAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATHANHTOAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAGIAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG.TENKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NHANVIEN.TENNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THANHTOAN.HTTHANHTOAN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TGDAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TGGIAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATHANHTOAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAGIAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHACHHANG.TENKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHANVIEN.TENNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THANHTOAN.HTTHANHTOAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MAHD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MAHD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MAHD })
+        </td>
+    </tr>
+}
+
+</table>

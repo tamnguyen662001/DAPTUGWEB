@@ -140,6 +140,7 @@
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\NhaCungCapController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\QuanLyHoaDonController.cs" />
     <Compile Include="Controllers\QuanLySanPhamController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
@@ -302,6 +303,16 @@
     <Content Include="Views\QuanLySanPham\Edit.cshtml" />
     <Content Include="Views\QuanLySanPham\Index.cshtml" />
     <Content Include="Views\NhanVien\DangNhap.cshtml" />
+    <Content Include="Views\HOADONs\Create.cshtml" />
+    <Content Include="Views\HOADONs\Delete.cshtml" />
+    <Content Include="Views\HOADONs\Details.cshtml" />
+    <Content Include="Views\HOADONs\Edit.cshtml" />
+    <Content Include="Views\HOADONs\Index.cshtml" />
+    <Content Include="Views\QuanLyHoaDon\Create.cshtml" />
+    <Content Include="Views\QuanLyHoaDon\Delete.cshtml" />
+    <Content Include="Views\QuanLyHoaDon\Details.cshtml" />
+    <Content Include="Views\QuanLyHoaDon\Edit.cshtml" />
+    <Content Include="Views\QuanLyHoaDon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

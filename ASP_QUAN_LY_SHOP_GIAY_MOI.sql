@@ -140,7 +140,7 @@ INSERT INTO NHACC VALUES ('NCC013',N'Jimmy Choo',N'119 Nguyễn Huệ, Phường
 INSERT INTO NHACC VALUES ('NCC014',N'Manolo Blahnik',N'Nguyễn Huệ, Phường7, Tuy Hòa, Phú Yên','Man@gmail.com')
 
 delete from NHACC where MANCC = 'NIKE'
-select * from NHACC
+select * from KHACHHANG
 
 --khach hang (sl 13)
 INSERT INTO KHACHHANG VALUES ('KH0001',N'Nguyễn Minh Trí',N'+84905011037','TK001','123456','tri@gmail.com',N'Thanh Xuân Trung, Thanh Xuân, Hà Nội')
@@ -157,7 +157,7 @@ INSERT INTO KHACHHANG VALUES ('KH0011',N'Nguyễn Quốc Châu',N'+84921255852',
 INSERT INTO KHACHHANG VALUES ('KH0012',N'Trương Thị Diễm Quỳnh',N'+84921255121','TK012','147','qu@gmail.com',N'Tuy Hòa, Phú Yên')
 INSERT INTO KHACHHANG VALUES ('KH0013',N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
 
-SELECT * FROM NHANVIEN
+SELECT * FROM KHACHHANG
 
 --nhan vien (sl: 11) (chua hoan thanh link anh) (Chua co quan ly, quan tri vien)
 INSERT INTO NHANVIEN VALUES(N'Nguyễn Nhật Minh','20011201',N'+84905012354',0,'NV1','1234','','nhat@gmail.com')
@@ -211,6 +211,8 @@ INSERT INTO SANPHAM VALUES('SP0010','LSP005',N'Brogues Nam Sledgers Nice ',N'Đ�
 INSERT INTO SANPHAM VALUES('SP0011','LSP001',N'Sneaker MLB Big Ball',N'Đôi',38,1250000,'NCC003', 60,N'Giày Sneakers Ecko Unltd OF21-26006 Phối Màu sở hữu kiểu dáng thời trang, hiện đại đến từ thương hiệu Ecko Unltd nổi tiếng. Với đôi giày sneakers này bạn có thể dễ dàng kết hợp với nhiều trang phục khác nhau tạo nên set đồ đẹp mắt,  phù hợp với những trang phục lịch sự đứng đắn như áo sơ mi hay quần âu, phù hợp để diện đi làm, đi dự tiệc,... Form giày với các đường may tỉ mỉ, sắc nét, tinh xảo bởi những người thợ thủ công lành nghề. Lót giầy độc đáo với phần gót da mềm giúp tăng ma sát giữ giày khó trượt khỏi chân, phần mu bàn chân, giúp việc đi giày dễ dàng. Việc sử dụng da, loại vật liệu có thể “thở” làm lót giày giúp chống khuẩn, kháng mùi tốt.','19.jpg')
 INSERT INTO SANPHAM VALUES('SP0012','LSP001',N'Sneakers Ecko Unltd OF21',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','24.jpg')
 
+INSERT INTO SANPHAM VALUES('SP0013','LSP003',N'Sneakers Best Saller',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','10.jpg')
+
 
 
 select * from SANPHAM
@@ -232,7 +234,7 @@ INSERT INTO CTHD VALUES(2,'100003','SP0004')
 INSERT INTO CTHD VALUES(1,'100004','SP0005')
 
 
-select * from KHACHHANG
+select * from nhanvien
 
 
 	select * from HOADON
