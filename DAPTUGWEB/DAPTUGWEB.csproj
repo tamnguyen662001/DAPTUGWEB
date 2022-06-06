@@ -308,6 +308,7 @@
     <Content Include="Views\QuanLyHoaDon\Details.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Edit.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Index.cshtml" />
+    <Content Include="Views\Layout\QuanTriLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

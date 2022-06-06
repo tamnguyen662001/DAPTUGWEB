@@ -152,7 +152,7 @@ INSERT INTO KHACHHANG VALUES ('KH0013',N'Nguyễn Việt Hưng',N'+84956555245',
 
 
 --nhan vien (sl: 11) (chua hoan thanh link anh) (Chua co quan ly, quan tri vien)
-INSERT INTO NHANVIEN VALUES(N'Nguyễn Nhật Minh','20011201',N'+84905012354',0,'NV1','1234','','nhat@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Nguyễn Lê Thành Tâm','20011201',N'+84905012354',0,'admin','0000','','tam@gmail.com')
 INSERT INTO NHANVIEN VALUES(N'Phan Châu Tần','20000201',N'+84902325654',1,'NV2','9999','','tan@gmail.com')
 INSERT INTO NHANVIEN VALUES('NV0003',N'Nguyễn Bình Thạch','19991210',N'+84925648754',N'Nhân Viên','NV3','nmt','','thac@gmail.com')
 INSERT INTO NHANVIEN VALUES('NV0004',N'Phạm Ngũ Lão','20020405',N'+84902154875',N'Nhân Viên','NV4','5689','','lao@gmail.com')
@@ -227,3 +227,9 @@ INSERT INTO CTHD VALUES(1,'100004','SP0005')
 -- Đã chèn dữ liệu bảng loại sản phẩm 
 -- đã chèn 4 dòng đầu bảng nahf cung cấp
 
+select * from khachhang
+
+
+select *   from HOADON
+
+select * from CTHD

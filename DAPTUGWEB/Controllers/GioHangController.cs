@@ -185,7 +185,7 @@ namespace DAPTUGWEB.Controllers
                 chitietHD.SOLUONG = (short)item.soLuong;
                 db.CTHDs.Add(chitietHD);
             }
-           // db.SaveChanges();
+            db.SaveChanges();
             return RedirectToAction("ThanhToan","GioHang/ThanhToan");
 
         }

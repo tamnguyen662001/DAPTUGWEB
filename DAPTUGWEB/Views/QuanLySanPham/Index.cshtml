@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Layout/MainLayout.cshtml";
+    Layout = "~/Views/Layout/QuanTriLayout.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "TENSP", rowsPerPage: 5);
     @Scripts.Render("~/Scripts/jquery-1.6.2.min.js")
 }
@@ -48,7 +48,7 @@
 
 
 <div class="container">
-    <div id="menu" style="margin-top:10px;">
+    @*<div id="menu" style="margin-top:10px;">
         <div>
             @Html.ActionLink("GIỚI THIỆU", "../Home/Index", new { @class = "a" }) &nbsp;|&nbsp;
             @Html.ActionLink("NHÂN VIÊN", "../PhongBans/Index", new { @class = "a" })&nbsp;|&nbsp;
@@ -57,7 +57,7 @@
             @Html.ActionLink("TÌM KIẾM", "../NhanViens/TimKiemNC", new { @class = "a" })
             <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
         </div>
-    </div>
+    </div>*@
     <p>
         @Html.ActionLink("Thêm sản phẩm mới", "Create")
     </p>
