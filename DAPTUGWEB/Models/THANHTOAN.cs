@@ -14,16 +14,7 @@ namespace DAPTUGWEB.Models
     
     public partial class THANHTOAN
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public THANHTOAN()
-        {
-            this.HOADONs = new HashSet<HOADON>();
-        }
-    
         public int IDTHANHTOAN { get; set; }
         public string HTTHANHTOAN { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

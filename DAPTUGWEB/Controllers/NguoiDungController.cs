@@ -9,7 +9,7 @@ namespace DAPTUGWEB.Controllers
 {
     public class NguoiDungController : Controller
     {
-        ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
+        ASP_QUAN_LY_SHOP_GIAY_6_6Entities db = new ASP_QUAN_LY_SHOP_GIAY_6_6Entities();
         // GET: NguoiDung
         public ActionResult Index()
         {
@@ -49,6 +49,7 @@ namespace DAPTUGWEB.Controllers
                 ViewBag.ThongBao = "Đăng nhập thành công! Chào " + kh.TENKH;
                 Session["Taikhoan"] = kh;
                 return RedirectToAction("Index","Home");
+               // return View();
                 
             }
                 ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";

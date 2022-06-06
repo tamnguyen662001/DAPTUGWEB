@@ -21,7 +21,6 @@ namespace DAPTUGWEB.Models
         }
     
         public int MAHD { get; set; }
-        public int MANV { get; set; }
         public int MAKH { get; set; }
         public System.DateTime TGDAT { get; set; }
         public Nullable<System.DateTime> TGGIAO { get; set; }
@@ -31,8 +30,5 @@ namespace DAPTUGWEB.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHD> CTHDs { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual THANHTOAN THANHTOAN { get; set; }
     }
 }

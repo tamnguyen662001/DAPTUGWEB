@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ASP_QUAN_LY_SHOP_GIAYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ASP_QUAN_LY_SHOP_GIAY_6_6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTHD">
           <Key>
             <PropertyRef Name="MAHD" />
@@ -19,7 +19,6 @@
             <PropertyRef Name="MAHD" />
           </Key>
           <Property Name="MAHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MANV" Type="int" Nullable="false" />
           <Property Name="MAKH" Type="int" Nullable="false" />
           <Property Name="TGDAT" Type="datetime" Nullable="false" />
           <Property Name="TGGIAO" Type="datetime" />
@@ -116,42 +115,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_HOADON_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="MAKH" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="MAKH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HOADON_NHANVIEN">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MANV" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="MANV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HOADON_THANHTOAN">
-          <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="THANHTOAN">
-              <PropertyRef Name="IDTHANHTOAN" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="IDTHANHTOAN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SANPHAM_LOAISP">
           <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
@@ -176,7 +139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ASP_QUAN_LY_SHOP_GIAYModelStoreContainer">
+        <EntityContainer Name="ASP_QUAN_LY_SHOP_GIAY_6_6ModelStoreContainer">
           <EntitySet Name="CTHD" EntityType="Self.CTHD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
@@ -193,18 +156,6 @@
             <End Role="SANPHAM" EntitySet="SANPHAM" />
             <End Role="CTHD" EntitySet="CTHD" />
           </AssociationSet>
-          <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-            <End Role="HOADON" EntitySet="HOADON" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HOADON_NHANVIEN" Association="Self.FK_HOADON_NHANVIEN">
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-            <End Role="HOADON" EntitySet="HOADON" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HOADON_THANHTOAN" Association="Self.FK_HOADON_THANHTOAN">
-            <End Role="THANHTOAN" EntitySet="THANHTOAN" />
-            <End Role="HOADON" EntitySet="HOADON" />
-          </AssociationSet>
           <AssociationSet Name="FK_SANPHAM_LOAISP" Association="Self.FK_SANPHAM_LOAISP">
             <End Role="LOAISP" EntitySet="LOAISP" />
             <End Role="SANPHAM" EntitySet="SANPHAM" />
@@ -218,7 +169,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ASP_QUAN_LY_SHOP_GIAYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ASP_QUAN_LY_SHOP_GIAY_6_6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CTHD">
           <Key>
             <PropertyRef Name="MAHD" />
@@ -235,7 +186,6 @@
             <PropertyRef Name="MAHD" />
           </Key>
           <Property Name="MAHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MANV" Type="Int32" Nullable="false" />
           <Property Name="MAKH" Type="Int32" Nullable="false" />
           <Property Name="TGDAT" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TGGIAO" Type="DateTime" Precision="3" />
@@ -243,9 +193,6 @@
           <Property Name="DATHANHTOAN" Type="Boolean" Nullable="false" />
           <Property Name="DAGIAO" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="CTHDs" Relationship="Self.FK_CTHD_HOADON" FromRole="HOADON" ToRole="CTHD" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
-          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="HOADON" ToRole="NHANVIEN" />
-          <NavigationProperty Name="THANHTOAN" Relationship="Self.FK_HOADON_THANHTOAN" FromRole="HOADON" ToRole="THANHTOAN" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -258,7 +205,6 @@
           <Property Name="MK" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="LOAISP">
           <Key>
@@ -292,7 +238,6 @@
           <Property Name="MK" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ANHNV" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
@@ -318,7 +263,6 @@
           </Key>
           <Property Name="IDTHANHTOAN" Type="Int32" Nullable="false" />
           <Property Name="HTTHANHTOAN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_THANHTOAN" FromRole="THANHTOAN" ToRole="HOADON" />
         </EntityType>
         <Association Name="FK_CTHD_HOADON">
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
@@ -341,42 +285,6 @@
             </Principal>
             <Dependent Role="CTHD">
               <PropertyRef Name="MASP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HOADON_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="MAKH" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="MAKH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HOADON_NHANVIEN">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MANV" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="MANV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HOADON_THANHTOAN">
-          <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="1" />
-          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="THANHTOAN">
-              <PropertyRef Name="IDTHANHTOAN" />
-            </Principal>
-            <Dependent Role="HOADON">
-              <PropertyRef Name="IDTHANHTOAN" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -404,7 +312,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ASP_QUAN_LY_SHOP_GIAYEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ASP_QUAN_LY_SHOP_GIAY_6_6Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTHDs" EntityType="Self.CTHD" />
           <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
@@ -421,18 +329,6 @@
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
             <End Role="CTHD" EntitySet="CTHDs" />
           </AssociationSet>
-          <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-            <End Role="HOADON" EntitySet="HOADONs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HOADON_NHANVIEN" Association="Self.FK_HOADON_NHANVIEN">
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-            <End Role="HOADON" EntitySet="HOADONs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HOADON_THANHTOAN" Association="Self.FK_HOADON_THANHTOAN">
-            <End Role="THANHTOAN" EntitySet="THANHTOANs" />
-            <End Role="HOADON" EntitySet="HOADONs" />
-          </AssociationSet>
           <AssociationSet Name="FK_SANPHAM_LOAISP" Association="Self.FK_SANPHAM_LOAISP">
             <End Role="LOAISP" EntitySet="LOAISPs" />
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
@@ -447,9 +343,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ASP_QUAN_LY_SHOP_GIAYModelStoreContainer" CdmEntityContainer="ASP_QUAN_LY_SHOP_GIAYEntities">
+        <EntityContainerMapping StorageEntityContainer="ASP_QUAN_LY_SHOP_GIAY_6_6ModelStoreContainer" CdmEntityContainer="ASP_QUAN_LY_SHOP_GIAY_6_6Entities">
           <EntitySetMapping Name="CTHDs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.CTHD">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.CTHD">
               <MappingFragment StoreEntitySet="CTHD">
                 <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
                 <ScalarProperty Name="MAHD" ColumnName="MAHD" />
@@ -458,10 +354,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOADONs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.HOADON">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.HOADON">
               <MappingFragment StoreEntitySet="HOADON">
                 <ScalarProperty Name="MAHD" ColumnName="MAHD" />
-                <ScalarProperty Name="MANV" ColumnName="MANV" />
                 <ScalarProperty Name="MAKH" ColumnName="MAKH" />
                 <ScalarProperty Name="TGDAT" ColumnName="TGDAT" />
                 <ScalarProperty Name="TGGIAO" ColumnName="TGGIAO" />
@@ -472,7 +367,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHACHHANGs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.KHACHHANG">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.KHACHHANG">
               <MappingFragment StoreEntitySet="KHACHHANG">
                 <ScalarProperty Name="MAKH" ColumnName="MAKH" />
                 <ScalarProperty Name="TENKH" ColumnName="TENKH" />
@@ -485,7 +380,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LOAISPs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.LOAISP">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.LOAISP">
               <MappingFragment StoreEntitySet="LOAISP">
                 <ScalarProperty Name="MALSP" ColumnName="MALSP" />
                 <ScalarProperty Name="TENLSP" ColumnName="TENLSP" />
@@ -494,7 +389,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHACCs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.NHACC">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.NHACC">
               <MappingFragment StoreEntitySet="NHACC">
                 <ScalarProperty Name="MANCC" ColumnName="MANCC" />
                 <ScalarProperty Name="TENNCC" ColumnName="TENNCC" />
@@ -504,7 +399,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NHANVIENs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.NHANVIEN">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
                 <ScalarProperty Name="MANV" ColumnName="MANV" />
                 <ScalarProperty Name="TENNV" ColumnName="TENNV" />
@@ -519,7 +414,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SANPHAMs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.SANPHAM">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.SANPHAM">
               <MappingFragment StoreEntitySet="SANPHAM">
                 <ScalarProperty Name="MASP" ColumnName="MASP" />
                 <ScalarProperty Name="MALSP" ColumnName="MALSP" />
@@ -535,7 +430,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="THANHTOANs">
-            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAYModel.THANHTOAN">
+            <EntityTypeMapping TypeName="ASP_QUAN_LY_SHOP_GIAY_6_6Model.THANHTOAN">
               <MappingFragment StoreEntitySet="THANHTOAN">
                 <ScalarProperty Name="IDTHANHTOAN" ColumnName="IDTHANHTOAN" />
                 <ScalarProperty Name="HTTHANHTOAN" ColumnName="HTTHANHTOAN" />

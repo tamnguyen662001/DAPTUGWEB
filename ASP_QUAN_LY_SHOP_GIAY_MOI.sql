@@ -1,7 +1,8 @@
-﻿CREATE DATABASE ASP_QUAN_LY_SHOP_GIAY_MOI
+﻿
+CREATE DATABASE ASP_QUAN_LY_SHOP_GIAY_6_6
 GO
 
-USE ASP_QUAN_LY_SHOP_GIAY_MOI
+USE ASP_QUAN_LY_SHOP_GIAY_6_6
 GO
 
 CREATE TABLE KHACHHANG
@@ -13,10 +14,10 @@ CREATE TABLE KHACHHANG
 	MK VARCHAR(15) NOT NULL,
 	EMAIL VARCHAR(15) NOT NULL,
 	DIACHI NVARCHAR(200) NOT NULL
+
 )
 GO
 
-select *from KHACHHANG
 CREATE TABLE NHANVIEN
 (
 	MANV INT IDENTITY(1,1) PRIMARY KEY,
@@ -60,13 +61,13 @@ CREATE TABLE SANPHAM
 	SLTON INT NOT NULL,
 	CHITIETSP NTEXT NOT NULL,
 	ANHSP VARCHAR(1024) NOT NULL
+	
 )
 GO
 
 CREATE TABLE HOADON
 (
 	MAHD INT IDENTITY(1,1) PRIMARY KEY,
-	MANV INT NOT NULL,
 	MAKH INT NOT NULL,
 	TGDAT DATETIME NOT NULL,
 	TGGIAO DATETIME,
@@ -75,7 +76,7 @@ CREATE TABLE HOADON
 	DAGIAO BIT NOT NULL
 )
 GO
-select * from nhanvien
+
 
 CREATE TABLE CTHD 
 (
@@ -113,12 +114,7 @@ INSERT INTO LOAISP VALUES('Boot', 'Boot NIKE','sp1.jpg')
 
 
 
-
 INSERT INTO SANPHAM VALUES ('Sne1','Sne', N'Giày bóng đá', N'Đôi', 30, 200000, 'NIKE', 10,N'Giày bóng đá sân cỏ', 'sp1.jpg')
-
-
-
-INSERT INTO NHACC VALUES ('NIKE', 'NIKE COMPANY', 'USA', '#')
 
 
 
@@ -139,9 +135,6 @@ INSERT INTO NHACC VALUES ('NCC012',N'Valentino',N'10 Trần Hưng Đạo, Phư�
 INSERT INTO NHACC VALUES ('NCC013',N'Jimmy Choo',N'119 Nguyễn Huệ, Phường 5, Tuy Hòa, Phú Yên','Ji@gmail.com')
 INSERT INTO NHACC VALUES ('NCC014',N'Manolo Blahnik',N'Nguyễn Huệ, Phường7, Tuy Hòa, Phú Yên','Man@gmail.com')
 
-delete from NHACC where MANCC = 'NIKE'
-select * from NHACC
-
 --khach hang (sl 13)
 INSERT INTO KHACHHANG VALUES ('KH0001',N'Nguyễn Minh Trí',N'+84905011037','TK001','123456','tri@gmail.com',N'Thanh Xuân Trung, Thanh Xuân, Hà Nội')
 INSERT INTO KHACHHANG VALUES ('KH0002',N'Nguyễn Phan Hảo',N'+84985654259','TK002','78991011','hao@gmail.com',N'Tuy Hòa, Phú Yên')
@@ -157,7 +150,6 @@ INSERT INTO KHACHHANG VALUES ('KH0011',N'Nguyễn Quốc Châu',N'+84921255852',
 INSERT INTO KHACHHANG VALUES ('KH0012',N'Trương Thị Diễm Quỳnh',N'+84921255121','TK012','147','qu@gmail.com',N'Tuy Hòa, Phú Yên')
 INSERT INTO KHACHHANG VALUES ('KH0013',N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
 
-SELECT * FROM NHANVIEN
 
 --nhan vien (sl: 11) (chua hoan thanh link anh) (Chua co quan ly, quan tri vien)
 INSERT INTO NHANVIEN VALUES(N'Nguyễn Nhật Minh','20011201',N'+84905012354',0,'NV1','1234','','nhat@gmail.com')
@@ -211,10 +203,9 @@ INSERT INTO SANPHAM VALUES('SP0010','LSP005',N'Brogues Nam Sledgers Nice ',N'Đ�
 INSERT INTO SANPHAM VALUES('SP0011','LSP001',N'Sneaker MLB Big Ball',N'Đôi',38,1250000,'NCC003', 60,N'Giày Sneakers Ecko Unltd OF21-26006 Phối Màu sở hữu kiểu dáng thời trang, hiện đại đến từ thương hiệu Ecko Unltd nổi tiếng. Với đôi giày sneakers này bạn có thể dễ dàng kết hợp với nhiều trang phục khác nhau tạo nên set đồ đẹp mắt,  phù hợp với những trang phục lịch sự đứng đắn như áo sơ mi hay quần âu, phù hợp để diện đi làm, đi dự tiệc,... Form giày với các đường may tỉ mỉ, sắc nét, tinh xảo bởi những người thợ thủ công lành nghề. Lót giầy độc đáo với phần gót da mềm giúp tăng ma sát giữ giày khó trượt khỏi chân, phần mu bàn chân, giúp việc đi giày dễ dàng. Việc sử dụng da, loại vật liệu có thể “thở” làm lót giày giúp chống khuẩn, kháng mùi tốt.','19.jpg')
 INSERT INTO SANPHAM VALUES('SP0012','LSP001',N'Sneakers Ecko Unltd OF21',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','24.jpg')
 
+INSERT INTO SANPHAM VALUES('SP0013','LSP003',N'Sneakers Best Saller',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','10.jpg')
 
 
-select * from SANPHAM
-delete from SANPHAM where MASP = 'sp0002'
 
 --hoa don
 INSERT INTO HOADON VALUES('HD001','NV0009','KH0011','20220320','20220323','100000',1,1)
@@ -232,11 +223,7 @@ INSERT INTO CTHD VALUES(2,'100003','SP0004')
 INSERT INTO CTHD VALUES(1,'100004','SP0005')
 
 
-select * from KHACHHANG
-
-
-	select * from HOADON
-
 --21/3
 -- Đã chèn dữ liệu bảng loại sản phẩm 
 -- đã chèn 4 dòng đầu bảng nahf cung cấp
+

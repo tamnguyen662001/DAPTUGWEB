@@ -9,7 +9,7 @@ namespace DAPTUGWEB.Controllers
 {
     public class NhanVienController : Controller
     {
-        ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
+        ASP_QUAN_LY_SHOP_GIAY_6_6Entities db = new ASP_QUAN_LY_SHOP_GIAY_6_6Entities();
         // GET: NhanVien
         public ActionResult Index()
         {

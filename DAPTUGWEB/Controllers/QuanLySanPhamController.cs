@@ -12,7 +12,7 @@ namespace DAPTUGWEB.Controllers
 {
     public class QuanLySanPhamController : Controller
     {
-        private ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
+        private ASP_QUAN_LY_SHOP_GIAY_6_6Entities db = new ASP_QUAN_LY_SHOP_GIAY_6_6Entities();
 
         // GET: QuanLySanPham
 

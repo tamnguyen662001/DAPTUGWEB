@@ -10,7 +10,7 @@ namespace DAPTUGWEB.Controllers
     public class GioHangController : Controller
     {
         // GET: GioHang
-        ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
+        ASP_QUAN_LY_SHOP_GIAY_6_6Entities db = new ASP_QUAN_LY_SHOP_GIAY_6_6Entities();
 
         #region Thêm xoá sửa giỏ hàng
 
@@ -173,9 +173,9 @@ namespace DAPTUGWEB.Controllers
             List<GioHang> giohang = LayGioHang();
             hoadon.MAKH = khachhang.MAKH;
             hoadon.TGDAT = DateTime.Now;
-            hoadon.MANV = nv.MANV;
+          
             db.HOADONs.Add(hoadon);
-            //db.SaveChanges();
+            db.SaveChanges();
                 
             foreach (var item in giohang)
             {

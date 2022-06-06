@@ -13,10 +13,10 @@ namespace DAPTUGWEB.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ASP_QUAN_LY_SHOP_GIAYEntities : DbContext
+    public partial class ASP_QUAN_LY_SHOP_GIAY_6_6Entities : DbContext
     {
-        public ASP_QUAN_LY_SHOP_GIAYEntities()
-            : base("name=ASP_QUAN_LY_SHOP_GIAYEntities")
+        public ASP_QUAN_LY_SHOP_GIAY_6_6Entities()
+            : base("name=ASP_QUAN_LY_SHOP_GIAY_6_6Entities")
         {
         }
     

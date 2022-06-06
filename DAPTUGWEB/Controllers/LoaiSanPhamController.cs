@@ -11,7 +11,7 @@ namespace DAPTUGWEB.Controllers
     {
         // GET: LoaiSanPham
 
-        ASP_QUAN_LY_SHOP_GIAYEntities db = new ASP_QUAN_LY_SHOP_GIAYEntities();
+        ASP_QUAN_LY_SHOP_GIAY_6_6Entities db = new ASP_QUAN_LY_SHOP_GIAY_6_6Entities();
         public PartialViewResult LoaiSanPhamPartial()
         {
             var dsLoaiSP = db.LOAISPs.ToList();
