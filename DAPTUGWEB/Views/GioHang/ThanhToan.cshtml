@@ -1,8 +1,77 @@
-﻿
+﻿@model DAPTUGWEB.Models.KHACHHANG
 @{
     ViewBag.Title = "ThanhToan";
     Layout = "~/Views/Layout/MainLayout.cshtml";
 }
 
-<h2>Thanh toán đơn hàng thành công</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+
+<link href="~/css/Checkout.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row checkout-left">
+        <div class="col-md-4 checkout-left-basket">
+            <h4>Đơn hàng của bạn</h4>
+            <ul>
+                <li>Product1 <i>-</i> <span>$675.00 </span></li>
+                <li>Product2 <i>-</i> <span>$325.00 </span></li>
+                <li>Product3 <i>-</i> <span>$405.00 </span></li>
+                <li>Total Service Charges <i>-</i> <span>$55.00</span></li>
+                <li>Total <i>-</i> <span>$1405.00</span></li>
+            </ul>
+        </div>
+        <div class="col-md-8 address_form">
+            <h4>Thông tin giao hàng</h4>
+            <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+                <section class="creditly-wrapper wrapper">
+                    <div class="information-wrapper">
+                        <div class="first-row form-group">
+                            <div class="controls">
+                                <label class="control-label">Full name: </label>
+                                <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                            </div>
+                            <div class="card_number_grids">
+                                <div class="card_number_grid_left">
+                                    <div class="controls">
+                                        <label class="control-label">Mobile number:</label>
+                                        <input class="form-control" type="text" placeholder="Mobile number">
+                                    </div>
+                                </div>
+                                <div class="card_number_grid_right">
+                                    <div class="controls">
+                                        <label class="control-label">Landmark: </label>
+                                        <input class="form-control" type="text" placeholder="Landmark">
+                                    </div>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="controls">
+                                <label class="control-label">Town/City: </label>
+                                <input class="form-control" type="text" placeholder="Town/City">
+                            </div>
+                            <div class="controls">
+                                <label class="control-label">Address type: </label>
+                                <select class="form-control option-w3ls">
+                                    <option>Office</option>
+                                    <option>Home</option>
+                                    <option>Commercial</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        @*//<button class="submit">Giao hàng</button>*@
+                        <button class="submit" onclick="location.href='@Url.Action("Index", "Home")';return false;">Giao hàng</button>
+
+                    </div>
+                </section>
+            </form>
+
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>

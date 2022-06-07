@@ -60,12 +60,26 @@
             height: 60px;
           
         }
-        #giohang #tieude{
+      /*  #giohang #tieude{
             text-transform:uppercase;
             font-weight:600;
           
 
-        }
+        }*/
+    .submit {
+        display: block;
+        position: relative;
+        padding: 11px 30px;
+        letter-spacing: 1px;
+        background: #212121;
+        font-size: 1em;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        outline: none;
+        transition: 0.5s all;
+        text-transform: uppercase;
+    }
 </style>
 <div class="container">
 
@@ -107,14 +121,14 @@
     <br />
     <div colspan="6" style="text-align:right">
         @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
-        <button class="btn btn-warning" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
+        <button class="submit" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
     </div>
     <br />
     <div colspan="6" style="text-align:right">
         @using (Html.BeginForm("DatHang", "GioHang"))
         {
             @*<input type="submit" value="Đặt hàng " />*@
-            <button class="btn btn-success" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
+            <button class="submit" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
         }
     </div>
         

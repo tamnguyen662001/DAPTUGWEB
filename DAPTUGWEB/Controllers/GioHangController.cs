@@ -195,6 +195,7 @@ namespace DAPTUGWEB.Controllers
         }
         public ActionResult ThanhToan()
         {
+            
             return View();
         }
         #endregion

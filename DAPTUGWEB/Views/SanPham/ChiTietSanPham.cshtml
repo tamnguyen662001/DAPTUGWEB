@@ -15,7 +15,7 @@
 
 
 <script src="~/js/productdetail.js"></script>
-
+<link href="~/css/Checkout.css" rel="stylesheet" />
 <div id="product">
     <div class="main">
         <div class="container">
@@ -56,7 +56,7 @@
                                 @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
                                 {
                                     // <input type="submit" value="Thêm vào giỏ hàng">
-                                    <button class="btn btn-success" type="submit">Thêm vào giỏ hàng</button>
+                                    <button class="submit" type="submit">Thêm vào giỏ hàng</button>
                                 }
                             </div>
 

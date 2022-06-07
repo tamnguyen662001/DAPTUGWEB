@@ -17,7 +17,7 @@
                 
             </div>
             <div class="product-pic" >
-                <a href="#"><img src="~/Image/San_pham/@item.ANHSP" title="product-name" /></a>
+                <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})"><img src="~/Image/San_pham/@item.ANHSP" title="product-name" /></a>
                 <p>
                     
                     <span>@item.TENSP</span>
