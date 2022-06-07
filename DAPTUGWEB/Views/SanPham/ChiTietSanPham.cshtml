@@ -35,20 +35,14 @@
                                 <div class="product_price p-b-10">
                                     <div ng-if="IsPromotion==true">
                                         <ins class="m-b-5">@Model.DONGIA.ToString("#,##0") VND</ins>
-
-
                                     </div>
-
                                 </div>
-
-                                <div class="product-code p-b-10">Mã sản phẩm: @Model.MASP</div>
-                                <div class="product-code p-b-10">Kho: @Model.SLTON</div>
-                                <div class="product-code p-b-10">Kích thước: @Model.KICHTHUOC</div>
-                                <div role="tabpanel" class="product_description product-tabs panel-group">
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <h2><b>CHI TIẾT SẢN PHẨM</b></h2>
-                                    </ul>
-                                    <div class="tab-content" id="chitiet">
+                                <div>Mã sản phẩm: @Model.MASP</div>
+                                <div>Kho: @Model.SLTON</div>
+                                <div>Kích thước: @Model.KICHTHUOC</div>
+                                <div>
+                                    <h2><b>CHI TIẾT SẢN PHẨM</b></h2>
+                                    <div id="chitiet">
                                         @Model.CHITIETSP
                                     </div>
                                 </div>
@@ -59,20 +53,16 @@
                                     <button class="submit" type="submit">Thêm vào giỏ hàng</button>
                                 }
                             </div>
-
-                          
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
-
-
         </div>
     </div>
+
+    
+
+    <!--//tabs-->
 </div>
 
 

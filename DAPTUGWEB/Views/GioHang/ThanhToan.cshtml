@@ -14,6 +14,21 @@
 
 <div class="container">
     <div class="row checkout-left">
+        <div class="col-md-7 checkout-left-basket">
+            <h4>Đặt hàng thành công</h4>
+            <ul>
+                <li><i class="fa-solid fa-circle-check"></i></li>
+
+                <li>
+                    Mọi khiếu nại về sản phẩm, shop chỉ hổ trợ khi có video mở hàng từ lúc nguyên kiện
+                    cho đến khi kết thúc (không cắt ghép chỉnh sửa clip), trường hợp sản phẩm trong đơn hàng này
+                    không có video xác thực, mọi sự cố shop xin phép từ chối giải quyết
+                </li>
+                <li>Cảm ơn bạn đã mua hàng !   </li>
+
+            </ul>
+            
+        </div>
         <div class="col-md-5 checkout-left-basket">
             <h4>Đơn hàng của bạn</h4>
             <ul>
@@ -23,50 +38,51 @@
                 <li>Email <span>@ViewBag.Email</span></li>
                 <li>Tổng tiền <span>@ViewBag.TongTien.ToString("#,##0") VNĐ</span></li>
             </ul>
-            <div class="d-flex" >
-                <button class="submit " onclick="location.href='@Url.Action("Index", "Home")';return false;">Giao hàng</button>
-                <button class="submit ml-5" onclick="location.href='@Url.Action("GioHang", "GioHang")';return false;">Chi tiết đơn hàng</button>
+            <div class="d-flex">
+                <button class="submit mr-5" onclick="location.href='@Url.Action("GioHang", "GioHang")';return false;">Chi tiết đơn hàng</button>
+
+                <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
             </div>
         </div>
         <!--<div class="col-md-8 address_form">
-            <h4>Thông tin giao hàng</h4>
-            <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
-                <section class="creditly-wrapper wrapper">
-                    <div class="information-wrapper">
-                        <div class="first-row form-group">
-                            <div class="controls">
-                                <label class="control-label">Full name: </label>
-                                <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
-                            </div>
-                            <div class="card_number_grids">
-                                <div class="card_number_grid_left">
-                                    <div class="controls">
-                                        <label class="control-label">Mobile number:</label>
-                                        <input class="form-control" type="text" placeholder="Mobile number">
-                                    </div>
+        <h4>Thông tin giao hàng</h4>
+        <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+            <section class="creditly-wrapper wrapper">
+                <div class="information-wrapper">
+                    <div class="first-row form-group">
+                        <div class="controls">
+                            <label class="control-label">Full name: </label>
+                            <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                        </div>
+                        <div class="card_number_grids">
+                            <div class="card_number_grid_left">
+                                <div class="controls">
+                                    <label class="control-label">Mobile number:</label>
+                                    <input class="form-control" type="text" placeholder="Mobile number">
                                 </div>
-                                <div class="card_number_grid_right">
-                                    <div class="controls">
-                                        <label class="control-label">Landmark: </label>
-                                        <input class="form-control" type="text" placeholder="Landmark">
-                                    </div>
+                            </div>
+                            <div class="card_number_grid_right">
+                                <div class="controls">
+                                    <label class="control-label">Landmark: </label>
+                                    <input class="form-control" type="text" placeholder="Landmark">
                                 </div>
-                                <div class="clear"> </div>
                             </div>
-                            <div class="controls">
-                                <label class="control-label">Town/City: </label>
-                                <input class="form-control" type="text" placeholder="Town/City">
-                            </div>
-                            <div class="controls">
-                                <label class="control-label">Address type: </label>
-                                <select class="form-control option-w3ls">
-                                    <option>Office</option>
-                                    <option>Home</option>
-                                    <option>Commercial</option>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="controls">
+                            <label class="control-label">Town/City: </label>
+                            <input class="form-control" type="text" placeholder="Town/City">
+                        </div>
+                        <div class="controls">
+                            <label class="control-label">Address type: </label>
+                            <select class="form-control option-w3ls">
+                                <option>Office</option>
+                                <option>Home</option>
+                                <option>Commercial</option>
 
-                                </select>
-                            </div>
-                        </div>-->
+                            </select>
+                        </div>
+                    </div>-->
         @*//<button class="submit">Giao hàng</button>*@
 
     </div>

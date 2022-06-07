@@ -24,7 +24,16 @@
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
     <script src="~/js/megamenu.js"></script>
 
-
+<style>
+    #menu{
+        font-size: 15px;
+        font-weight:600;
+        letter-spacing:2px;
+        color : black;
+        text-decoration:none;
+    }
+   
+</style>
 
 </head>
 
@@ -52,8 +61,8 @@
 
     <div class="container-fluid">
         <div id="menu" style="margin-top:60px;">
-            <div>
-                @Html.ActionLink("GIỚI THIỆU", "../Home/Index", new { @class = "a" }) &nbsp;|&nbsp;
+            <div class="menu2">
+                @Html.ActionLink("TRANG CHỦ", "../Home/Index", new { @class = "a" }) &nbsp;|&nbsp;
                 @Html.ActionLink("NHÂN VIÊN", "../PhongBans/Index", new { @class = "a" })&nbsp;|&nbsp;
                 @Html.ActionLink("SẢN PHẨM", "../QuanLySanPham/Index", new { @class = "a" }) &nbsp;|&nbsp;
                 @Html.ActionLink("HOÁ ĐƠN", "../QuanLyHoaDon/Index", new { @class = "a" })&nbsp;|&nbsp;
@@ -70,30 +79,28 @@
         <div class="bottom-top-grids">
             <div class="wrap">
                 <div class="bottom-top-grid">
-                    <h4>GET HELP</h4>
+                    <h4>HỔ TRỢ</h4>
                     <ul>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="#">Shopping</a></li>
+                        <li><a href="contact.html">Liên hệ chúng tôi</a></li>
+                        <li><a href="#">Mua ngay</a></li>
                         <li><a href="#">NIKEiD</a></li>
                         <li><a href="#">Nike+</a></li>
                     </ul>
                 </div>
                 <div class="bottom-top-grid">
-                    <h4>ORDERS</h4>
+                    <h4>ĐẶT HÀNG</h4>
                     <ul>
-                        <li><a href="#">Payment options</a></li>
-                        <li><a href="#">Shipping and delivery</a></li>
-                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Hình thức thanh toán</a></li>
+                        <li><a href="#">Giao hàng tận nơi</a></li>
+                        <li><a href="#">Hoàn trả</a></li>
                     </ul>
                 </div>
                 <div class="bottom-top-grid last-bottom-top-grid">
-                    <h4>REGISTER</h4>
+                    <h4>ĐĂNG KÍ</h4>
                     <p>
-                        Create one account to manage everything you do with Nike, from your shopping preferences to
-                        your
-                        Nike+ activity.
+                        Tạo một tài khoản để quản lý mọi thứ bạn làm với Nike, từ sở thích mua sắm của bạn
                     </p>
-                    <a class="learn-more" href="#">Learn more</a>
+                    <a class="learn-more" href="#">Xem thêm</a>
                 </div>
                 <div class="clear"> </div>
             </div>
@@ -101,19 +108,19 @@
         <div class="bottom-bottom-grids">
             <div class="wrap">
                 <div class="bottom-bottom-grid">
-                    <h6>EMAIL SIGN UP</h6>
-                    <p>Be the first to know about new products and special offers.</p>
-                    <a class="learn-more" href="#">Sign up now</a>
+                    <h6>EMAIL</h6>
+                    <p>Hãy là người đầu tiên biết về sản phẩm mới và ưu đãi đặc biệt.</p>
+                    <a class="learn-more" href="#">Đăng kí ngay</a>
                 </div>
                 <div class="bottom-bottom-grid">
-                    <h6>GIFT CARDS</h6>
-                    <p>Give the gift that always fits.</p>
-                    <a class="learn-more" href="#">View cards</a>
+                    <h6>QUÀ TẶNG</h6>
+                    <p>Những món quà ý nghĩa.</p>
+                    <a class="learn-more" href="#">Xem thẻ quà</a>
                 </div>
                 <div class="bottom-bottom-grid last-bottom-bottom-grid">
-                    <h6>STORES NEAR YOU</h6>
-                    <p>Locate a Nike retail store or authorized retailer.</p>
-                    <a class="learn-more" href="#">Search</a>
+                    <h6>GẦN BẠN</h6>
+                    <p>Tìm cửa hàng bán lẻ Nike hoặc nhà bán lẻ được ủy quyền.</p>
+                    <a class="learn-more" href="#">Tìm</a>
                 </div>
                 <div class="clear"> </div>
             </div>
@@ -130,18 +137,17 @@
         <div class="wrap">
             <div class="footer-left">
                 <ul>
-                    <li><a href="#">United Kingdom</a> <span> </span></li>
-                    <li><a href="#">Terms of Use</a> <span> </span></li>
-                    <li><a href="#">Nike Inc.</a> <span> </span></li>
-                    <li><a href="#">Launch Calendar</a> <span> </span></li>
-                    <li><a href="#">Privacy & Cookie Policy</a> <span> </span></li>
-                    <li><a href="#">Cookie Settings</a></li>
-                    <div class="clear"> </div>
+                    <li><a href="#">Việt Nam</a> <span> </span></li>
+                    <li><a href="#">Đại học Nha Trang</a> <span> </span></li>
+                    <li><a href="#">Lớp 61.CNTT-1</a> <span> </span></li>
+                    <li><a href="#">Phát triển ứng dụng Web</a> <span> </span></li>
+                   
+                   
                 </ul>
             </div>
             <div class="footer-right">
                 <p>
-                    &copy; 2022 Spike_shoes. All rights reserved | Template by <a href="http://w3layouts.com/">#</a>
+                    &copy; 2022 DTT_Shoes. All rights reserved | <a href=">DAPTUDWEB</a>
                 </p>
 
                 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>

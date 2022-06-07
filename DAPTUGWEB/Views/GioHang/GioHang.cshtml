@@ -64,12 +64,12 @@
         #tongtien{
             margin-left:auto;
         }
-      /*  #giohang #tieude{
-            text-transform:uppercase;
-            font-weight:600;
-          
+        #giohang #tieude{
+           background:black;
+          color:white;
+          font-weight:700;
 
-        }*/
+        }
     .submit {
         display: block;
         position: relative;
@@ -126,19 +126,21 @@
 
     </table>
 
-    <div id="tongtien"><p>Tổng tiền : @ViewBag.TongTien</p></div>
+   
     <br />
-    <div colspan="6" style="text-align:right">
-        @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
-        <button class="submit" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Sửa giỏ hàng</button>
-    </div>
-    <br />
-    <div colspan="6" style="text-align:right">
-        @using (Html.BeginForm("DatHang", "GioHang"))
-        {
-            @*<input type="submit" value="Đặt hàng " />*@
-            <button class="submit" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
-        }
+    <div class="d-flex">
+        <div colspan="6" style="text-align:right">
+            @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
+            <button class="submit mr-5" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Sửa giỏ hàng</button>
+        </div>
+        <br />
+        <div colspan="6" style="text-align:right">
+            @using (Html.BeginForm("DatHang", "GioHang"))
+            {
+                @*<input type="submit" value="Đặt hàng " />*@
+                <button class="submit ml-5" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
+            }
+        </div>
     </div>
    
 
