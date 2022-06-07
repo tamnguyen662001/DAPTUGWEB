@@ -20,13 +20,14 @@ namespace DAPTUGWEB.Models
         {
             this.CTHDs = new HashSet<CTHD>();
         }
-    
+        [Display(Name = "Mã sản phẩm")]
         public string MASP { get; set; }
+        [Display(Name = "Mã loại sản phẩm")]
         public string MALSP { get; set; }
         [Display(Name = "Tên sản phẩm")]
         [Required(ErrorMessage = "Nhập tên sản phẩm")]
         public string TENSP { get; set; }
-        [Display(Name = "Tên sản phẩm")]
+        [Display(Name = "Đơn vị tính")]
         [Required(ErrorMessage = "Nhập đơn vị tính")]
         public string DVT { get; set; }
         [Display(Name = "Kích thước")]

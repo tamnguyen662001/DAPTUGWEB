@@ -62,7 +62,7 @@ namespace DAPTUGWEB.Controllers
         public ActionResult Create([Bind(Include = "MASP,MALSP,TENSP,DVT,KICHTHUOC,DONGIA,MANCC,SLTON,CHITIETSP,ANHSP")] SANPHAM sANPHAM)
         {
             //System.Web.HttpPostedFileBase Avatar;
-            var imgSP = Request.Files["Avatar"];
+            var imgSP = Request.Files["Avatar"];    
             //Lấy thông tin từ input type=file có tên Avatar
             string postedFileName = System.IO.Path.GetFileName(imgSP.FileName);
             //Lưu hình đại diện về Server

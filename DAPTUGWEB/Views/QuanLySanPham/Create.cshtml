@@ -29,13 +29,13 @@
         @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4><b>THÔNG TIN SẢN PHẨM THÊM MỚI</b></h4>
+    
         <hr />
         <div class="row">
             <div class="col-md-6">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MASP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.MASP, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         <input type="text" value="@ViewBag.MaSP" disabled readonly class="form-control" />
                         @*@Html.EditorFor(model => model.MASP, new { htmlAttributes = new { @class = "form-control" } })*@
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MALSP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.MALSP, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.DropDownList("MALSP", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.MALSP, "", new { @class = "text-danger" })
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.TENSP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.TENSP, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.TENSP, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.TENSP, "", new { @class = "text-danger" })
@@ -60,14 +60,14 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DVT, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.DVT, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.DVT, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.DVT, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.KICHTHUOC, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.KICHTHUOC, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.KICHTHUOC, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.KICHTHUOC, "", new { @class = "text-danger" })
@@ -78,7 +78,7 @@
                 
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.DONGIA, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.DONGIA, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.DONGIA, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.DONGIA, "", new { @class = "text-danger" })
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MANCC, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.MANCC, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.DropDownList("MANCC", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.MANCC, "", new { @class = "text-danger" })
@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.SLTON, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.SLTON, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.SLTON, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.SLTON, "", new { @class = "text-danger" })
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.CHITIETSP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.CHITIETSP, htmlAttributes: new { @class = "control-label col-md-5  my-3" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.CHITIETSP, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.CHITIETSP, "", new { @class = "text-danger" })
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.ANHSP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.ANHSP, htmlAttributes: new { @class = "control-label col-md-5 my-3" })
                     <div class="col-md-6">
                         <input type="file" style="height:30px;" name="Avatar" accept="image/*" required />
                         @Html.ValidationMessageFor(model => model.ANHSP, "", new { @class = "text-danger" })
