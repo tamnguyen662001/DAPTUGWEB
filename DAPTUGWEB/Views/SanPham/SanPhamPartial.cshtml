@@ -28,7 +28,7 @@
                     <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">Details</a>
                 </div>
                 <div class="product-info-price">
-                    <a href="details.html">@((float)item.DONGIA) Đ</a>
+                    <a href="details.html">@item.DONGIA.ToString("#,##0") Đ</a>
                 </div>
                 <div class="clear"> </div>
             </div>

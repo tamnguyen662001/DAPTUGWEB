@@ -34,7 +34,7 @@
                                 <h1 class="name m-b-5"><span>@Model.TENSP</span></h1>
                                 <div class="product_price p-b-10">
                                     <div ng-if="IsPromotion==true">
-                                        <ins class="m-b-5">@((float)Model.DONGIA) đ</ins>
+                                        <ins class="m-b-5">@Model.DONGIA.ToString("#,##0") VND</ins>
 
 
                                     </div>
@@ -48,8 +48,8 @@
                                     <ul class="nav nav-tabs" role="tablist">
                                         <h2><b>CHI TIẾT SẢN PHẨM</b></h2>
                                     </ul>
-                                    <div class="tab-content">
-                                        <div>@Model.CHITIETSP</div>
+                                    <div class="tab-content" id="chitiet">
+                                        @Model.CHITIETSP
                                     </div>
                                 </div>
                                 <br />

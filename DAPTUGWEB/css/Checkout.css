@@ -15,8 +15,11 @@
 .checkout-left-basket ul li {
     list-style-type: none;
     margin-bottom: 1em;
-    font-size: 14px;
+    font-size: 15px;
     color: #999;
+    color: black;
+    font-weight:600;
+    letter-spacing : 2px;
 }
 
 .checkout-left-basket {
@@ -27,6 +30,7 @@
 .checkout-right-basket {
     float: right;
     margin: 3em 0em;
+   
 }
 
 .checkout-left-basket ul li span {
