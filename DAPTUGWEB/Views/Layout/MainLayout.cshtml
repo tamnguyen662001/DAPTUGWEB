@@ -23,7 +23,7 @@
 
 
 
-
+    <link href="~/css/Checkout.css" rel="stylesheet" />
 
 
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
@@ -39,7 +39,7 @@
     <!-- Thử làm lại nav menu theo cách thường-->
     <nav class="navbar navbar-light bg-dark navbar-expand-md fixed-top">
         @*//<span>@Html.ActionLink("DTT SHOES", "Home/Index")</span>*@
-        <span><a href="../Home/Index">DDT SHOES</a></span>
+        <span><a href="../Home/Index" id="logo1">DDT SHOES</a></span>
         <button class="navbar-toggler" type="button" data-target="#navResponsive" data-toggle="collapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +49,7 @@
                 <li>@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
                 <li>@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
                 <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
-                <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
+                <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")<i class="fa-solid fa-right-to-bracket"></i></li>
             </ul>
         </div>
     </nav><br>
@@ -69,7 +69,7 @@
                         placeholder =
                     "Nhập tên sản phẩm cần tìm kiếm"
                     })
-                    <input class="btn btn-primary" type="submit" value="Search" />
+                    <input class="submit" type="submit" value="Tìm" />
                 }
 
 

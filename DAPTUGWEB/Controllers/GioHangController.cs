@@ -105,9 +105,11 @@ namespace DAPTUGWEB.Controllers
             if (Session["GioHang"] == null)
             {
                 return RedirectToAction("Index", "Home");
-
+             
             }
             List<GioHang> dssp = LayGioHang();
+            ViewBag.TongTien = TongTien();
+
             return View(dssp);
             
         }
@@ -195,7 +197,14 @@ namespace DAPTUGWEB.Controllers
         }
         public ActionResult ThanhToan()
         {
+            KHACHHANG khachhang = (KHACHHANG)Session["TaiKhoan"];
+            ViewBag.TenKH = khachhang.TENKH;
+            ViewBag.MaKH = khachhang.MAKH;
+            ViewBag.SDT = khachhang.SDT;
+            ViewBag.DiaChi = khachhang.DIACHI;
+            ViewBag.Email = khachhang.EMAIL;
             
+            ViewBag.TongTien = TongTien();
             return View();
         }
         #endregion

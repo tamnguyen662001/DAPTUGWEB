@@ -42,24 +42,31 @@
     .tr, .td {
         text-align: left;
     }
+    .submit {
+        display: block;
+        position: relative;
+        padding: 11px 30px;
+        letter-spacing: 1px;
+        background: #212121;
+        font-size: 1em;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        outline: none;
+        transition: 0.5s all;
+        text-transform: uppercase;
+    }
 </style>
 
 
 
 
 <div class="container">
-    @*<div id="menu" style="margin-top:10px;">
-        <div>
-            @Html.ActionLink("GIỚI THIỆU", "../Home/Index", new { @class = "a" }) &nbsp;|&nbsp;
-            @Html.ActionLink("NHÂN VIÊN", "../PhongBans/Index", new { @class = "a" })&nbsp;|&nbsp;
-            @Html.ActionLink("SẢN PHẨM", "../QuanLySanPham/Index", new { @class = "a" }) &nbsp;|&nbsp;
-            @Html.ActionLink("HOÁ ĐƠN", "../QuanLyHoaDon/Index", new { @class = "a" })&nbsp;|&nbsp;
-            @Html.ActionLink("TÌM KIẾM", "../NhanViens/TimKiemNC", new { @class = "a" })
-            <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
-        </div>
-    </div>*@
+
     <p>
-        @Html.ActionLink("Thêm sản phẩm mới", "Create")
+        @*@Html.ActionLink("Thêm sản phẩm mới", "Create")*@
+      
+        <button class="submit" onclick="location.href='@Url.Action("Create", "QuanLySanPham")';return false;">Thêm sản phẩm mới </button>
     </p>
     <br />
     <div id="gridContent">

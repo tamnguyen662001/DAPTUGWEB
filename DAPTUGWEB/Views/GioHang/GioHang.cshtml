@@ -4,6 +4,7 @@
     ViewBag.Title = "GioHang";
     Layout = "~/Views/Layout/MainLayout.cshtml";
     var grid = new WebGrid(Model, canPage: true, defaultSort: "maSP", rowsPerPage: 3);
+    int tt = 0;
 }
 
 <style type="text/css">
@@ -60,6 +61,9 @@
             height: 60px;
           
         }
+        #tongtien{
+            margin-left:auto;
+        }
       /*  #giohang #tieude{
             text-transform:uppercase;
             font-weight:600;
@@ -96,10 +100,12 @@
             <td>Đơn giá</td>
 
             <td>Thành tiền</td>
+
         </tr>
 
         @foreach (var item in Model)
         {
+
             <tr>
                 <td><a href="@Url.Action("ChiTietSanPham","SanPham",new { @maSP = item.maSP})"><img src="@Url.Content("~/Image/San_pham/" + item.anhSP)" /></a></td>
 
@@ -112,16 +118,19 @@
                 <td>@item.donGia</td>
 
                 <td>@item.thanhTien</td>
+
             </tr>
 
         }
 
 
     </table>
+
+    <div id="tongtien"><p>Tổng tiền : @ViewBag.TongTien</p></div>
     <br />
     <div colspan="6" style="text-align:right">
         @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
-        <button class="submit" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
+        <button class="submit" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Sửa giỏ hàng</button>
     </div>
     <br />
     <div colspan="6" style="text-align:right">
@@ -131,6 +140,6 @@
             <button class="submit" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
         }
     </div>
-        
+   
 
 </div>

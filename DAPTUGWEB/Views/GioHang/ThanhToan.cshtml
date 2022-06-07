@@ -1,4 +1,4 @@
-﻿@model DAPTUGWEB.Models.KHACHHANG
+﻿@model IEnumerable<DAPTUGWEB.Models.KHACHHANG>
 @{
     ViewBag.Title = "ThanhToan";
     Layout = "~/Views/Layout/MainLayout.cshtml";
@@ -17,14 +17,18 @@
         <div class="col-md-4 checkout-left-basket">
             <h4>Đơn hàng của bạn</h4>
             <ul>
-                <li>Product1 <i>-</i> <span>$675.00 </span></li>
-                <li>Product2 <i>-</i> <span>$325.00 </span></li>
-                <li>Product3 <i>-</i> <span>$405.00 </span></li>
-                <li>Total Service Charges <i>-</i> <span>$55.00</span></li>
-                <li>Total <i>-</i> <span>$1405.00</span></li>
+                <li>Khách hàng <i>-</i> <span>@ViewBag.TenKH </span></li>
+                <li>Số điện thoại <i>-</i> <span>@ViewBag.SDT </span></li>
+                <li>Đia chỉ <i>-</i> <span>@ViewBag.DiaChi</span></li>
+                <li>Email <i>-</i> <span>@ViewBag.Email</span></li>
+
+
+
+                <li>Tổng tiền <i>-</i> <span>@ViewBag.TongTien.ToString("#,##0") VNĐ</span></li>
             </ul>
+
         </div>
-        <div class="col-md-8 address_form">
+        <!--<div class="col-md-8 address_form">
             <h4>Thông tin giao hàng</h4>
             <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
                 <section class="creditly-wrapper wrapper">
@@ -62,15 +66,15 @@
 
                                 </select>
                             </div>
-                        </div>
+                        </div>-->
                         @*//<button class="submit">Giao hàng</button>*@
-                        <button class="submit" onclick="location.href='@Url.Action("Index", "Home")';return false;">Giao hàng</button>
+                        <!--<button class="submit" onclick="location.href='@Url.Action("Index", "Home")';return false;">Giao hàng</button>
 
                     </div>
                 </section>
             </form>
 
-        </div>
+        </div>-->
 
         <div class="clearfix"> </div>
     </div>
