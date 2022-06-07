@@ -105,6 +105,7 @@ namespace DAPTUGWEB.Controllers
             if (Session["GioHang"] == null)
             {
                 return RedirectToAction("Index", "Home");
+
             }
             List<GioHang> dssp = LayGioHang();
             return View(dssp);

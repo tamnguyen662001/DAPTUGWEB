@@ -204,6 +204,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\delete.png" />
+    <Content Include="Image\details.png" />
+    <Content Include="Image\edit.png" />
     <Content Include="Image\Loai_san_pham\1.jpg" />
     <Content Include="Image\Loai_san_pham\2.jpg" />
     <Content Include="Image\Loai_san_pham\3.jpg" />

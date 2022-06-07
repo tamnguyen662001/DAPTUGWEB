@@ -80,13 +80,24 @@
           grid.Column("SLTON","Số lượng tồn"),
     grid.Column("NHACC.TENNCC","Nhà cung cấp"),
     grid.Column("LOAISP.TENLSP","Loại sản phẩm"),
-    grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "QuanLySanPham",new { id = item.MaSP },"QuanLySanPhamController")),
-    grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
-    // grid.Column(format: (item) => Url.Action("Xem chi tiết", "ChiTietSanPham","SanPham", new { @maSP = item.MaSP })),
-    grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
+    //grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "QuanLySanPham",new { id = item.MaSP },"QuanLySanPhamController")),
+    //grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
+    //// grid.Column(format: (item) => Url.Action("Xem chi tiết", "ChiTietSanPham","SanPham", new { @maSP = item.MaSP })),
+    //grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
 
-
-    }
-    )
+    grid.Column("Chức năng", format: @<text>
+        <a href="@Url.Action("Edit",
+                        new { id = item.MaSP})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="~/Image/edit.png" width="20" height="20" /></abbr></a>
+        <a href="@Url.Action("Details",
+                        new { id = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><img src="~/Image/details.png" width="20" height="20" /></abbr></a>
+        <a href="@Url.Action("Delete",
+                        new { id = item.MaSP})" class="edit-btn">
+            <abbr title="Xóa dữ liệu">
+                <img src="~/Image/delete.png" width="20" height="20" />
+            </abbr>
+        </a>
+    </text>),
+ }
+ )
     </div>
 </div>

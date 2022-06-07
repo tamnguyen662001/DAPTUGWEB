@@ -100,9 +100,13 @@
                 <td>@item.donGia</td>
 
                 <td>@item.thanhTien</td>
-                <td> <input type="submit" value="Cập nhật " />
-                     <br />
-                    @Html.ActionLink("Xoá","XoaGioHang", new {@maSP = item.maSP})
+                <td>
+                    @*<input type="submit" value="Cập nhật " />*@
+                    <button class="btn btn-success" type="submit">Cập nhật</button>
+                    <br />
+                    @*@Html.ActionLink("Xoá", "XoaGioHang", new { @maSP = item.maSP })*@
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("XoaGioHang", "GioHang",new { @maSP = item.maSP })';return false;">Xoá</button>
+
                 </td>
                 }
             </tr>

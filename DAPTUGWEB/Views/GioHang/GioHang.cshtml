@@ -106,17 +106,17 @@
     </table>
     <br />
     <div colspan="6" style="text-align:right">
-        @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
+        @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
+        <button class="btn btn-success" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
     </div>
 
     <div colspan="6" style="text-align:right">
         @using (Html.BeginForm("DatHang", "GioHang"))
         {
-            <input type = "submit" value = "Đặt hàng " />
-
-
+            @*<input type="submit" value="Đặt hàng " />*@
+            <button class="btn btn-success" type="submit" onclick="location.href='@Url.Action("DatHang", "GioHang")';return false;">Đặt hàng</button>
         }
-        </div>
+    </div>
         
 
 </div>
