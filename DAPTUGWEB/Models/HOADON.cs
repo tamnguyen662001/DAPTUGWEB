@@ -23,6 +23,7 @@ namespace DAPTUGWEB.Models
     
         public int MAHD { get; set; }
         public int MAKH { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime TGDAT { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> TGGIAO { get; set; }

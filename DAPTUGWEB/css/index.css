@@ -12,6 +12,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
+#menu li {
+    margin-left:20px;
+    text-align: center;
+    align-content: center;
+}
+
 ol, ul {
     list-style: none;
     margin: 0px;

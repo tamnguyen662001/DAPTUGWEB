@@ -112,6 +112,13 @@ ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_THANHTOANN FOREIGN KEY (IDTHANHT
 
 
 
+
+ALTER TABLE dbo.CTHD add CONSTRAINT FK_CTHD_HOADON FOREIGN KEY (MAHD) REFERENCES dbo.HOADON (MAHD) on delete cascade on update cascade
+ALTER TABLE dbo.CTHD add CONSTRAINT FK_CTHD_SANPHAM FOREIGN KEY (MASP) REFERENCES dbo.SANPHAM (MASP) on delete cascade on update cascade
+
+delete from SANPHAM where dvt ='1'
+select * from  CTHD 
+
 INSERT INTO LOAISP VALUES('Sne', 'Sneakers','sp2.jpg')
 INSERT INTO LOAISP VALUES('Cas', 'Casual Shoe','sp3.jpg')
 INSERT INTO LOAISP VALUES('For', 'Formal Shoe','sp4.jpg')
@@ -171,7 +178,7 @@ INSERT INTO NHANVIEN VALUES('NV0011',N'Đỗ Bảo Châu','20010803',N'+84933265
 
 -- thanh toan (sl 3)
 
-
+select * from NHANVIEN
 --loai san pham (SL 13) (THIEU ANH MINH HOA --)
 INSERT INTO LOAISP VALUES('LSP001',N'Giày Sneaker','1.jpg') -- giay the thao
 INSERT INTO LOAISP VALUES('LSP002',N'Giày Slip-on','2.jpg') -- giay luoi (khong co giay buoc, toi gian)
@@ -235,6 +242,11 @@ INSERT INTO CTHD VALUES(1,'100004','SP0005')
 select * from khachhang
 
 
-select *   from HOADON
+select *   from HOADON where MAHD = 14
 
-select * from CTHD
+select * from CTHD where MAHD = 22
+
+delete  from HOADON where MAHD = 17
+
+
+select * from hoadon 

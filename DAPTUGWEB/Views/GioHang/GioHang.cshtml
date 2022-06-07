@@ -107,9 +107,9 @@
     <br />
     <div colspan="6" style="text-align:right">
         @*@Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")*@
-        <button class="btn btn-success" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
+        <button class="btn btn-warning" onclick="location.href='@Url.Action("SuaGioHang", "GioHang")';return false;">Chỉnh sửa giỏ hàng</button>
     </div>
-
+    <br />
     <div colspan="6" style="text-align:right">
         @using (Html.BeginForm("DatHang", "GioHang"))
         {

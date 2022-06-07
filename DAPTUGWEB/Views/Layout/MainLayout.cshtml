@@ -35,37 +35,7 @@
 
 
 <body>
-    @*@RenderBody()*@
-    <!-- New toolbar-->
-    <!---start-wrap---->
-    <!---start-header---->
-    @*<div class="header sticky-bit">*@
-    <!--<div class="top-header">
-    <div class="wrap">-->
-    <!--<div class="top-header-left">
-    <ul>
-        <li><a class="cart" href="#"><span id="clickme"> </span></a></li>-->
-    <!---start-cart-bag---->
-    <!--<div id="cart">Your Cart is Empty <span>(0)</span></div>-->
-    <!---start-cart-bag---->
-    <!--<li><a class="info" href="#"><span> </span></a></li>
-        </ul>
-    </div>-->
-    <!--<div class="top-header-center ">
-                <div class="top-header-center-alert-left">
-                    <h3><a>@Html.ActionLink("FREE DELIVERY", "index")</a></h3>
-                </div>
-                <div class="top-header-right">
-                    <ul>
-                        <li><a>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") </a><span> </span></li>
-                        <li><a>@Html.ActionLink("Sign in", "Sign in")</a></li>
-                    </ul>
-                </div>
-                <div class="clear"> </div>
-            </div>
-            <div class="clear"> </div>
-        </div>
-    </div>-->
+   
     <!-- Thử làm lại nav menu theo cách thường-->
     <nav class="navbar navbar-light bg-dark navbar-expand-md fixed-top">
         @*//<span>@Html.ActionLink("DTT SHOES", "Home/Index")</span>*@
@@ -75,7 +45,7 @@
         </button>
 
         <div class="collapse navbar-collapse top-header-right" id="navResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" id="menu">
                 <li>@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
                 <li>@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
                 <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>

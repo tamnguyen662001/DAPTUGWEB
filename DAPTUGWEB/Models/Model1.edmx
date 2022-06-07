@@ -116,7 +116,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CTHD_SANPHAM">
-          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SANPHAM">
