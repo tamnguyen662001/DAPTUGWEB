@@ -44,13 +44,32 @@ namespace DAPTUGWEB.Controllers
             string sTendn = f["Tendnnv"].ToString();
             string sMk = f.Get("Mknv").ToString();
             NHANVIEN nv = db.NHANVIENs.SingleOrDefault(n => n.TENDN == sTendn && n.MK == sMk);
+            //if (nv != null)
+            //{
+
+            //    ViewBag.ThongBao = "Đăng nhập thành công! Chào " + nv.TENNV;
+            //    Session["Taikhoan"] = nv;
+            //    //return View();
+            //    //return RedirectToAction("SuaGioHang", "GioHang");
+            //    return RedirectToAction("Index", "QuanLySanPham/Index");
+            //}
+
             if (nv != null)
             {
-                ViewBag.ThongBao = "Đăng nhập thành công! Chào " + nv.TENNV;
-                Session["Taikhoan"] = nv;
-                //return View();
-                //return RedirectToAction("SuaGioHang", "GioHang");
-                return RedirectToAction("Index", "QuanLySanPham/Index");
+                if(nv.QTV == false)
+                {
+                    ViewBag.ThongBao = "Đăng nhập thành công! Chào quản lí : " + nv.TENNV;
+                    Session["Taikhoan"] = nv;
+                    //return View();
+                    //return RedirectToAction("SuaGioHang", "GioHang");
+                    return RedirectToAction("Index", "QuanLySanPham/Index");
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Đăng nhập thành công! Chào nhân viên : " + nv.TENNV;
+                    Session["Taikhoan"] = nv;
+                    return RedirectToAction("Index", "Home/Index");
+                } 
             }
             ViewBag.ThongBao = "Tên tài khoản hoặc mật khẩu không đúng!";
             return View();

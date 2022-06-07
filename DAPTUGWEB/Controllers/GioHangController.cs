@@ -174,7 +174,10 @@ namespace DAPTUGWEB.Controllers
             List<GioHang> giohang = LayGioHang();
             hoadon.MAKH = khachhang.MAKH;
             hoadon.TGDAT = DateTime.Now;
-          
+            hoadon.TGGIAO = DateTime.Today.AddDays(+20);
+            Random rd = new Random();
+            hoadon.IDTHANHTOAN = rd.Next(0, 1);
+            hoadon.DATHANHTOAN = false;
             db.HOADONs.Add(hoadon);
             db.SaveChanges();
                 

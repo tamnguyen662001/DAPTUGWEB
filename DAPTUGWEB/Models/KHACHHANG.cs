@@ -14,6 +14,12 @@ namespace DAPTUGWEB.Models
     
     public partial class KHACHHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KHACHHANG()
+        {
+            this.HOADONs = new HashSet<HOADON>();
+        }
+    
         public int MAKH { get; set; }
         public string TENKH { get; set; }
         public string SDT { get; set; }
@@ -21,5 +27,8 @@ namespace DAPTUGWEB.Models
         public string MK { get; set; }
         public string EMAIL { get; set; }
         public string DIACHI { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

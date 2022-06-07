@@ -17,6 +17,9 @@
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAY_6_6Model.FK_CTHD_SANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAY_6_6Model.FK_SANPHAM_LOAISP" ManuallyRouted="false" />
         <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAY_6_6Model.FK_SANPHAM_NHACC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ASP_QUAN_LY_SHOP_GIAY_6_6Model.sysdiagram" Width="1.5" PointX="5.375" PointY="8.75" />
+        <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAY_6_6Model.FK_HOADON_KHACHHANG" />
+        <AssociationConnector Association="ASP_QUAN_LY_SHOP_GIAY_6_6Model.FK_HOADON_THANHTOANN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

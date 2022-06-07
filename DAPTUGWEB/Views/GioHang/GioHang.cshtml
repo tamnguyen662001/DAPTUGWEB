@@ -120,25 +120,3 @@
         
 
 </div>
-@*<div class="container">
-    @grid.GetHtml(
-               tableStyle: "table table-bordered table-hover",
-               footerStyle: "grid-footer",
-               fillEmptyRows: true,
-               mode: WebGridPagerModes.Numeric,
-               alternatingRowStyle: "alternatingRowStyle",
-                 columns: new[]  // colums in grid
-                {
-                grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
-
-                     grid.Column("anhSP"," Ảnh sản phẩm"),
-           grid.Column("maSP","Mã sản phẩm"), //the model fields to display
-           grid.Column("tenSP","Tên sản phẩm"  ),
-           grid.Column("soLuong","Số lượng"),
-           grid.Column("donGia","Đơn giá"),
-           grid.Column("thanhTien"," Thành tiền"),
-
-
-    })
-
-</div>*@

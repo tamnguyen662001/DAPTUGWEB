@@ -3,65 +3,65 @@
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Layout/MainLayout.cshtml";
+    string tinhtrangdon = "";
+    string thanhtoan = "";
 }
 
-<h2>Details</h2>
+<table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+    <tr>
+        <td>
+            <table cellpadding="2" cellspacing="10">
+              
 
-<div>
-    <h4>HOADON</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MAKH)
-        </dt>
+                <tr>
+                    <td>Mã khách hàng:</td>
+                    <td>@Html.DisplayFor(model => model.MAKH)</td>
+                </tr>
+                <tr>
+                    <td>Mã Hoá đơn:</td>
+                    <td>@Html.DisplayFor(model => model.MAHD)</td>
+                </tr>
+                <tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.MAKH)
-        </dd>
+                    <td>Trạng thái đơn hàng:</td>
+                    <td>
+                        @{if (Model.DAGIAO == true)
+                            { tinhtrangdon = "Đã giao"; }
+                            else
+                            { tinhtrangdon = "Chưa giao"; }
+                        }
+                        @tinhtrangdon
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thời gian đặt: </td>
+                    <td>  @Html.DisplayFor(model => model.TGDAT)</td>
+                </tr>
+                <tr>
+                    <td>Thời gian giao: </td>
+                    <td>  @Html.DisplayFor(model => model.TGGIAO)</td>
+                </tr>
+                <tr>
+                    <td>Thanh toán:</td>
+                    <td>
+                        @{if (Model.DATHANHTOAN == true)
+                            { thanhtoan = "Đã thanh toán"; }
+                            else
+                            { thanhtoan = "Chưa thanh toán"; }
+                        }
+                        @thanhtoan
+                    </td>
+                </tr>
+                <tr>
+                    <td> Hình thức thanh toán: </td>
+                    <td>  @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)</td>
+                </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TGDAT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TGDAT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TGGIAO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TGGIAO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IDTHANHTOAN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDTHANHTOAN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DATHANHTOAN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DATHANHTOAN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DAGIAO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DAGIAO)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHD }) |
-    @Html.ActionLink("Back to List", "Index")
+            </table>
+        </td>
+    </tr>
+</table>
+<p style="margin-left:50px;">
+    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MAHD }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>

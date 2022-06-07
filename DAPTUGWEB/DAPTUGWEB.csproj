@@ -183,6 +183,9 @@
     <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\THANHTOAN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
