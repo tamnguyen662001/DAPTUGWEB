@@ -99,8 +99,8 @@
         grid.Column("Chức năng", format: @<text>
             <a href="@Url.Action("Edit",
                         new { id = item.MaSP})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="~/Image/edit.png" width="20" height="20" /></abbr></a>
-            <a href="@Url.Action("Details",
-                        new { id = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><img src="~/Image/details.png" width="20" height="20" /></abbr></a>
+            <a href="@Url.Action("ChiTietSanPham","SanPham",
+                        new { @maSP = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><img src="~/Image/details.png" width="20" height="20" /></abbr></a>
             <a href="@Url.Action("Delete",
                         new { id = item.MaSP})" class="edit-btn">
                 <abbr title="Xóa dữ liệu">
