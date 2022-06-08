@@ -183,6 +183,12 @@
     <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -315,6 +321,7 @@
     <Content Include="Views\QuanLyHoaDon\Edit.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Index.cshtml" />
     <Content Include="Views\Layout\QuanTriLayout.cshtml" />
+    <Content Include="Views\QuanLySanPham\TimKiemNC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

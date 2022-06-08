@@ -113,11 +113,7 @@ ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_THANHTOANN FOREIGN KEY (IDTHANHT
 
 
 
-ALTER TABLE dbo.CTHD add CONSTRAINT FK_CTHD_HOADON FOREIGN KEY (MAHD) REFERENCES dbo.HOADON (MAHD) on delete cascade on update cascade
-ALTER TABLE dbo.CTHD add CONSTRAINT FK_CTHD_SANPHAM FOREIGN KEY (MASP) REFERENCES dbo.SANPHAM (MASP) on delete cascade on update cascade
 
-delete from SANPHAM where dvt ='1'
-select * from  CTHD 
 
 INSERT INTO LOAISP VALUES('Sne', 'Sneakers','sp2.jpg')
 INSERT INTO LOAISP VALUES('Cas', 'Casual Shoe','sp3.jpg')
@@ -235,6 +231,54 @@ INSERT INTO CTHD VALUES(2,'100003','SP0004')
 INSERT INTO CTHD VALUES(1,'100004','SP0005')
 
 
+
+
+
+-- tạo proc tìm kiếm
+go
+CREATE PROCEDURE SanPham_TimKiem
+    @masp varchar(10)=NULL,
+	@tensp nvarchar(200)=NULL,
+	
+	@giaMin varchar(30)=NULL,
+	@giaMax varchar(30)=NULL,
+	
+	@mancc varchar(10)=NULL
+AS
+BEGIN
+DECLARE @SqlStr NVARCHAR(4000),
+		@ParamList nvarchar(2000)
+SELECT @SqlStr = '
+       SELECT * 
+       FROM SANPHAM
+       WHERE  (1=1)
+       '
+IF @masp IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (MASP LIKE ''%'+@masp+'%'')
+              '
+IF @tensp IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (TENSP LIKE ''%'+@tensp+'%'')
+              '
+
+             
+IF @giaMin IS NOT NULL and @giaMax IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+             AND (DonGia Between Convert(int,'''+@giaMin+''') AND Convert(int, '''+@giaMax+'''))
+             '
+         
+IF @mancc IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (MANCC LIKE ''%'+@mancc+'%'')
+              '
+	EXEC SP_EXECUTESQL @SqlStr 
+END
+
+drop proc SanPham_TimKiem
+
+EXEC SanPham_TimKiem null , null, 509000, 1450000, null
+
 --21/3
 -- Đã chèn dữ liệu bảng loại sản phẩm 
 -- đã chèn 4 dòng đầu bảng nahf cung cấp
@@ -244,7 +288,7 @@ select * from SANPHAM
 
 select *   from HOADON where MAHD = 14
 
-select * from CTHD where MAHD = 22
+select * from CTHD where MAHD = 60
 
 delete  from HOADON where MAHD = 17
 

@@ -16,10 +16,14 @@ namespace DAPTUGWEB.Controllers
 
         public ActionResult Index(int? page)
         {
+            if (page == null) page = 1;
+
+            var dssp = (from l in db.SANPHAMs select l).OrderBy(x => x.MASP);
             int pageSize = 6;
             int pageumber = (page ?? 1);
 
-            return View(db.SANPHAMs.ToList().OrderBy(n=>n.DONGIA).ToPagedList(pageumber,pageSize));
+            return View(dssp.ToPagedList(pageumber,pageSize));
+            //return View(db.SANPHAMs.Where(n=>n.SLTON > 20).ToList().OrderBy(n => n.DONGIA).ToPagedList(pageumber, pageSize));
         }
 
        

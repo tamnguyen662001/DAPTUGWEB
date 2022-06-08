@@ -16,6 +16,7 @@ namespace DAPTUGWEB.Controllers
 
         // GET: QuanLySanPham
 
+
         string LayMaSP()
         {
             var maMax = db.SANPHAMs.ToList().Select(n => n.MASP).Max();
@@ -98,6 +99,46 @@ namespace DAPTUGWEB.Controllers
             ViewBag.MANCC = new SelectList(db.NHACCs, "MANCC", "TENNCC", sANPHAM.MANCC);
             return View(sANPHAM);
         }
+        /// <summary>
+        /// tìm kiếm sản phẩm
+        /// </summary>
+        /// <param name="sANPHAM"></param>
+        /// <returns></returns>
+        public ActionResult TimKiemNC(string masp = "", string tensp = "", string giaMin = "", string giaMax = "",  string ncc = "")
+        {
+            string min = giaMin, max = giaMax;
+            
+            ViewBag.masp = masp;
+            ViewBag.tensp = tensp;
+            ViewBag.ncc = ncc;
+            if (giaMin == "")
+            {
+                ViewBag.giaMin = "";
+                min = "0";
+            }
+            else
+            {
+                ViewBag.luongMin = giaMin;
+                min = giaMin;
+            }
+            if (max == "")
+            {
+                max = Int32.MaxValue.ToString();
+                ViewBag.giaMax = "";// Int32.MaxValue.ToString(); 
+            }
+            else
+            {
+                ViewBag.giaMax = giaMax;
+                max = giaMax;
+            }
+            
+            ViewBag.MaPB = new SelectList(db.NHACCs, "MANCC", "TENNCC");
+            var sanpham = db.SANPHAMs.SqlQuery("SanPham_TimKiem'" + masp + "','" + tensp + "','"  + "','" + min + "','" + max + "',N'"  + "','" + ncc + "'");
+            if (sanpham.Count() == 0)
+                ViewBag.TB = "Không có thông tin tìm kiếm!";
+            return View(sanpham.ToList());
+        }
+
 
         // POST: QuanLySanPham/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 

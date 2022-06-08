@@ -20,7 +20,7 @@ namespace DAPTUGWEB.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-    
+
         public int MAKH { get; set; }
         [Display(Name = "Họ tên khách hàng")]
         [Required(ErrorMessage = "Nhập họ tên khách hàng")]
@@ -41,7 +41,7 @@ namespace DAPTUGWEB.Models
         [Display(Name = "Địa chỉ")]
         [Required(ErrorMessage = "Nhập địa chỉ")]
         public string DIACHI { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }

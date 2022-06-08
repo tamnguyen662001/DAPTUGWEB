@@ -1,8 +1,8 @@
 ﻿@using DAPTUGWEB.Models;
 
-@using PagedList.Mvc
-@model PagedList.IPagedList<SANPHAM>
 
+@model PagedList.IPagedList<SANPHAM>
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Home Page";
@@ -96,17 +96,18 @@
                     </div>
 
                 </div>
-
+               
             </div>
-            <div id="toast"></div>
+            @*Trang @(Model.PageCount < Model.PageNumber  ? 0 : Model.PageNumber)/@Model.PageCount;*@
             <div class="col-lg-9">
                 <div class="row">
                     @Html.Action("SanPhamPartial", "SanPham")
-                    @*Trang@(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
 
-                        <div class="phantrang">
-                            @Html.PagedListPager(Model, page => Url.Action("../SanPham/SanPhamPartial", new { page = page }))
-                        </div>*@
+                    <div class="phantrang">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+                    </div>
+
                 </div>
 
             </div>
