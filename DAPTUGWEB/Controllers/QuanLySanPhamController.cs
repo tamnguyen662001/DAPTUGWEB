@@ -132,8 +132,8 @@ namespace DAPTUGWEB.Controllers
                 max = giaMax;
             }
             
-            ViewBag.MaPB = new SelectList(db.NHACCs, "MANCC", "TENNCC");
-            var sanpham = db.SANPHAMs.SqlQuery("SanPham_TimKiem'" + masp + "','" + tensp + "','"  + "','" + min + "','" + max + "',N'"  + "','" + ncc + "'");
+            ViewBag.MANCC = new SelectList(db.NHACCs, "MANCC", "TENNCC");
+            var sanpham = db.SANPHAMs.SqlQuery("SanPham_TimKiem'" + masp + "','" + tensp + "','" + min + "','" + max + "','" + ncc + "'");
             if (sanpham.Count() == 0)
                 ViewBag.TB = "Không có thông tin tìm kiếm!";
             return View(sanpham.ToList());

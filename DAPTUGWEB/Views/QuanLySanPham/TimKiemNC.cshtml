@@ -57,24 +57,24 @@
             <table class="table1" align="center">
                 <tr>
                     <td>
-                        <div> Mã nhân viên</div>
+                        <div> Mã sản phẩm</div>
                     </td>
                     <td>
-                        <input type="text" name="maNV" value="@ViewBag.masp" />
+                        <input type="text" name="masp" value="@ViewBag.masp" />
                     </td>
 
                 </tr>
                 <tr>
-                    <td>Họ tên</td>
+                    <td>Tên sản phẩm</td>
                     <td>
-                        <input type="text" name="hoTen" value="@ViewBag.tensp" />
+                        <input type="text" name="tensp" value="@ViewBag.tensp" />
                     </td>
 
                 </tr>
 
 
                 <tr>
-                    <td>Gias từ</td>
+                    <td>Giá từ</td>
                     <td>
                         <input type="text" name="giaMin" value="@ViewBag.giaMin" />
                         Đến<input type="text" name="giaMax" value="@ViewBag.giaMax" />
@@ -82,12 +82,7 @@
 
                 </tr>
 
-                <tr>
-                    <td>Địa chỉ</td>
-                    <td>
-                        <input type="text" name="diaChi" value="@ViewBag.diaChi" />
-                    </td>
-                </tr>
+                
                 <tr>
                     <td>Nhà cung cấp</td>
                     <td>
@@ -97,9 +92,9 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" value="Tìm kiếm" style="margin-left: 5px;width:100px;
+                        <input type="submit" class="submit" name="submit" value="Tìm kiếm" style="margin-left: 5px;width:100px;
                 background-color: blue;color:white" />
-                        <input type="button" name="Nhapmoi" value="Làm mới" style="margin-left: 5px;width:100px;
+                        <input type="button" name="Nhapmoi" class="submit" value="Làm mới" style="margin-left: 5px;width:100px;
                 background-color: blue;color:white" onclick="location.href='@Url.Action("TimKiemNC", "QuanLySanPham/TimKiemNC")'" />
 
                     </td>
@@ -124,28 +119,13 @@
          grid.Column("DONGIA","Đơn giá",format:@<text> @item.DONGIA.ToString("#,##0")</text>),
 grid.Column("SLTON","Số lượng tồn"),
 grid.Column("NHACC.TENNCC","Nhà cung cấp"),
-grid.Column("LOAISP.TENLSP","Loại sản phẩm"),
-//grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "QuanLySanPham",new { id = item.MaSP },"QuanLySanPhamController")),
-//grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
-//// grid.Column(format: (item) => Url.Action("Xem chi tiết", "ChiTietSanPham","SanPham", new { @maSP = item.MaSP })),
-//grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
+grid.Column("LOAISP.TENLSP","Loại sản phẩm")
 
-grid.Column("Chức năng", format: @<text>
-            <a href="@Url.Action("Edit",
-                        new { id = item.MaSP})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="~/Image/edit.png" width="20" height="20" /></abbr></a>
-            <a href="@Url.Action("ChiTietSanPham","SanPham",
-                        new { @maSP = item.MaSP})" class="edit-btn"><abbr title="Xem chi tiết"><img src="~/Image/details.png" width="20" height="20" /></abbr></a>
-            <a href="@Url.Action("Delete",
-                        new { id = item.MaSP})" class="edit-btn">
-                <abbr title="Xóa dữ liệu">
-                    <img src="~/Image/delete.png" width="20" height="20" />
-                </abbr>
-            </a>
-</text>),
+
 }
 )
     </div>
-    </div>
+    
 </body>
 </html>
 
