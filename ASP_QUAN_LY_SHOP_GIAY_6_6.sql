@@ -239,7 +239,7 @@ INSERT INTO CTHD VALUES(1,'100004','SP0005')
 -- Đã chèn dữ liệu bảng loại sản phẩm 
 -- đã chèn 4 dòng đầu bảng nahf cung cấp
 
-select * from khachhang
+select * from SANPHAM
 
 
 select *   from HOADON where MAHD = 14

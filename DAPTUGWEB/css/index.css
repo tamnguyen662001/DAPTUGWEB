@@ -349,13 +349,6 @@ body {
         margin-left: -10px;
     }
 /*----//End-cart-tonggle----*/
-.cart span {
-    background: url(../images/image-sprit.png) no-repeat 0px 0px;
-}
-
-.info span {
-    background: url(../images/image-sprit.png) no-repeat -22px 0px;
-}
 
 
 
@@ -375,29 +368,7 @@ body {
 
 
 
-.top-header-right ul li {
-    display: inline-block;
-}
 
-    .top-header-right ul li{
-    }
-
-        .top-header-right ul li {
-            height: 13px;
-            width: 1px;
-            background: #FFF;
-            display: inline-block;
-            margin: 0 0.5em 0 0.6em;
-            vertical-align: middle;
-        }
-
-    .top-header-right ul li a {
-        color: #FFF;
-        font-size: 0.7em;
-        text-transform: uppercase;
-      text-decoration:none!important;
-      
-    }
 /*----start-mid-head---*/
 .mid-grids {
     padding: 1.4em 0;

@@ -40,22 +40,24 @@
     <nav class="navbar navbar-light bg-dark navbar-expand-md fixed-top">
         @*//<span>@Html.ActionLink("DTT SHOES", "Home/Index")</span>*@
         <span><a href="../Home/Index" id="logo1">DDT SHOES</a></span>
+
         <button class="navbar-toggler" type="button" data-target="#navResponsive" data-toggle="collapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse top-header-right" id="navResponsive">
             <ul class="navbar-nav ml-auto" id="menu">
-                <li>@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
-                <li>@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
-                <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
-                <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")<i class="fa-solid fa-right-to-bracket"></i></li>
+                <li class="mr-2 my-2">@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
+                <li class="mr-2 my-2">@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
+                <li class="mr-2 my-2" >@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
+                <li class="mr-2 my-2">@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
+
             </ul>
         </div>
     </nav><br>
-
+    
     <!----start-mid-head---->
-    <div class="mid-header">
+    <div class="mid-header my-2">
         <div class="wrap">
             <div class="mid-grid-left d-flex">
                 @*<form>
@@ -228,6 +230,7 @@
             <div class="wrap">
                 <div class="bottom-top-grid">
                     <h4>HỔ TRỢ</h4>
+                
                     <ul>
                         <li><a href="contact.html">Liên hệ chúng tôi</a></li>
                         <li><a href="#">Mua ngay</a></li>

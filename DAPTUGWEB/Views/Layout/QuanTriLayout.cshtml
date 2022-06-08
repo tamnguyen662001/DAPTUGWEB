@@ -16,9 +16,9 @@
 
 
 
-    <link href="~/css/rightsidebar.css" rel="stylesheet" />
+   
     <link href="~/css/index.css" rel="stylesheet" />
-    <link href="~/css/megamenu.css" rel="stylesheet" />
+  
 
 
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
@@ -41,17 +41,17 @@
     <!-- Thử làm lại nav menu theo cách thường-->
     <nav class="navbar navbar-light bg-dark navbar-expand-md fixed-top">
         @*<span>@Html.ActionLink("DTT SHOES", "../Home")</span>*@
-        <span><a href="../Home/Index">DDT SHOES</a></span>
+        <span><a href="/Home/Index" id="logo1">DDT SHOES</a></span>
         <button class="navbar-toggler" type="button" data-target="#navResponsive" data-toggle="collapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse top-header-right" id="navResponsive">
             <ul class="navbar-nav ml-auto">
-                <li>@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
-                <li>@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
-                <li>@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
-                <li>@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
+                <li class="mr-2 my-2">@Html.ActionLink("QUẢN TRỊ", "../NhanVien/DangNhap")</li>
+                <li class="mr-2 my-2">@Html.Action("GioHangPartial", "GioHang") <span>  </span></li>
+                <li class="mr-2 my-2">@Html.ActionLink("ĐĂNG KÝ", "../NguoiDung/DangKy") <span>  </span></li>
+                <li class="mr-2 my-2">@Html.ActionLink("ĐĂNG NHẬP", "../NguoiDung/DangNhap")</li>
             </ul>
         </div>
     </nav><br>
@@ -59,10 +59,10 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div id="menu" style="margin-top:60px;">
             <div class="menu2">
-                @Html.ActionLink("TRANG CHỦ", "../Home/Index", new { @class = "a" }) &nbsp;|&nbsp;
+               
                 @Html.ActionLink("NHÂN VIÊN", "../PhongBans/Index", new { @class = "a" })&nbsp;|&nbsp;
                 @Html.ActionLink("SẢN PHẨM", "../QuanLySanPham/Index", new { @class = "a" }) &nbsp;|&nbsp;
                 @Html.ActionLink("HOÁ ĐƠN", "../QuanLyHoaDon/Index", new { @class = "a" })&nbsp;|&nbsp;

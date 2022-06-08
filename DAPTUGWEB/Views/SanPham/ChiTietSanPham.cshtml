@@ -12,10 +12,24 @@
 <link href="~/css/productdetail.css" rel="stylesheet" />
 
 
+<style>
+    .submit {
+        display: block;
+        position: relative;
+        padding: 11px 30px;
+        letter-spacing: 1px;
+        background: #212121;
+        font-size: 1em;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        outline: none;
+        transition: 0.5s all;
+        text-transform: uppercase;
+    }
+</style>
 
 
-<script src="~/js/productdetail.js"></script>
-<link href="~/css/Checkout.css" rel="stylesheet" />
 <div id="product">
     <div class="main">
         <div class="container">
@@ -41,10 +55,11 @@
                                 <div>Kho: @Model.SLTON</div>
                                 <div>Kích thước: @Model.KICHTHUOC</div>
                                 <div>
-                                    <h2><b>CHI TIẾT SẢN PHẨM</b></h2>
-                                    <div id="chitiet">
+                                    <p class="title">chi tiết sản phẩm</p>
+
+                                    <p class="lead border-top pt-3">
                                         @Model.CHITIETSP
-                                    </div>
+                                    </p>
                                 </div>
                                 <br />
                                 @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
