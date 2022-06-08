@@ -62,11 +62,14 @@
                                     </p>
                                 </div>
                                 <br />
-                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
-                                {
-                                    // <input type="submit" value="Thêm vào giỏ hàng">
-                                    <button class="submit" type="submit">Thêm vào giỏ hàng</button>
-                                }
+                                <div class="d-flex">
+                                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
+                                    {
+                                        // <input type="submit" value="Thêm vào giỏ hàng">
+                                        <button class="submit" type="submit">Thêm vào giỏ hàng</button>
+                                    }
+                                    <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
+                                </div>
                             </div>
                         </div>
                     </div>

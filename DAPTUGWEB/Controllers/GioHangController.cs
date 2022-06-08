@@ -197,6 +197,11 @@ namespace DAPTUGWEB.Controllers
         }
         public ActionResult ThanhToan()
         {
+            HOADON hoadon = new HOADON();
+            List<GioHang> giohang = LayGioHang();
+          
+            hoadon.TGDAT = DateTime.Now;
+            ViewBag.TgDat = hoadon.TGDAT;
             KHACHHANG khachhang = (KHACHHANG)Session["TaiKhoan"];
             ViewBag.TenKH = khachhang.TENKH;
             ViewBag.MaKH = khachhang.MAKH;

@@ -28,6 +28,7 @@ namespace DAPTUGWEB.Controllers
             {
                 db.KHACHHANGs.Add(a);
                 db.SaveChanges();
+                return RedirectToAction("DangNhap", "NguoiDung");
             }
             
             return View();

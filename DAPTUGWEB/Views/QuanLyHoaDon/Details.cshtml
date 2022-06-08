@@ -7,61 +7,66 @@
     string thanhtoan = "";
 }
 
-<table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
-    <tr>
-        <td>
-            <table cellpadding="2" cellspacing="10">
-              
+<div class="container">
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:16px;margin-left:50px; font-weight:500">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
 
-                <tr>
-                    <td>Mã khách hàng:</td>
-                    <td>@Html.DisplayFor(model => model.MAKH)</td>
-                </tr>
-                <tr>
-                    <td>Mã Hoá đơn:</td>
-                    <td>@Html.DisplayFor(model => model.MAHD)</td>
-                </tr>
-                <tr>
 
-                    <td>Trạng thái đơn hàng:</td>
-                    <td>
-                        @{if (Model.DAGIAO == true)
-                            { tinhtrangdon = "Đã giao"; }
-                            else
-                            { tinhtrangdon = "Chưa giao"; }
-                        }
-                        @tinhtrangdon
-                    </td>
-                </tr>
-                <tr>
-                    <td>Thời gian đặt: </td>
-                    <td>  @Html.DisplayFor(model => model.TGDAT)</td>
-                </tr>
-                <tr>
-                    <td>Thời gian giao: </td>
-                    <td>  @Html.DisplayFor(model => model.TGGIAO)</td>
-                </tr>
-                <tr>
-                    <td>Thanh toán:</td>
-                    <td>
-                        @{if (Model.DATHANHTOAN == true)
-                            { thanhtoan = "Đã thanh toán"; }
-                            else
-                            { thanhtoan = "Chưa thanh toán"; }
-                        }
-                        @thanhtoan
-                    </td>
-                </tr>
-                <tr>
-                    <td> Hình thức thanh toán: </td>
-                    <td>  @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)</td>
-                </tr>
+                    <tr>
+                        <td>Mã khách hàng:</td>
+                        <td>@Html.DisplayFor(model => model.MAKH)</td>
+                    </tr>
+                    <tr>
+                        <td>Mã đơn hàng:</td>
+                        <td>@Html.DisplayFor(model => model.MAHD)</td>
+                    </tr>
+                    <tr>
 
-            </table>
-        </td>
-    </tr>
-</table>
-<p style="margin-left:50px;">
-    @Html.ActionLink("Cập nhật", "Edit", new { id = Model.MAHD }) |
-    @Html.ActionLink("Quay lại", "Index")
-</p>
+                        <td>Trạng thái đơn hàng:</td>
+                        <td>
+                            @{if (Model.DAGIAO == true)
+                                { tinhtrangdon = "Đã giao"; }
+                                else
+                                { tinhtrangdon = "Chưa giao"; }
+                            }
+                            @tinhtrangdon
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian đặt: </td>
+                        <td>  @Html.DisplayFor(model => model.TGDAT)</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian giao: </td>
+                        <td>  @Html.DisplayFor(model => model.TGGIAO)</td>
+                    </tr>
+                    <tr>
+                        <td>Thanh toán:</td>
+                        <td>
+                            @{if (Model.DATHANHTOAN == true)
+                                { thanhtoan = "Đã thanh toán"; }
+                                else
+                                { thanhtoan = "Chưa thanh toán"; }
+                            }
+                            @thanhtoan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hình thức thanh toán: </td>
+                        <td>  @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+    <p style="margin-left:50px;">
+        <div class="form-actions no-color my-4 d-flex" style="margin-left:50px;">
+            <input type="submit" value="Cập nhật" class="submit mr-4" />
+            <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
+
+        </div>
+    </p>
+</div>

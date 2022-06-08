@@ -36,12 +36,14 @@
                 <li>Số điện thoại  <span>@ViewBag.SDT </span></li>
                 <li>Đia chỉ <span>@ViewBag.DiaChi</span></li>
                 <li>Email <span>@ViewBag.Email</span></li>
+                <li>Ngày đặt <span>@ViewBag.TgDat</span></li>
                 <li>Tổng tiền <span>@ViewBag.TongTien.ToString("#,##0") VNĐ</span></li>
             </ul>
-            <div class="d-flex">
+            <div class="d-flex my-4">
                 <button class="submit mr-5" onclick="location.href='@Url.Action("GioHang", "GioHang")';return false;">Chi tiết đơn hàng</button>
 
                 <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
+                
             </div>
         </div>
         <!--<div class="col-md-8 address_form">

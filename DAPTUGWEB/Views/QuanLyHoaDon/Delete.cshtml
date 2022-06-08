@@ -3,71 +3,77 @@
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Layout/MainLayout.cshtml";
+    string tinhtrangdon = "";
+    string thanhtoan = "";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>HOADON</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MAKH)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MAKH)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TGDAT)
-        </dt>
+<div class="container">
+    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
+        <tr>
+            <td>
+                <table cellpadding="2" cellspacing="10">
 
-        <dd>
-            @Html.DisplayFor(model => model.TGDAT)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TGGIAO)
-        </dt>
+                    <tr>
+                        <td>Mã khách hàng:</td>
+                        <td>@Html.DisplayFor(model => model.MAKH)</td>
+                    </tr>
+                    <tr>
+                        <td>Mã đơn hàng:</td>
+                        <td>@Html.DisplayFor(model => model.MAHD)</td>
+                    </tr>
+                    <tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.TGGIAO)
-        </dd>
+                        <td>Trạng thái đơn hàng:</td>
+                        <td>
+                            @{if (Model.DAGIAO == true)
+                                { tinhtrangdon = "Đã giao"; }
+                                else
+                                { tinhtrangdon = "Chưa giao"; }
+                            }
+                            @tinhtrangdon
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian đặt: </td>
+                        <td>  @Html.DisplayFor(model => model.TGDAT)</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian giao: </td>
+                        <td>  @Html.DisplayFor(model => model.TGGIAO)</td>
+                    </tr>
+                    <tr>
+                        <td>Thanh toán:</td>
+                        <td>
+                            @{if (Model.DATHANHTOAN == true)
+                                { thanhtoan = "Đã thanh toán"; }
+                                else
+                                { thanhtoan = "Chưa thanh toán"; }
+                            }
+                            @thanhtoan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Hình thức thanh toán: </td>
+                        <td>  @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)</td>
+                    </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IDTHANHTOAN)
-        </dt>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.IDTHANHTOAN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DATHANHTOAN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DATHANHTOAN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DAGIAO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DAGIAO)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color d-flex my-4" style="margin-left:50px;">
+    <input type="submit" value="Xoá" class="submit mr-4" />
+    <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
+
+</div>
     }
 </div>
