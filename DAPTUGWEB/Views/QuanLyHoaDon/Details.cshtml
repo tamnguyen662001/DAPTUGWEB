@@ -6,8 +6,8 @@
     string tinhtrangdon = "";
     string thanhtoan = "";
 }
-
-<div class="container">
+<link href="~/css/Checkout.css" rel="stylesheet" />
+@*<div class="container">
     <table border="1" cellpadding="0" cellspacing="0" style="font-size:16px;margin-left:50px; font-weight:500">
         <tr>
             <td>
@@ -64,13 +64,57 @@
     </table>
 
 
- 
 
-        <p style="margin-left:50px;">
-            <div class="form-actions no-color my-4 d-flex" style="margin-left:50px;">
-                <button class="submit mr-4" onclick="location.href='@Url.Action("Edit", "QuanLyHoaDon", new { id = Model.MAHD})';return false;">Cập nhật</button>
-                <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
+
+    <p style="margin-left:50px;">
+        <div class="form-actions no-color my-4 d-flex" style="margin-left:50px;">
+            <button class="submit mr-4" onclick="location.href='@Url.Action("Edit", "QuanLyHoaDon", new { id = Model.MAHD})';return false;">Cập nhật</button>
+            <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
+
+        </div>
+    </p>
+</div>*@
+
+<div class="container">
+    <div class="row checkout-left">
+
+        <div class="col-md-6 checkout-left-basket">
+            <h4>Chi tiết đơn hàng</h4>
+            <ul>
+                <li>Mã khách hàng  <span>@Html.DisplayFor(model => model.MAKH) </span></li>
+                <li>Mã hoá đơn  <span>@Html.DisplayFor(model => model.MAHD) </span></li>
+                <li>
+                    Vận chuyển <span>
+                        @{if (Model.DAGIAO == true)
+                            { tinhtrangdon = "Đã giao"; }
+                            else
+                            { tinhtrangdon = "Chưa giao"; }
+                        }
+                        @tinhtrangdon
+                    </span>
+                </li>
+                <li>Ngày đặt <span> @Html.DisplayFor(model => model.TGDAT)</span></li>
+                <li>Ngày giao <span> @Html.DisplayFor(model => model.TGGIAO)</span></li>
+                <li>
+                    Thanh toán <span>
+                        @{if (Model.DATHANHTOAN == true)
+                            { thanhtoan = "Đã thanh toán"; }
+                            else
+                            { thanhtoan = "Chưa thanh toán"; }
+                        }
+                        @thanhtoan
+                    </span>
+                </li>
+                <li>Hình thức thanh toán  <span>@Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN) </span></li>
+            </ul>
+            <div class="d-flex my-4">
+                <button class="submit mr-5" onclick="location.href='@Url.Action("Edit", "QuanLyHoaDon", new { id = Model.MAHD})';return false;">Cập nhật</button>
+
+                <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
 
             </div>
-        </p>
+        </div>
+
+
     </div>
+</div>

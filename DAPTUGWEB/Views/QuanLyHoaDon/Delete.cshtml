@@ -9,71 +9,50 @@
 
 
 
-
 <div class="container">
-    <table border="1" cellpadding="0" cellspacing="0" style="font-size:14px;margin-left:50px;">
-        <tr>
-            <td>
-                <table cellpadding="2" cellspacing="10">
+    <div class="row checkout-left">
+
+        <div class="col-md-6 checkout-left-basket">
+            <h4>Bạn có chắc muốn xoá</h4>
+            <ul>
+                <li>Mã khách hàng  <span>@Html.DisplayFor(model => model.MAKH) </span></li>
+                <li>Mã hoá đơn  <span>@Html.DisplayFor(model => model.MAHD) </span></li>
+                <li>
+                    Vận chuyển <span>
+                        @{if (Model.DAGIAO == true)
+                            { tinhtrangdon = "Đã giao"; }
+                            else
+                            { tinhtrangdon = "Chưa giao"; }
+                        }
+                        @tinhtrangdon
+                    </span>
+                </li>
+                <li>Ngày đặt <span> @Html.DisplayFor(model => model.TGDAT)</span></li>
+                <li>Ngày giao <span> @Html.DisplayFor(model => model.TGGIAO)</span></li>
+                <li>
+                    Thanh toán <span>
+                        @{if (Model.DATHANHTOAN == true)
+                            { thanhtoan = "Đã thanh toán"; }
+                            else
+                            { thanhtoan = "Chưa thanh toán"; }
+                        }
+                        @thanhtoan
+                    </span>
+                </li>
+                <li>Hình thức thanh toán  <span>@Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN) </span></li>
+            </ul>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color d-flex my-4">
+                    <input type="submit" value="Xoá" class="submit mr-4" />
+                    <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
+
+                </div>
+            }
+        </div>
 
 
-                    <tr>
-                        <td>Mã khách hàng:</td>
-                        <td>@Html.DisplayFor(model => model.MAKH)</td>
-                    </tr>
-                    <tr>
-                        <td>Mã đơn hàng:</td>
-                        <td>@Html.DisplayFor(model => model.MAHD)</td>
-                    </tr>
-                    <tr>
-
-                        <td>Trạng thái đơn hàng:</td>
-                        <td>
-                            @{if (Model.DAGIAO == true)
-                                { tinhtrangdon = "Đã giao"; }
-                                else
-                                { tinhtrangdon = "Chưa giao"; }
-                            }
-                            @tinhtrangdon
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian đặt: </td>
-                        <td>  @Html.DisplayFor(model => model.TGDAT)</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian giao: </td>
-                        <td>  @Html.DisplayFor(model => model.TGGIAO)</td>
-                    </tr>
-                    <tr>
-                        <td>Thanh toán:</td>
-                        <td>
-                            @{if (Model.DATHANHTOAN == true)
-                                { thanhtoan = "Đã thanh toán"; }
-                                else
-                                { thanhtoan = "Chưa thanh toán"; }
-                            }
-                            @thanhtoan
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> Hình thức thanh toán: </td>
-                        <td>  @Html.DisplayFor(model => model.THANHTOAN.HTTHANHTOAN)</td>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-    </table>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-<div class="form-actions no-color d-flex my-4" style="margin-left:50px;">
-    <input type="submit" value="Xoá" class="submit mr-4" />
-    <button class="submit" onclick="location.href='@Url.Action("Index", "QuanLyHoaDon")';return false;">Trở về</button>
-
-</div>
-    }
+    </div>
 </div>

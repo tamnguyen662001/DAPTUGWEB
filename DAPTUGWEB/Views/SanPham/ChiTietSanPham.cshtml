@@ -9,10 +9,32 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 <link href="~/css/productdetail.css" rel="stylesheet" />
 
 
 <style>
+    .social-nav li {
+        display: inline-block;
+        margin: 0 6px;
+    }
+
+    .social-nav a {
+        display: inline-block;
+        float: none;
+        width: 30px;
+        height: 30px;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+        background: #000;
+        position: relative;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+    }
     .submit {
         display: block;
         position: relative;
@@ -27,6 +49,7 @@
         transition: 0.5s all;
         text-transform: uppercase;
     }
+   
 </style>
 
 
@@ -55,21 +78,21 @@
                                 <div>Kho: @Model.SLTON</div>
                                 <div>Kích thước: @Model.KICHTHUOC</div>
                                 <div>
-                                    <p class="title">chi tiết sản phẩm</p>
+                                    <p class="name  my-3">Chi tiết sản phẩm</p>
 
-                                    <p class="lead border-top pt-3">
+                                    <p class="lead border-top pt-3 ">
                                         @Model.CHITIETSP
                                     </p>
                                 </div>
-                                <br />
-                                <div class="d-flex">
-                                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
-                                    {
-                                        // <input type="submit" value="Thêm vào giỏ hàng">
-                                        <button class="submit" type="submit">Thêm vào giỏ hàng</button>
-                                    }
-                                    <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
-                                </div>
+                                
+                            <br />
+                            <div class="d-flex">
+                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
+                                {
+                                    // <input type="submit" value="Thêm vào giỏ hàng">
+                                    <button class="submit" type="submit">Thêm vào giỏ hàng</button>
+                                }
+                                <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
                             </div>
                         </div>
                     </div>
@@ -77,11 +100,11 @@
             </div>
         </div>
     </div>
-
-    
-
-    <!--//tabs-->
 </div>
+
+
+
+<!--//tabs-->
 
 
 
