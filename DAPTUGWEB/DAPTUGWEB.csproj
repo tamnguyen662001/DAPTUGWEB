@@ -209,7 +209,6 @@
     <Content Include="css\productdetail.css" />
     <Content Include="css\rightsidebar.css" />
     <Content Include="css\megamenu.css" />
-    <Content Include="css\slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,11 +246,8 @@
     <Content Include="Image\San_pham\7.jpg" />
     <Content Include="Image\San_pham\8.jpg" />
     <Content Include="Image\San_pham\9.jpg" />
-    <Content Include="js\address.js" />
-    <Content Include="js\app.js" />
     <Content Include="js\main.js" />
     <Content Include="js\megamenu.js" />
-    <Content Include="js\productdetail.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
