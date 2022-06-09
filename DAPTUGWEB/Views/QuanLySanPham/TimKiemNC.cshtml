@@ -108,29 +108,27 @@
     </div>
     <div id="gridContent">
         <p class="lead mb-4"> @ViewBag.TB     </p>
-        @grid.GetHtml(
+            @grid.GetHtml(
             tableStyle: "table table-bordered table-hover",
             footerStyle: "grid-footer",
             fillEmptyRows: true,
             mode: WebGridPagerModes.Numeric,
             alternatingRowStyle: "alternatingRowStyle",
-              columns: new[]  // colums in grid
+            columns: new[]  // colums in grid
              {
-         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
-         grid.Column("MASP","Mã sản phẩm"),
-                  grid.Column("TENSP","Tên sản phẩm"), //the model fields to display
+                grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+                grid.Column("MASP","Mã sản phẩm"),
+                grid.Column("TENSP","Tên sản phẩm"), //the model fields to display
+                grid.Column("KICHTHUOC","Kích thước"),
+                grid.Column("DONGIA","Đơn giá",format:@<text> @item.DONGIA.ToString("#,##0")</text>),
+                grid.Column("SLTON", "Số lượng tồn"),
+                grid.Column("NHACC.TENNCC", "Nhà cung cấp"),
+                grid.Column("LOAISP.TENLSP", "Loại sản phẩm")
 
-        grid.Column("KICHTHUOC","Kích thước"),
-         grid.Column("DONGIA","Đơn giá",format:@<text> @item.DONGIA.ToString("#,##0")</text>),
-grid.Column("SLTON", "Số lượng tồn"),
-grid.Column("NHACC.TENNCC", "Nhà cung cấp"),
-grid.Column("LOAISP.TENLSP", "Loại sản phẩm")
 
-
-}
-)
+            }
+            )
     </div>
-
 </body>
 </html>
 

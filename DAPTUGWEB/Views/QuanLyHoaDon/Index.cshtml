@@ -62,35 +62,24 @@
     
 </style>
 
-
-@*<p>
-    @Html.ActionLink("Thêm hoá đơn mới", "Create")
-</p>*@
-
 <div class="container">
-
     <div id="gridContent">
         @ViewBag.TB
         @grid.GetHtml(
-            tableStyle: "table table-bordered table-hover",
-            footerStyle: "grid-footer",
-            fillEmptyRows: true,
-            mode: WebGridPagerModes.Numeric,
-            alternatingRowStyle: "alternatingRowStyle",
-              columns: new[]  // colums in grid
-             {
-         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+         tableStyle: "table table-bordered table-hover",
+         footerStyle: "grid-footer",
+         fillEmptyRows: true,
+         mode: WebGridPagerModes.Numeric,
+         alternatingRowStyle: "alternatingRowStyle",
+         columns: new[]  // colums in grid
+         {
+            grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
             grid.Column("MAHD","Mã hoá đơn"), //the model fields to display
-        grid.Column("MAKH","Mã khách hàng"), //the model fields to display
-
-        grid.Column("TGDAT","Ngày đặt hàng"),
-        grid.Column("TGGIAO","Ngày giao hàng"),
-//      grid.Column("SLTON","Số lượng tồn"),
-grid.Column("THANHTOAN.HTTHANHTOAN","Hình thức thanh toán"),
-//grid.Column("DATHANHTOAN","Thanh toán"),
-// grid.Column("DAGIAO","Trạng thái đơn hàng"),
-
-    grid.Column("Chức năng", format: @<text>
+            grid.Column("MAKH","Mã khách hàng"), //the model fields to display
+            grid.Column("TGDAT","Ngày đặt hàng"),
+            grid.Column("TGGIAO","Ngày giao hàng"),
+            grid.Column("THANHTOAN.HTTHANHTOAN","Hình thức thanh toán"),
+            grid.Column("Chức năng", format: @<text>
             <a href="@Url.Action("Edit",
                         new { id = item.MAHD})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="~/Image/edit.png" width="20" height="20" /></abbr></a>
             <a href="@Url.Action("Details",
@@ -101,8 +90,8 @@ grid.Column("THANHTOAN.HTTHANHTOAN","Hình thức thanh toán"),
                     <img src="~/Image/delete.png" width="20" height="20" />
                 </abbr>
             </a>
-    </text>),
-}
-)
+                </text>),
+            }
+         )
     </div>
 </div>

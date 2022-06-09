@@ -115,12 +115,10 @@
                 <td>@item.donGia</td>
 
                 <td>@item.thanhTien</td>
-                <td>
-                    @*<input type="submit" value="Cập nhật " />*@
+                <td>           
                     <button class="submit" type="submit">sửa</button>
                     <br />
                     <br />
-                    @*@Html.ActionLink("Xoá", "XoaGioHang", new { @maSP = item.maSP })*@
                     <button class="submit" onclick="location.href='@Url.Action("XoaGioHang", "GioHang",new { @maSP = item.maSP })';return false;">Xoá</button>
 
                 </td>

@@ -61,40 +61,30 @@
 </style>
 
 
-
-
 <div class="container">
-
-    <p>
-        @*@Html.ActionLink("Thêm sản phẩm mới", "Create")*@
-      
+    <p>     
         <button class="submit" onclick="location.href='@Url.Action("Create", "QuanLySanPham")';return false;">Thêm sản phẩm </button>
     </p>
     <br />
     <div id="gridContent">
-        @ViewBag.TB
-        @grid.GetHtml(
+            @ViewBag.TB
+            @grid.GetHtml(
             tableStyle: "table table-bordered table-hover",
             footerStyle: "grid-footer",
             fillEmptyRows: true,
             mode: WebGridPagerModes.Numeric,
             alternatingRowStyle: "alternatingRowStyle",
-              columns: new[]  // colums in grid
+            columns: new[]  // colums in grid
              {
-         grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
-        grid.Column("TENSP","Tên sản phẩm"), //the model fields to display
+                grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+                grid.Column("TENSP","Tên sản phẩm"), //the model fields to display
 
-        grid.Column("KICHTHUOC","Kích thước"),
-         grid.Column("DONGIA","Đơn giá",format:@<text> @item.DONGIA.ToString("#,##0")</text>),
-        grid.Column("SLTON","Số lượng tồn"),
-        grid.Column("NHACC.TENNCC","Nhà cung cấp"),
-        grid.Column("LOAISP.TENLSP","Loại sản phẩm"),
-        //grid.Column(format: (item) => Html.ActionLink("Cập nhật", "Edit", "QuanLySanPham",new { id = item.MaSP },"QuanLySanPhamController")),
-        //grid.Column(format: (item) => Html.ActionLink("Xem chi tiết", "Details","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
-        //// grid.Column(format: (item) => Url.Action("Xem chi tiết", "ChiTietSanPham","SanPham", new { @maSP = item.MaSP })),
-        //grid.Column(format: (item) => Html.ActionLink("Xóa", "Delete","QuanLySanPham", new { id = item.MaSP },"QuanLySanPhamController")),
-
-        grid.Column("Chức năng", format: @<text>
+                grid.Column("KICHTHUOC","Kích thước"),
+                grid.Column("DONGIA","Đơn giá",format:@<text> @item.DONGIA.ToString("#,##0")</text>),
+                grid.Column("SLTON","Số lượng tồn"),
+                grid.Column("NHACC.TENNCC","Nhà cung cấp"),
+                grid.Column("LOAISP.TENLSP","Loại sản phẩm"),
+                grid.Column("Chức năng", format: @<text>
             <a href="@Url.Action("Edit",
                         new { id = item.MaSP})" class="edit-btn"><abbr title="Cập nhật dữ liệu"><img src="~/Image/edit.png" width="20" height="20" /></abbr></a>
             <a href="@Url.Action("ChiTietSanPham","SanPham",

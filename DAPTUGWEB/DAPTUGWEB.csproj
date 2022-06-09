@@ -315,7 +315,6 @@
     <Content Include="Views\QuanLySanPham\Edit.cshtml" />
     <Content Include="Views\QuanLySanPham\Index.cshtml" />
     <Content Include="Views\NhanVien\DangNhap.cshtml" />
-    <Content Include="Views\QuanLyHoaDon\Create.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Delete.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Details.cshtml" />
     <Content Include="Views\QuanLyHoaDon\Edit.cshtml" />

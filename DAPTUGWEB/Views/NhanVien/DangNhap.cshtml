@@ -5,15 +5,9 @@
 }
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link href="~/css/rightsidebar.css" rel="stylesheet" />
-<link href="~/css/megamenu.css" rel="stylesheet" />
 <link href="~/css/index.css" rel="stylesheet" />
 <link href="~/css/menuaccount.css" rel="stylesheet" />
 <link href="~/css/Checkout.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js" />
-<script src="~/js/address.js"></script>
 
 <div class="container">
     <div class="row">
@@ -25,18 +19,9 @@
                         Tài khoản
                     </span>
                 </h3>
-                @*<ul>
-                    <li><a href=""> @Html.ActionLink("Đăng nhập", "../NguoiDung/DangNhap")</a></li>
-                    <li><a href=""> @Html.ActionLink("Đăng ký", "../NguoiDung/Dangky")</a></li>
-                    <li><a href="">Quên mật khẩu</a></li>
-                </ul>*@
             </div>
         </div>
-
-
         <div class="col-lg-9">
-
-
             @using (Html.BeginForm())
             {
                 <div class="form-horizontal">
@@ -44,13 +29,13 @@
                     @ViewBag.ThongBao
                     <hr />
                     <div class="form-group">
-                        <label class="control-label col-md-3"> Tên đăng nhập</label>
+                        <label class="control-label col-md-3 my-3"> Tên đăng nhập</label>
                         <div class="col-md-5">
                             <input type="text" name="Tendnnv" value="" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3"> Mật khẩu</label>
+                        <label class="control-label col-md-3 my-3"> Mật khẩu</label>
                         <div class="col-md-5">
                             <input type="password" name="Mknv" value="" class="form-control" />
                         </div>
