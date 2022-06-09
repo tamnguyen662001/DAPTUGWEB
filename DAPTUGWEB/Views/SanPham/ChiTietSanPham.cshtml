@@ -1,5 +1,7 @@
 ﻿@using DAPTUGWEB.Models;
 @model SANPHAM
+
+
 @{
     ViewBag.Title = "ChiTietSanPham";
     Layout = "~/Views/Layout/MainLayout.cshtml";
@@ -35,6 +37,7 @@
         -o-transition: 0.5s;
         transition: 0.5s;
     }
+
     .submit {
         display: block;
         position: relative;
@@ -49,7 +52,6 @@
         transition: 0.5s all;
         text-transform: uppercase;
     }
-   
 </style>
 
 
@@ -58,7 +60,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="clearfix">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12 product-image clearfix">
@@ -67,37 +68,49 @@
                                     <a href=""><img src="~/Image/San_pham/@Model.ANHSP"></a>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12 clearfix">
-                                <h1 class="name m-b-5"><span>@Model.TENSP</span></h1>
-                                <div class="product_price p-b-10">
-                                    <div ng-if="IsPromotion==true">
-                                        <ins class="m-b-5">@Model.DONGIA.ToString("#,##0") VND</ins>
-                                    </div>
-                                </div>
-                                <div>Mã sản phẩm: @Model.MASP</div>
-                                <div>Kho: @Model.SLTON</div>
-                                <div>Kích thước: @Model.KICHTHUOC</div>
-                                <div>
-                                    <p class="name  my-3">Chi tiết sản phẩm</p>
 
-                                    <p class="lead border-top pt-3 ">
-                                        @Model.CHITIETSP
-                                    </p>
+                            <div class="col-md-6 col-sm-6 col-xs-12 checkout-left-basket">
+
+                                <h4>@Html.DisplayFor(model => model.TENSP)</h4>
+                                <ul>
+
+                                    <li>Kích thước  <span>@Html.DisplayFor(model => model.KICHTHUOC) </span></li>
+                                    <li>Đơn giá  <span>@Html.DisplayFor(model => model.DONGIA) </span></li>
+
+                                    <li>Kho <span> @Html.DisplayFor(model => model.SLTON) </span></li>
+                                    <li>Loại sản phẩm<span> @Html.DisplayFor(model => model.LOAISP.TENLSP)</span></li>
+
+                                    <li>Nhà cung cấp<span>@Html.DisplayFor(model => model.NHACC.TENNCC) </span></li>
+                                </ul>
+                                <br />
+                                <br />
+                                <div class="d-flex">
+                                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
+                                    {
+                                        // <input type="submit" value="Thêm vào giỏ hàng">
+                                        <button class="submit" type="submit">Thêm vào giỏ hàng</button>
+                                    }
+                                    <button class="submit ml-auto" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
                                 </div>
-                                
-                            <br />
-                            <div class="d-flex">
-                                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @maSP = Model.MASP, @url = Request.Url.ToString() }))
-                                {
-                                    // <input type="submit" value="Thêm vào giỏ hàng">
-                                    <button class="submit" type="submit">Thêm vào giỏ hàng</button>
-                                }
-                                <button class="submit ml-4" onclick="location.href='@Url.Action("Index", "Home")';return false;">Mua tiếp</button>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12 checkout-left-basket my-4">
+                    <h4>chi tiết sản phẩm</h4>
+                    <ul>
+                        <li>@Model.CHITIETSP</li>
+                    </ul>
+
+                </div>
+            </div>
+
+           
         </div>
     </div>
 </div>
