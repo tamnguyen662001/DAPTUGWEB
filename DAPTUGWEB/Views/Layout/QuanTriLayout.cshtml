@@ -38,8 +38,9 @@
 
     <div class="container">
         <div id="menu" style="margin-top:60px;">
-            <div class="menu2">  
-                @Html.ActionLink("NHÂN VIÊN", "../NhanVien/Index", new { @class = "a" })&nbsp;|&nbsp;
+            <div class="menu2">
+                @Html.ActionLink("NHÂN VIÊN", "../Home/Index", new { @class = "a" })&nbsp;|&nbsp;
+                @Html.ActionLink("KHÁCH HÀNG", "../Home/Index", new { @class = "a" })&nbsp;|&nbsp;
                 @Html.ActionLink("SẢN PHẨM", "../QuanLySanPham/Index", new { @class = "a" }) &nbsp;|&nbsp;
                 @Html.ActionLink("HOÁ ĐƠN", "../QuanLyHoaDon/Index", new { @class = "a" })&nbsp;|&nbsp;
                 @Html.ActionLink("TÌM KIẾM", "../QuanLySanPham/TimKiemNC", new { @class = "a" })
