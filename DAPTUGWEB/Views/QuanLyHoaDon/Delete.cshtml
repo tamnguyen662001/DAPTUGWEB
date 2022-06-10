@@ -10,13 +10,13 @@
 
 
 <div class="container">
-    <h4 style="color:red;"> Bạn có chắc chắn xóa thông tin này?</h4>
+    <h4 style="color:red;"> Bạn có chắc chắn xóa đơn hàng này?</h4>
     <div class="row checkout-left">
         <div class="col-md-6 checkout-left-basket">
             <h4>Đơn hàng của bạn</h4>
             <ul>
                 <li>Mã khách hàng  <span>@Html.DisplayFor(model => model.MAKH) </span></li>
-                <li>Mã hoá đơn  <span>@Html.DisplayFor(model => model.MAHD) </span></li>
+                <li>Mã đơn hàng  <span>@Html.DisplayFor(model => model.MAHD) </span></li>
                 <li>
                     Vận chuyển <span>
                         @{if (Model.DAGIAO == true)
