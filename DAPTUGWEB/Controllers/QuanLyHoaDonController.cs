@@ -29,6 +29,7 @@ namespace DAPTUGWEB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             HOADON hOADON = db.HOADONs.Find(id);
+            
             if (hOADON == null)
             {
                 return HttpNotFound();
@@ -82,6 +83,9 @@ namespace DAPTUGWEB.Controllers
             return View(hOADON);
         }
 
+       
+
+
         // POST: QuanLyHoaDon/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -96,7 +100,7 @@ namespace DAPTUGWEB.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MAKH = new SelectList(db.KHACHHANGs, "MAKH", "TENKH", hOADON.MAKH);
-           
+            
             ViewBag.IDTHANHTOAN = new SelectList(db.THANHTOANs, "IDTHANHTOAN", "HTTHANHTOAN", hOADON.IDTHANHTOAN);
             return View(hOADON);
         }

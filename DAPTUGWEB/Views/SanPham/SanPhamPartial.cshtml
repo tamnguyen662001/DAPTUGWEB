@@ -17,10 +17,10 @@
             </div>
             <div class="product-info">
                 <div class="product-info-cust">
-                    <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">Details</a>
+                    <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">Chi tiết</a>
                 </div>
                 <div class="product-info-price">
-                    <a href="details.html">@item.DONGIA.ToString("#,##0") Đ</a>
+                    <a href="@Url.Action("ChiTietSanPham", new { @MASP = item.MASP})">@item.DONGIA.ToString("#,##0") Đ</a>
                 </div>
                 <div class="clear"> </div>
             </div>
