@@ -93,14 +93,15 @@ CREATE TABLE THANHTOAN
 	HTTHANHTOAN NVARCHAR(20) NOT NULL,
 )
 GO
-select *from THANHTOAN
 
 
 
+-- Thanh toan
 INSERT INTO THANHTOAN VALUES(0, N'Tiền mặt')
 INSERT INTO THANHTOAN VALUES(1, N'Chuyển khoản')
 
--- kHOA
+
+-- Rang boc
 
 ALTER TABLE dbo.SANPHAM ADD CONSTRAINT FK_SANPHAM_LOAISP FOREIGN KEY (MALSP) REFERENCES dbo.LOAISP (MALSP)
 ALTER TABLE dbo.SANPHAM ADD CONSTRAINT FK_SANPHAM_NHACC FOREIGN KEY (MANCC) REFERENCES dbo.NHACC (MANCC)
@@ -112,8 +113,7 @@ ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_THANHTOANN FOREIGN KEY (IDTHANHT
 
 
 
-
-
+-- Loai san pham
 
 INSERT INTO LOAISP VALUES('Sne', 'Sneakers','sp2.jpg')
 INSERT INTO LOAISP VALUES('Cas', 'Casual Shoe','sp3.jpg')
@@ -122,13 +122,7 @@ INSERT INTO LOAISP VALUES('Boot', 'Boot NIKE','sp1.jpg')
 
 
 
-
-INSERT INTO SANPHAM VALUES ('Sne1','Sne', N'Giày bóng đá', N'Đôi', 30, 200000, 'NIKE', 10,N'Giày bóng đá sân cỏ', 'sp1.jpg')
-
-
-
--- nhap du lieu
--- Nha cung cap (sl 14)
+-- Nha cung cap
 INSERT INTO NHACC VALUES ('NCC001',N'Adidas',N'218A Ngô Gia Tự, Street, Thành phố Nha Trang, Khánh Hòa','Adi@gmail.com')
 INSERT INTO NHACC VALUES ('NCC002',N'Nike',N' 733 Đ. Kha Vạn Cân, Linh Chiểu, Thủ Đức, Thành phố Hồ Chí Minh','Nike@gmail.com')
 INSERT INTO NHACC VALUES ('NCC003',N'Supreme',N'719 21 Tháng 8, Phước Mỹ, Phan Rang-Tháp Chàm, Ninh Thuận','Sup@gmail.com')
@@ -144,43 +138,40 @@ INSERT INTO NHACC VALUES ('NCC012',N'Valentino',N'10 Trần Hưng Đạo, Phư�
 INSERT INTO NHACC VALUES ('NCC013',N'Jimmy Choo',N'119 Nguyễn Huệ, Phường 5, Tuy Hòa, Phú Yên','Ji@gmail.com')
 INSERT INTO NHACC VALUES ('NCC014',N'Manolo Blahnik',N'Nguyễn Huệ, Phường7, Tuy Hòa, Phú Yên','Man@gmail.com')
 
---khach hang (sl 13)
-INSERT INTO KHACHHANG VALUES ('KH0001',N'Nguyễn Minh Trí',N'+84905011037','TK001','123456','tri@gmail.com',N'Thanh Xuân Trung, Thanh Xuân, Hà Nội')
-INSERT INTO KHACHHANG VALUES ('KH0002',N'Nguyễn Phan Hảo',N'+84985654259','TK002','78991011','hao@gmail.com',N'Tuy Hòa, Phú Yên')
-INSERT INTO KHACHHANG VALUES ('KH0003',N'Nguyễn Lê Thành Tâm',N'+84902355124','TK003','123','tam@gmail.com',N'Thành phố Cà Mau, Cà Mau')
-INSERT INTO KHACHHANG VALUES ('KH0004',N'Lê Duy Tín',N'+84925633548','TK004','00000','tin@gmail.com',N'Phú Nhuận, Thành phố Hồ Chí Minh')
-INSERT INTO KHACHHANG VALUES ('KH0005',N'Nguyễn Khánh Duy',N'+84912546987','TK005','5689','duy@gmail.com',N'Thạch Thang, Hải Châu, Đà Nẵng')
-INSERT INTO KHACHHANG VALUES ('KH0006',N'Nguyễn Minh Khương',N'+84912548521','TK006','12345','khu@gmail.com',N'P. Phú Khương, Bến Tre')
-INSERT INTO KHACHHANG VALUES ('KH0007',N'Nguyễn Đức Trung',N'+84925622213','TK007','9999999','trung@gmail.com',N'Đ. Lê Duẩn, Thạch Thang, Hải Châu, Đà Nẵng')
-INSERT INTO KHACHHANG VALUES ('KH0008',N'Nguyễn Bảo Anh',N'+8497844511','TK008','78945','anh@gmail.com',N'P. Lam Sơn, Thành phố Thanh Hóa, Thanh Hoá')
-INSERT INTO KHACHHANG VALUES ('KH0009',N'Huỳnh Thị Ngọc Nguyên',N'+84898368112','TK009','2121','ngu@gmail.com',N'Hải Châu, Đà Nẵng')
-INSERT INTO KHACHHANG VALUES ('KH0010',N'Lê Thị Thu Trâm',N'+84921255465','TK010','3232','tram@gmail.com',N'Thành phố Cà Mau, Cà Mau')
-INSERT INTO KHACHHANG VALUES ('KH0011',N'Nguyễn Quốc Châu',N'+84921255852','TK011','323','chau@gmail.com',N'Tuy Hòa, Phú Yên')
-INSERT INTO KHACHHANG VALUES ('KH0012',N'Trương Thị Diễm Quỳnh',N'+84921255121','TK012','147','qu@gmail.com',N'Tuy Hòa, Phú Yên')
-INSERT INTO KHACHHANG VALUES ('KH0013',N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
+--Khach hang ()
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Minh Trí',N'+84905011037','TK001','123456','tri@gmail.com',N'Thanh Xuân Trung, Thanh Xuân, Hà Nội')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Phan Hảo',N'+84985654259','TK002','78991011','hao@gmail.com',N'Tuy Hòa, Phú Yên')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Lê Thành Tâm',N'+84902355124','TK003','123','tam@gmail.com',N'Thành phố Cà Mau, Cà Mau')
+INSERT INTO KHACHHANG VALUES (N'Lê Duy Tín',N'+84925633548','TK004','00000','tin@gmail.com',N'Phú Nhuận, Thành phố Hồ Chí Minh')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Khánh Duy',N'+84912546987','TK005','5689','duy@gmail.com',N'Thạch Thang, Hải Châu, Đà Nẵng')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Minh Khương',N'+84912548521','TK006','12345','khu@gmail.com',N'P. Phú Khương, Bến Tre')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Đức Trung',N'+84925622213','TK007','9999999','trung@gmail.com',N'Đ. Lê Duẩn, Thạch Thang, Hải Châu, Đà Nẵng')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Bảo Anh',N'+8497844511','TK008','78945','anh@gmail.com',N'P. Lam Sơn, Thành phố Thanh Hóa, Thanh Hoá')
+INSERT INTO KHACHHANG VALUES (N'Huỳnh Thị Ngọc Nguyên',N'+84898368112','TK009','2121','ngu@gmail.com',N'Hải Châu, Đà Nẵng')
+INSERT INTO KHACHHANG VALUES (N'Lê Thị Thu Trâm',N'+84921255465','TK010','3232','tram@gmail.com',N'Thành phố Cà Mau, Cà Mau')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Quốc Châu',N'+84921255852','TK011','323','chau@gmail.com',N'Tuy Hòa, Phú Yên')
+INSERT INTO KHACHHANG VALUES (N'Trương Thị Diễm Quỳnh',N'+84921255121','TK012','147','qu@gmail.com',N'Tuy Hòa, Phú Yên')
+INSERT INTO KHACHHANG VALUES (N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
 
 
---nhan vien (sl: 11) (chua hoan thanh link anh) (Chua co quan ly, quan tri vien)
+--nhan vien 
 INSERT INTO NHANVIEN VALUES(N'Nguyễn Lê Thành Tâm','20011201',N'+84905012354',0,'admin','0000','','tam@gmail.com')
 INSERT INTO NHANVIEN VALUES(N'Phan Châu Tần','20000201',N'+84902325654',1,'NV2','9999','','tan@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0003',N'Nguyễn Bình Thạch','19991210',N'+84925648754',N'Nhân Viên','NV3','nmt','','thac@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0004',N'Phạm Ngũ Lão','20020405',N'+84902154875',N'Nhân Viên','NV4','5689','','lao@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0005',N'Trần Ngu','19980521',N'+84854652145',N'Nhân Viên','NV5','1478','','ngu@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0007',N'Bùi Văn Long','19991202',N'+84956799512',N'Nhân Viên','NV6','3215','','long@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0008',N'Toàn Chức','19990508',N'+84921548796',N'Nhân Viên','NV7','zxc','','chuc@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0009',N'Hayate','20011225',N'+84932659844',N'Nhân Viên','NV8','asd','','te@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0010',N'Jonh','20010605',N'+84903326598',N'Nhân Viên','NV9','abc','','jonh@gmail.com')
-INSERT INTO NHANVIEN VALUES('NV0011',N'Đỗ Bảo Châu','20010803',N'+84933265963',N'Nhân Viên','NV10','2583','','chau@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Nguyễn Bình Thạch','19991210',N'+84925648754',1,'NV3','nmt','','thac@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Phạm Ngũ Lão','20020405',N'+84902154875',1,'NV4','5689','','lao@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Trần Ngu','19980521',N'+84854652145',1,'NV5','1478','','ngu@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Bùi Văn Long','19991202',N'+84956799512',1,'NV6','3215','','long@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Toàn Chức','19990508',N'+84921548796',1,'NV7','zxc','','chuc@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Hayate','20011225',N'+84932659844',1,'NV8','asd','','te@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Jonh','20010605',N'+84903326598',0,'NV9','abc','','jonh@gmail.com')
+INSERT INTO NHANVIEN VALUES(N'Đỗ Bảo Châu','20010803',N'+84933265963',1,'baochau','2583','','chau@gmail.com')
 
--- thanh toan (sl 3)
-
-select * from NHANVIEN
---loai san pham (SL 13) (THIEU ANH MINH HOA --)
-INSERT INTO LOAISP VALUES('LSP001',N'Giày Sneaker','1.jpg') -- giay the thao
-INSERT INTO LOAISP VALUES('LSP002',N'Giày Slip-on','2.jpg') -- giay luoi (khong co giay buoc, toi gian)
-INSERT INTO LOAISP VALUES('LSP003',N'Giày Thể thao','3.jpg')
-INSERT INTO LOAISP VALUES('LSP004',N'Giày Da thật','4.jpg')
-INSERT INTO LOAISP VALUES('LSP005',N'Giày Boots','5.jpg')
+----loai san pham (SL 13) (THIEU ANH MINH HOA --)
+--INSERT INTO LOAISP VALUES('LSP001',N'Giày Sneaker','1.jpg') -- giay the thao
+--INSERT INTO LOAISP VALUES('LSP002',N'Giày Slip-on','2.jpg') -- giay luoi (khong co giay buoc, toi gian)
+--INSERT INTO LOAISP VALUES('LSP003',N'Giày Thể thao','3.jpg')
+--INSERT INTO LOAISP VALUES('LSP004',N'Giày Da thật','4.jpg')
+--INSERT INTO LOAISP VALUES('LSP005',N'Giày Boots','5.jpg')
 
 
 --INSERT INTO LOAISP VALUES('LSP003',N'Sandals','') -- dep, giay co quai hau
@@ -214,27 +205,7 @@ INSERT INTO SANPHAM VALUES('SP0012','LSP001',N'Sneakers Ecko Unltd OF21',N'Đôi
 INSERT INTO SANPHAM VALUES('SP0013','LSP003',N'Sneakers Best Saller',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','10.jpg')
 
 
-
---hoa don
-INSERT INTO HOADON VALUES('HD001','NV0009','KH0011','20220320','20220323','100000',1,1)
-INSERT INTO HOADON VALUES('HD002','NV0011','KH0004','20220319','20220322','100001',1,1)
-INSERT INTO HOADON VALUES('HD003','NV0004','KH0010','20222103',NULL,'100002',0,0)
-INSERT INTO HOADON VALUES('HD004','NV0001','KH0009','20220219','20220222','100003',1,1)
-INSERT INTO HOADON VALUES('HD005','NV0009','KH0008','20220109','20220113','100004',1,1)
-INSERT INTO HOADON VALUES('HD006','NV0007','KH0004','20220119','20220121','100005',1,1)
-
--- cthd
-INSERT INTO CTHD VALUES(1,'100000','SP0001')
-INSERT INTO CTHD VALUES(2,'100001','SP0002')
-INSERT INTO CTHD VALUES(2,'100002','SP0003')
-INSERT INTO CTHD VALUES(2,'100003','SP0004')
-INSERT INTO CTHD VALUES(1,'100004','SP0005')
-
-
-
-
-
--- tạo proc tìm kiếm
+-- Tạo proc tìm kiếm
 go
 CREATE PROCEDURE SanPham_TimKiem
     @masp varchar(10)=NULL,
@@ -279,18 +250,3 @@ drop proc SanPham_TimKiem
 
 EXEC SanPham_TimKiem null , null, 509000, 1450000, null
 
---21/3
--- Đã chèn dữ liệu bảng loại sản phẩm 
--- đã chèn 4 dòng đầu bảng nahf cung cấp
-
-select * from SANPHAM
-
-
-select *   from HOADON where MAHD = 14
-
-select * from CTHD where MAHD = 60
-
-delete  from HOADON where MAHD = 17
-
-
-select * from hoadon 
