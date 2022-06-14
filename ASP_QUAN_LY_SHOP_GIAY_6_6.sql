@@ -101,14 +101,14 @@ INSERT INTO THANHTOAN VALUES(0, N'Tiền mặt')
 INSERT INTO THANHTOAN VALUES(1, N'Chuyển khoản')
 
 
--- Rang boc
+-- Rang buoc
 
 ALTER TABLE dbo.SANPHAM ADD CONSTRAINT FK_SANPHAM_LOAISP FOREIGN KEY (MALSP) REFERENCES dbo.LOAISP (MALSP)
 ALTER TABLE dbo.SANPHAM ADD CONSTRAINT FK_SANPHAM_NHACC FOREIGN KEY (MANCC) REFERENCES dbo.NHACC (MANCC)
-ALTER TABLE dbo.CTHD ADD CONSTRAINT FK_CTHD_HOADON FOREIGN KEY (MAHD) REFERENCES dbo.HOADON (MAHD) ON DELETE CASCADE, ON UPDATE CASCADE
-ALTER TABLE dbo.CTHD ADD CONSTRAINT FK_CTHD_SANPHAM FOREIGN KEY (MASP) REFERENCES dbo.SANPHAM (MASP) ON DELETE CASCADE, ON UPDATE CASCADE
+ALTER TABLE dbo.CTHD ADD CONSTRAINT FK_CTHD_HOADON FOREIGN KEY (MAHD) REFERENCES dbo.HOADON (MAHD) ON DELETE CASCADE ON UPDATE CASCADE
+ALTER TABLE dbo.CTHD ADD CONSTRAINT FK_CTHD_SANPHAM FOREIGN KEY (MASP) REFERENCES dbo.SANPHAM (MASP) ON DELETE CASCADE ON UPDATE CASCADE
 --ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_NHANVIEN FOREIGN KEY (MANV) REFERENCES dbo.NHANVIEN (MANV)
-ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_KHACHHANG FOREIGN KEY (MAKH) REFERENCES dbo.KHACHHANG (MAKH)ON DELETE CASCADE, ON UPDATE CASCADE
+ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_KHACHHANG FOREIGN KEY (MAKH) REFERENCES dbo.KHACHHANG (MAKH)ON DELETE CASCADE ON UPDATE CASCADE
 ALTER TABLE dbo.HOADON ADD CONSTRAINT FK_HOADON_THANHTOANN FOREIGN KEY (IDTHANHTOAN) REFERENCES dbo.THANHTOAN (IDTHANHTOAN)
 
 
@@ -119,6 +119,22 @@ INSERT INTO LOAISP VALUES('Sne', 'Sneakers','sp2.jpg')
 INSERT INTO LOAISP VALUES('Cas', 'Casual Shoe','sp3.jpg')
 INSERT INTO LOAISP VALUES('For', 'Formal Shoe','sp4.jpg')
 INSERT INTO LOAISP VALUES('Boot', 'Boot NIKE','sp1.jpg')
+INSERT INTO LOAISP VALUES('LSP001',N'Giày Sneaker','1.jpg') -- giay the thao
+INSERT INTO LOAISP VALUES('LSP002',N'Giày Slip-on','2.jpg') -- giay luoi (khong co giay buoc, toi gian)
+INSERT INTO LOAISP VALUES('LSP003',N'Giày Thể thao','3.jpg')
+INSERT INTO LOAISP VALUES('LSP004',N'Giày Da thật','4.jpg')
+INSERT INTO LOAISP VALUES('LSP005',N'Giày Boots','5.jpg')
+INSERT INTO LOAISP VALUES('LSP003',N'Sandals','') -- dep, giay co quai hau
+INSERT INTO LOAISP VALUES('LSP004',N'Boat Shoes','') -- giay thuyen
+INSERT INTO LOAISP VALUES('LSP005',N'ESPADRILLES','') -- giong slip-on nhung duoc lam bang vai
+INSERT INTO LOAISP VALUES('LSP006',N'DERBY','') --giay tay
+INSERT INTO LOAISP VALUES('LSP007',N'BROGUE','') --giay tay
+INSERT INTO LOAISP VALUES('LSP008',N'OXFORD','') --giay tay
+INSERT INTO LOAISP VALUES('LSP009',N'MONK','') --giay tay
+INSERT INTO LOAISP VALUES('LSP009',N'LOAFER','') --giay tay
+INSERT INTO LOAISP VALUES('LSP010',N'BROGUE','') --giay Boots
+INSERT INTO LOAISP VALUES('LSP011',N'CHELSEA','') --giay Boots
+INSERT INTO LOAISP VALUES('LSP012',N'CHUKKA','') --giay Boots
 
 
 
@@ -138,7 +154,7 @@ INSERT INTO NHACC VALUES ('NCC012',N'Valentino',N'10 Trần Hưng Đạo, Phư�
 INSERT INTO NHACC VALUES ('NCC013',N'Jimmy Choo',N'119 Nguyễn Huệ, Phường 5, Tuy Hòa, Phú Yên','Ji@gmail.com')
 INSERT INTO NHACC VALUES ('NCC014',N'Manolo Blahnik',N'Nguyễn Huệ, Phường7, Tuy Hòa, Phú Yên','Man@gmail.com')
 
---Khach hang ()
+--Khach hang
 INSERT INTO KHACHHANG VALUES (N'Nguyễn Minh Trí',N'+84905011037','TK001','123456','tri@gmail.com',N'Thanh Xuân Trung, Thanh Xuân, Hà Nội')
 INSERT INTO KHACHHANG VALUES (N'Nguyễn Phan Hảo',N'+84985654259','TK002','78991011','hao@gmail.com',N'Tuy Hòa, Phú Yên')
 INSERT INTO KHACHHANG VALUES (N'Nguyễn Lê Thành Tâm',N'+84902355124','TK003','123','tam@gmail.com',N'Thành phố Cà Mau, Cà Mau')
@@ -154,7 +170,7 @@ INSERT INTO KHACHHANG VALUES (N'Trương Thị Diễm Quỳnh',N'+84921255121','
 INSERT INTO KHACHHANG VALUES (N'Nguyễn Việt Hưng',N'+84956555245','TK013','111','hug@gmail.com',N'Vạn Thọ, Nha Trang')
 
 
---nhan vien 
+--Nhan vien 
 INSERT INTO NHANVIEN VALUES(N'Nguyễn Lê Thành Tâm','20011201',N'+84905012354',0,'admin','0000','','tam@gmail.com')
 INSERT INTO NHANVIEN VALUES(N'Phan Châu Tần','20000201',N'+84902325654',1,'NV2','9999','','tan@gmail.com')
 INSERT INTO NHANVIEN VALUES(N'Nguyễn Bình Thạch','19991210',N'+84925648754',1,'NV3','nmt','','thac@gmail.com')
@@ -166,31 +182,11 @@ INSERT INTO NHANVIEN VALUES(N'Hayate','20011225',N'+84932659844',1,'NV8','asd','
 INSERT INTO NHANVIEN VALUES(N'Jonh','20010605',N'+84903326598',0,'NV9','abc','','jonh@gmail.com')
 INSERT INTO NHANVIEN VALUES(N'Đỗ Bảo Châu','20010803',N'+84933265963',1,'baochau','2583','','chau@gmail.com')
 
-----loai san pham (SL 13) (THIEU ANH MINH HOA --)
---INSERT INTO LOAISP VALUES('LSP001',N'Giày Sneaker','1.jpg') -- giay the thao
---INSERT INTO LOAISP VALUES('LSP002',N'Giày Slip-on','2.jpg') -- giay luoi (khong co giay buoc, toi gian)
---INSERT INTO LOAISP VALUES('LSP003',N'Giày Thể thao','3.jpg')
---INSERT INTO LOAISP VALUES('LSP004',N'Giày Da thật','4.jpg')
---INSERT INTO LOAISP VALUES('LSP005',N'Giày Boots','5.jpg')
 
 
---INSERT INTO LOAISP VALUES('LSP003',N'Sandals','') -- dep, giay co quai hau
---INSERT INTO LOAISP VALUES('LSP004',N'Boat Shoes','') -- giay thuyen
---INSERT INTO LOAISP VALUES('LSP005',N'ESPADRILLES','') -- giong slip-on nhung duoc lam bang vai
---INSERT INTO LOAISP VALUES('LSP006',N'DERBY','') --giay tay
---INSERT INTO LOAISP VALUES('LSP007',N'BROGUE','') --giay tay
---INSERT INTO LOAISP VALUES('LSP008',N'OXFORD','') --giay tay
---INSERT INTO LOAISP VALUES('LSP009',N'MONK','') --giay tay
---INSERT INTO LOAISP VALUES('LSP009',N'LOAFER','') --giay tay
---INSERT INTO LOAISP VALUES('LSP010',N'BROGUE','') --giay Boots
---INSERT INTO LOAISP VALUES('LSP011',N'CHELSEA','') --giay Boots
---INSERT INTO LOAISP VALUES('LSP012',N'CHUKKA','') --giay Boots
-
-
---san pham (sl 20)(thiếu ảnh minh họa)
+--San pham 
 INSERT INTO SANPHAM VALUES('SP0001','LSP001',N'New Balance 574',N'Đôi',40,700000,'NCC001', 100,N'Giày sneaker New Balance574 là mẫu giày Unisex được các tín đồ cực kỳ yêu thích. Giày có lớp lót được làm từ Cotton giúp cho mọi vận động trở nên cực kỳ thoải mái và êm ái. Thiết kế Cổ thấp trendy thích hợp với những bạn trẻ cá tính và năng động. Đôi sneaker New Balance574 được làm từ Da mang lại sự bền bỉ trong nhiều năm liền. Phần dây được làm theo kiểu Dây khá gọn gàng và tiện dụng.','18.jpg')
 INSERT INTO SANPHAM VALUES('SP0002','LSP003',N'Giày Thể Thao Lacoste Storda 120',N'Đôi',40,509000,'NCC003', 80,N'Giày Nike Blazer Mid 77 Vintage là giày sneaker Cổ cao Unisex có trọng lượng khá vừa phải, không khiến cho người dùng có cảm giác nặng gây mỏi cổ chân. Ngoài ra, giày được thiết kế mũi giày dáng Dài vừa thời trang vừa tạo sự thoải mái mà vẫn ôm chân. Lớp lót bên trong giày được làm từ Cao su mang lại cảm giác thoải mái, dễ chịu cho người đi giày dù là trong thời gian dài. Hãng sử dụng Da để làm mặt trên của giày vừa thời trang lại có độ bền cao. Giày Nike Blazer Mid 77 Vintage được sản xuất với đa dạng màu sắc và đủ size để mọi người có thể thoải mái lựa chọn cũng như dễ dàng phối đồ. ','24.jpg')
-
 INSERT INTO SANPHAM VALUES('SP0003','LSP001',N'Nike Blazer Mid 77 Vintage',N'Đôi',40,509000,'NCC003', 80,N'Giày Nike Blazer Mid 77 Vintage là giày sneaker Cổ cao Unisex có trọng lượng khá vừa phải, không khiến cho người dùng có cảm giác nặng gây mỏi cổ chân. Ngoài ra, giày được thiết kế mũi giày dáng Dài vừa thời trang vừa tạo sự thoải mái mà vẫn ôm chân. Lớp lót bên trong giày được làm từ Cao su mang lại cảm giác thoải mái, dễ chịu cho người đi giày dù là trong thời gian dài. Hãng sử dụng Da để làm mặt trên của giày vừa thời trang lại có độ bền cao. Giày Nike Blazer Mid 77 Vintage được sản xuất với đa dạng màu sắc và đủ size để mọi người có thể thoải mái lựa chọn cũng như dễ dàng phối đồ. ','15.jpg')
 INSERT INTO SANPHAM VALUES('SP0004','LSP002',N'Lacoste Slip On Tatalya 319',N'Đôi',39,2635000,'NCC004', 70,N'Giày Lacoste Slip on Tatalya 319 (Xanh Navy) sản phẩm đến từ thương hiệu Lacoste nổi tiếng. Với thiết kế trẻ trung, hiện đại đôi giày được nhiều tín đồ mê giày slip on yêu thích. Lót giày sử dụng công nghệ OrthoLite, dày dặn, êm ái, hút ẩm, lưu thông không khí cho bàn chân mát mẻ, ngăn chặn mùi và nấm, giúp chân luôn thoải mái ngay cả khi bạn mang giày cả ngày dài. Đường may của giày tinh tế, tỉ mỉ từng chi tiết, đảm bảo hài lòng ngay cả với khách hàng khó tính nhất. Đôi giày được làm từ chất liệu vải Canvas cao cấp.Phần đế giày được làm từ cao su lưu hóa có độ bền cao, ma sát tốt. Giày tiện lợi, dễ đi, dễ kết hợp với các trang phục khác nhau để thay đổi phong cách cho bản thân.','14.jpg')
 INSERT INTO SANPHAM VALUES('SP0005','LSP002',N'Vans Asher Checkerboard Baby Blue',N'Đôi',39,1500000,'NCC005', 60,N'Giày Vans Asher Checkerboard Baby Blue Màu Trắng Xanh là đôi giày cao cấp đến từ thương hiệu Vans nổi tiếng của nước Mỹ. Với đôi giày Asher Checkerboard Baby Blue này chắc chắn bạn sẽ trở nên nổi bật và cuốn hút hơn. Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng. Giày Vans Asher Checkerboard Baby Blue Màu Trắng Xanh dễ dàng kết hợp với nhiều trang phục khác nhau theo sở thích bản thân tạo nên 1 set đồ đẹp khi đi chơi, đi học hay dạo phố...','17.jpg')
@@ -201,7 +197,6 @@ INSERT INTO SANPHAM VALUES('SP0009','LSP004',N'Be Classy Classic Brogues Derby -
 INSERT INTO SANPHAM VALUES('SP0010','LSP005',N'Brogues Nam Sledgers Nice ',N'Đôi',42,3300000,'NCC010', 50,N'Giày Boots Brogues Nam Sledgers Nice 0118A5107L Màu Đen Size 44 mặt hàng giày dép thời trang chất lượng chính hãng của nhà sản xuất Sledgers nổi tiếng thế giới dạng màu sắc trắng, đỏ, đen, xám, xanh navy... đủ kiểu dáng, hàng sale được Hạ Vàng phân phối với giá tốt,  ưu đãi nhất trên sàn thương mại điện tử Vua Hàng Hiệu. Giày Tây Brogues Nam Sledgers Nice 0118A5107L Màu Đen Size 44 với thiết kế sang trọng và lịch lãm, kết hợp cùng chất liệu da cao cấp, bền đẹp, cho phái mạnh thêm tự tin và khẳng định đẳng cấp của mình. Bên cạnh đó, giày được thiết kế theo công nghệ hiện đại, đem lại sự thoải mái, êm ái cho người mang.','8.jpg')
 INSERT INTO SANPHAM VALUES('SP0011','LSP001',N'Sneaker MLB Big Ball',N'Đôi',38,1250000,'NCC003', 60,N'Giày Sneakers Ecko Unltd OF21-26006 Phối Màu sở hữu kiểu dáng thời trang, hiện đại đến từ thương hiệu Ecko Unltd nổi tiếng. Với đôi giày sneakers này bạn có thể dễ dàng kết hợp với nhiều trang phục khác nhau tạo nên set đồ đẹp mắt,  phù hợp với những trang phục lịch sự đứng đắn như áo sơ mi hay quần âu, phù hợp để diện đi làm, đi dự tiệc,... Form giày với các đường may tỉ mỉ, sắc nét, tinh xảo bởi những người thợ thủ công lành nghề. Lót giầy độc đáo với phần gót da mềm giúp tăng ma sát giữ giày khó trượt khỏi chân, phần mu bàn chân, giúp việc đi giày dễ dàng. Việc sử dụng da, loại vật liệu có thể “thở” làm lót giày giúp chống khuẩn, kháng mùi tốt.','19.jpg')
 INSERT INTO SANPHAM VALUES('SP0012','LSP001',N'Sneakers Ecko Unltd OF21',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','24.jpg')
-
 INSERT INTO SANPHAM VALUES('SP0013','LSP003',N'Sneakers Best Saller',N'Đôi',32,1450000,'NCC003', 50,N'Giày MLB Big Ball Chunky A New York Yankees Màu Trắng Logo Đen size 260 là đôi giày cao cấp với thiết kế hiện đại, thời trang đến từ thương hiệu MLB nổi tiếng của Hàn Quốc. MLB Big Ball Chunky A sẽ cho bạn trải nghiệm tuyệt vời nhất khi đi lên chân Đôi giày này được làm từ chất liệu da và vải cao cấp, bền đẹp trong suốt quá trình sử dụng. Form giày đi lên chân vừa vặn, các đường chỉ khâu vô cùng chắc chắn và tỉ mỉ đảm bảo hài lòng mọi khách hàng','10.jpg')
 
 
@@ -246,7 +241,7 @@ IF @mancc IS NOT NULL
 	EXEC SP_EXECUTESQL @SqlStr 
 END
 
-drop proc SanPham_TimKiem
+--drop proc SanPham_TimKiem
 
 EXEC SanPham_TimKiem null , null, 509000, 1450000, null
 
